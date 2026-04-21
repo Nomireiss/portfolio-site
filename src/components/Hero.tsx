@@ -55,13 +55,13 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="#work"
-              className="h-9 px-4 py-2 bg-[#171717] text-[#FAFAFA] text-sm font-medium rounded-lg hover:bg-[#333] transition-colors inline-flex items-center"
+              className="h-11 px-6 py-2.5 bg-[#171717] text-[#FAFAFA] text-sm font-medium rounded-[10px] hover:bg-[#333] transition-colors inline-flex items-center"
             >
               See my work
             </a>
             <a
               href="#contact"
-              className="h-9 px-4 py-2 text-[#0A0A0A] text-sm font-medium rounded-lg hover:bg-black/5 transition-colors inline-flex items-center gap-2"
+              className="h-11 px-6 py-2.5 text-[#0A0A0A] text-sm font-medium rounded-[10px] hover:bg-black/5 transition-colors inline-flex items-center gap-2"
             >
               Get in touch
               <ArrowUpRight size={16} />

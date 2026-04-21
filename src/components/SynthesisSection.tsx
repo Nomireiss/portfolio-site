@@ -61,8 +61,8 @@ export default function SynthesisSection() {
         height: "400vh",
         backgroundColor: "#ffffff",
         backgroundImage:
-          "linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
-        backgroundSize: "10px 10px",
+          "linear-gradient(to bottom, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 65%), linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
+        backgroundSize: "100% 100%, 10px 10px, 10px 10px",
       }}
       className="relative"
     >
@@ -73,11 +73,11 @@ export default function SynthesisSection() {
         style={{
           backgroundColor: "#ffffff",
           backgroundImage:
-            "linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
-          backgroundSize: "10px 10px",
+            "linear-gradient(to bottom, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 65%), linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
+          backgroundSize: "100% 100%, 10px 10px, 10px 10px",
           paddingLeft: "clamp(1rem, 6.94vw, 80px)",
           paddingRight: "clamp(1rem, 6.94vw, 80px)",
-          paddingTop: "90px",   /* clear sticky nav */
+          paddingTop: "100px",  /* clear sticky nav (97px) */
           paddingBottom: "48px",
           gap: "5vw",
         }}

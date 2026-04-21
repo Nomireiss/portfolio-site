@@ -1,23 +1,71 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-function LogoIcon() {
+gsap.registerPlugin(ScrollTrigger);
+
+function LogoIcon({ inWorkSection }: { inWorkSection: boolean }) {
   return (
-    <img src="/Nomi Logo.png" alt="Nomi" style={{ height: "64px", width: "auto" }} />
+    <div style={{ display: "grid", height: "64px", alignItems: "center" }}>
+      <img
+        src="/Nomi Logo Rough.png"
+        alt="Nomi"
+        style={{
+          gridArea: "1 / 1",
+          height: "64px",
+          width: "auto",
+          opacity: inWorkSection ? 0 : 1,
+          transition: "opacity 0.5s ease",
+        }}
+      />
+      <img
+        src="/Nomi Logo.png"
+        alt="Nomi"
+        style={{
+          gridArea: "1 / 1",
+          height: "64px",
+          width: "auto",
+          opacity: inWorkSection ? 1 : 0,
+          transition: "opacity 0.5s ease",
+        }}
+      />
+    </div>
   );
 }
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [inWorkSection, setInWorkSection] = useState(false);
+
+  useEffect(() => {
+    const workSection = document.querySelector("#work");
+    if (!workSection) return;
+
+    const trigger = ScrollTrigger.create({
+      trigger: workSection,
+      start: "top top",
+      onEnter: () => setInWorkSection(true),
+      onLeaveBack: () => setInWorkSection(false),
+    });
+
+    return () => trigger.kill();
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-[#E5E5E5]">
+    <header
+      className="sticky top-0 z-50 border-b border-[#E5E5E5]"
+      style={{
+        backgroundColor: inWorkSection ? "#EFF0F6" : "#ffffff",
+        transition: "background-color 0.5s ease",
+      }}
+    >
       <div className="w-full px-4 sm:px-10 md:px-20 py-4">
         <div className="flex items-center justify-between">
           <a href="#" aria-label="Home">
-            <LogoIcon />
+            <LogoIcon inWorkSection={inWorkSection} />
           </a>
 
           {/* Desktop nav */}
@@ -30,14 +78,14 @@ export default function Navigation() {
                 About
               </a>
             </div>
-            <a href="#contact" className="h-9 px-4 py-2 bg-[#171717] text-[#FAFAFA] text-sm font-medium rounded-lg hover:bg-[#333] transition-colors inline-flex items-center">
+            <a href="#contact" className="h-11 px-6 py-2.5 bg-[#171717] text-[#FAFAFA] text-sm font-medium rounded-[10px] hover:bg-[#333] transition-colors inline-flex items-center">
               Get in touch
             </a>
           </div>
 
           {/* Mobile: CTA + hamburger */}
           <div className="flex md:hidden items-center gap-3">
-            <a href="#contact" className="h-9 px-4 py-2 bg-[#171717] text-[#FAFAFA] text-sm font-medium rounded-lg hover:bg-[#333] transition-colors inline-flex items-center">
+            <a href="#contact" className="h-11 px-6 py-2.5 bg-[#171717] text-[#FAFAFA] text-sm font-medium rounded-[10px] hover:bg-[#333] transition-colors inline-flex items-center">
               Get in touch
             </a>
             <button

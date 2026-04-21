@@ -27,11 +27,12 @@ const projects = [
 export default function ProjectGallery() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
-  const rowRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [hovered, setHovered] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Heading fade-up
       if (headingRef.current) {
         gsap.fromTo(
           headingRef.current,
@@ -50,17 +51,20 @@ export default function ProjectGallery() {
         );
       }
 
-      if (rowRef.current) {
+      // Staggered card float-in
+      const cards = cardRefs.current.filter(Boolean);
+      if (cards.length) {
         gsap.fromTo(
-          rowRef.current,
-          { y: 52, opacity: 0 },
+          cards,
+          { y: 48, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            duration: 1,
-            ease: "power2.out",
+            duration: 0.85,
+            ease: "power3.out",
+            stagger: 0.18,
             scrollTrigger: {
-              trigger: rowRef.current,
+              trigger: cards[0],
               start: "top 88%",
               toggleActions: "play none none none",
             },
@@ -143,7 +147,6 @@ export default function ProjectGallery() {
 
         {/* Cards grid — 1 col mobile, 2 col md, 3 col lg */}
         <div
-          ref={rowRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           style={{ gap: "24px", marginTop: "64px" }}
         >
@@ -154,6 +157,7 @@ export default function ProjectGallery() {
             return (
               <div
                 key={project.title}
+                ref={(el) => { cardRefs.current[i] = el; }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 className="flex flex-col"
@@ -170,7 +174,7 @@ export default function ProjectGallery() {
                   className="relative overflow-hidden w-full"
                   style={{
                     aspectRatio: "385 / 440",
-                    borderRadius: "30px 0px 30px 0px",
+                    borderRadius: "20px",
                   }}
                 >
                   <img

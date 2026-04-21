@@ -34,9 +34,23 @@ export default function SkillsGrid() {
         backgroundImage:
           "linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
         backgroundSize: "10px 10px",
+        paddingBottom: "24px",
       }}
     >
-      {/* Figma comment card — desktop only, floats above section */}
+      {/* Bottom-right comment card — floats into the gap between sections */}
+      <div className="hidden lg:block">
+        <CommentCard time="just now" className="right-[92px] bottom-[-200px]">
+          <p>
+            Too much white space here, we need to adjust the spacing.{" "}
+            <Mention>@Claude </Mention>
+            is telling me it&rsquo;s due to the padding required for the fun
+            card scroll we have in the next section — but we need to do
+            something about this.
+          </p>
+        </CommentCard>
+      </div>
+
+      {/* Top-left comment card — desktop only, floats above section */}
       <div className="hidden lg:block">
         <CommentCard time="1 minute ago" className="left-[92px] top-[32px]">
           <p>

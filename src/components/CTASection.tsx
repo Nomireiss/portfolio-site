@@ -29,7 +29,7 @@ export default function CTASection() {
           </div>
           <a
             href="mailto:hello@portfolio.com"
-            className="h-9 px-4 py-2 bg-[#FAFAFA] text-[#171717] text-sm font-medium rounded-lg hover:bg-white transition-colors inline-flex items-center gap-2"
+            className="h-11 px-6 py-2.5 bg-[#FAFAFA] text-[#171717] text-sm font-medium rounded-[10px] hover:bg-white transition-colors inline-flex items-center gap-2"
           >
             Let&rsquo;s Chat
             <ArrowUpRight size={16} />
