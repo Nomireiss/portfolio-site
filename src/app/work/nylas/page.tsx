@@ -4,38 +4,60 @@ import { ArrowLeft } from "lucide-react";
 
 const MONO = "'JetBrains Mono', 'Courier New', monospace";
 const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
+const INTER = "Inter, sans-serif";
 
-/* ─── Sidebar primitives ──────────────────────────────────────── */
+/* ─── Typography primitives ───────────────────────────────────── */
 
-function SidebarLabel({ children }: { children: React.ReactNode }) {
+function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONO, fontSize: "0.65rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A3A3A3", textTransform: "uppercase", marginBottom: "10px" }}>
-      // {children}
+    <blockquote style={{
+      margin: "0 0 28px",
+      paddingLeft: "20px",
+      borderLeft: "3px solid #0A0A0A",
+      fontFamily: INTER,
+      fontSize: "1.1rem",
+      fontStyle: "italic",
+      lineHeight: 1.8,
+      color: "#3A3A3A",
+    }}>
+      {children}
+    </blockquote>
+  );
+}
+
+function BulletItem({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div style={{ display: "flex", gap: "12px", marginBottom: "14px" }}>
+      <span style={{ color: "#A3A3A3", flexShrink: 0, marginTop: "3px" }}>→</span>
+      <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#3A3A3A", margin: 0 }}>
+        <strong style={{ color: "#0A0A0A", fontWeight: 600 }}>{label} </strong>
+        {children}
+      </p>
+    </div>
+  );
+}
+
+function SectionEyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p style={{ fontFamily: MONO, fontSize: "0.65rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A3A3A3", textTransform: "uppercase", marginBottom: "16px" }}>
+      {children}
     </p>
   );
 }
 
-function SidebarBlock({ label, children }: { label: string; children: React.ReactNode }) {
+function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "14px" }}>
-      <SidebarLabel>{label}</SidebarLabel>
-      <div style={{ fontFamily: MONO, fontSize: "0.78rem", lineHeight: 1.7, color: "#3A3A3A" }}>
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function Mention({ children }: { children: React.ReactNode }) {
-  return <span style={{ color: "#4497F7", fontWeight: 500 }}>{children}</span>;
-}
-
-function MetricRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div style={{ display: "flex", gap: "8px", marginBottom: "4px" }}>
-      <span style={{ color: "#A3A3A3", minWidth: "56px" }}>{label}</span>
-      <span style={{ color: "#0A0A0A" }}>→ {value}</span>
-    </div>
+    <h2 style={{
+      fontFamily: MONA,
+      fontWeight: 800,
+      fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+      lineHeight: 0.96,
+      letterSpacing: "-0.025em",
+      color: "#0A0A0A",
+      margin: "0 0 32px",
+    }}>
+      {children}
+    </h2>
   );
 }
 
@@ -43,237 +65,271 @@ function MetricRow({ label, value }: { label: string; value: string }) {
 
 function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; aspectRatio?: string }) {
   return (
-    <div
-      style={{
-        width: "100%",
-        aspectRatio,
-        background: "#F5F5F5",
-        borderRadius: "12px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        border: "1px solid #E5E5E5",
-      }}
-    >
-      <span style={{ fontFamily: MONO, fontSize: "0.75rem", color: "#A3A3A3" }}>
+    <div style={{
+      width: "100%",
+      aspectRatio,
+      background: "#F2F2F2",
+      borderRadius: "10px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      border: "1px solid #E8E8E8",
+      margin: "40px 0",
+    }}>
+      <span style={{ fontFamily: MONO, fontSize: "0.7rem", color: "#B5B5B5" }}>
         {label ?? "Image — to be provided"}
       </span>
     </div>
   );
 }
 
-/* ─── Section divider ─────────────────────────────────────────── */
+/* ─── Sidebar comment card ────────────────────────────────────── */
 
-function Divider() {
-  return <div style={{ borderTop: "1px solid #E5E5E5", margin: "80px 0" }} />;
+function SidebarComment({ label, mention, children }: { label: string; mention?: string; children: React.ReactNode }) {
+  return (
+    <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px" }}>
+      <p style={{ fontFamily: MONO, fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A3A3A3", textTransform: "uppercase", marginBottom: "10px" }}>
+        // {label}
+      </p>
+      {mention && (
+        <p style={{ fontFamily: MONO, fontSize: "0.78rem", color: "#4497F7", fontWeight: 600, marginBottom: "10px" }}>
+          {mention}
+        </p>
+      )}
+      <div style={{ fontFamily: MONO, fontSize: "0.78rem", lineHeight: 1.75, color: "#3A3A3A" }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+/* ─── 70/30 section grid ──────────────────────────────────────── */
+
+function SectionGrid({ main, sidebar }: { main: React.ReactNode; sidebar: React.ReactNode }) {
+  return (
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "7fr 3fr",
+      gap: "clamp(2rem, 5vw, 72px)",
+      alignItems: "start",
+    }}>
+      <div>{main}</div>
+      <aside style={{ position: "sticky", top: "120px", alignSelf: "start", display: "flex", flexDirection: "column", gap: "32px" }}>
+        {sidebar}
+      </aside>
+    </div>
+  );
 }
 
 /* ─── Page ────────────────────────────────────────────────────── */
 
 export default function NylasPage() {
+  const pad = "clamp(1rem, 6.94vw, 80px)";
+
   return (
     <>
-      <Navigation />
-
+      <Navigation forceColored />
       <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
-        <div
-          style={{
-            maxWidth: "1280px",
-            margin: "0 auto",
-            paddingLeft: "clamp(1rem, 6.94vw, 80px)",
-            paddingRight: "clamp(1rem, 6.94vw, 80px)",
-          }}
-        >
+        <div style={{ maxWidth: "1280px", margin: "0 auto", paddingLeft: pad, paddingRight: pad }}>
 
-          {/* Back link */}
+          {/* Back */}
           <div style={{ paddingTop: "40px", paddingBottom: "56px" }}>
-            <Link
-              href="/#work"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "0.85rem",
-                fontWeight: 500,
-                color: "#737373",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              className="hover:text-[#0A0A0A]"
+            <Link href="/#work"
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: INTER, fontSize: "0.85rem", fontWeight: 500, color: "#737373", textDecoration: "none" }}
+              className="hover:text-[#0A0A0A] transition-colors"
             >
-              <ArrowLeft size={15} />
-              All Work
+              <ArrowLeft size={15} /> All Work
             </Link>
           </div>
 
-          {/* ── SECTION 1: HERO ─────────────────────────────────── */}
-          <section>
-
-            {/* Category eyebrow */}
-            <div style={{ marginBottom: "32px", display: "flex", alignItems: "center", gap: "12px" }}>
-              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#A3A3A3" }} />
-              <span style={{ fontFamily: MONO, fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.14em", color: "#A3A3A3", textTransform: "uppercase" }}>
-                Case Study · 2024 · Platform Design
+          {/* ── PROJECT HEADER — full width ──────────────────── */}
+          <header style={{ paddingBottom: "48px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
+              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
+              <span style={{ fontFamily: MONO, fontSize: "0.65rem", fontWeight: 500, letterSpacing: "0.14em", color: "#A3A3A3", textTransform: "uppercase" }}>
+                Case Study · Platform Design · 2024
               </span>
             </div>
 
-            {/* 70 / 30 grid */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "7fr 3fr",
-                gap: "clamp(2rem, 5vw, 80px)",
-                alignItems: "start",
-              }}
-            >
+            <h1 style={{
+              fontFamily: MONA,
+              fontWeight: 800,
+              fontSize: "clamp(2.6rem, 4.8vw, 5.2rem)",
+              lineHeight: 0.95,
+              letterSpacing: "-0.03em",
+              color: "#0A0A0A",
+              margin: "0 0 48px",
+              maxWidth: "820px",
+            }}>
+              The Unification Mandate:
+              <br />
+              <span style={{ fontWeight: 700 }}>Erasing the Friction<br />of Fragmentation.</span>
+            </h1>
 
-              {/* ── MAIN STAGE ── */}
-              <div>
-                {/* Headline */}
-                <h1
-                  style={{
-                    fontFamily: MONA,
-                    fontWeight: 800,
-                    fontSize: "clamp(3.5rem, 7vw, 7.5rem)",
-                    lineHeight: 0.92,
-                    letterSpacing: "-0.03em",
-                    color: "#0A0A0A",
-                    margin: "0 0 32px",
-                  }}
-                >
-                  NYLAS:<br />
-                  <span style={{ fontWeight: 700 }}>Engineering the<br />Agentic Era.</span>
-                </h1>
-
-                {/* Sub-headline */}
-                <p
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "1.1rem",
-                    fontWeight: 400,
-                    lineHeight: 1.75,
-                    color: "#3A3A3A",
-                    maxWidth: "580px",
-                    margin: "0 0 56px",
-                  }}
-                >
-                  Scaling a developer-first platform from fragmented UI components
-                  to a unified, AI-ready architectural ecosystem. This is a study
-                  in operational design leadership.
-                </p>
-
-                {/* Hero image */}
-                <ImagePlaceholder label="Nylas Dashboard — Hero Shot (100% Fidelity)" aspectRatio="16/10" />
-              </div>
-
-              {/* ── SIDEBAR ── */}
-              <aside style={{ position: "sticky", top: "120px", alignSelf: "start", display: "flex", flexDirection: "column", gap: "36px" }}>
-
-                <SidebarBlock label="Annotation: The Role">
-                  <p style={{ marginBottom: "10px" }}>
-                    <Mention>@Hiring Manager</Mention>
-                  </p>
-                  <p style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "10px", color: "#3A3A3A", marginBottom: 0 }}>
-                    At Nylas, I&rsquo;m not just the &ldquo;Designer.&rdquo; I&rsquo;m the bridge
-                    between Product and Engineering. My mandate: turn a sprawling
-                    legacy platform into a high-velocity design system that can
-                    handle the complexity of AI-to-AI communication.
-                  </p>
-                </SidebarBlock>
-
-                <SidebarBlock label="Annotation: The Metric">
-                  <MetricRow label="Status" value="100% Fidelity (Live)" />
-                  <MetricRow label="Stack" value="Shadcn / Tailwind / React" />
-                  <MetricRow label="Impact" value="Unified 4+ disparate product workstreams into a single, cohesive design language." />
-                </SidebarBlock>
-
-              </aside>
+            {/* Metadata row */}
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              borderTop: "1px solid #E5E5E5",
+              borderBottom: "1px solid #E5E5E5",
+              paddingTop: "20px",
+              paddingBottom: "20px",
+            }}>
+              {[
+                { label: "Client", value: "Nylas" },
+                { label: "Role", value: "Principal Product Designer" },
+                { label: "Stack", value: "Shadcn / Tailwind / React" },
+                { label: "Year", value: "2024" },
+              ].map(({ label, value }) => (
+                <div key={label} style={{ paddingRight: "24px" }}>
+                  <p style={{ fontFamily: MONO, fontSize: "0.62rem", letterSpacing: "0.1em", color: "#A3A3A3", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
+                  <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#0A0A0A", margin: 0 }}>{value}</p>
+                </div>
+              ))}
             </div>
-          </section>
+          </header>
 
-          <Divider />
+          {/* ── SECTION 1: THE MANDATE ───────────────────────── */}
+          <SectionGrid
+            main={
+              <>
+                <ImagePlaceholder label="Nylas Platform — Hero Shot (100% Fidelity)" aspectRatio="16/10" />
+                <PullQuote>
+                  &ldquo;When I joined Nylas, the user journey felt like crossing borders
+                  between three different countries. My mandate was to eliminate the
+                  cognitive load of &lsquo;context switching&rsquo; by building a singular,
+                  high-performance design language that scaled from a marketing headline to
+                  a complex API configuration.&rdquo;
+                </PullQuote>
+              </>
+            }
+            sidebar={
+              <SidebarComment label="Annotation: The Problem" mention="@Hiring Manager">
+                I identified 14 different button styles across the suite in week one.
+                Fragmentation isn&rsquo;t just an aesthetic issue — it&rsquo;s a velocity
+                killer. Every inconsistent component is a decision an engineer shouldn&rsquo;t
+                have to make.
+              </SidebarComment>
+            }
+          />
 
-          {/* ── SECTION 2: OPERATIONAL DESIGN PIVOT ─────────────── */}
+          {/* Divider */}
+          <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
+
+          {/* ── SECTION 2: THE NDS ───────────────────────────── */}
+          <SectionGrid
+            main={
+              <>
+                <SectionEyebrow>The How</SectionEyebrow>
+                <SectionHeading>
+                  Building the Bridge:<br />
+                  The Nylas Design System (NDS).
+                </SectionHeading>
+                <PullQuote>
+                  &ldquo;I architected the NDS as a multi-layered system. By leveraging
+                  Shadcn&rsquo;s accessible foundations and Tailwind&rsquo;s utility-first
+                  logic, I created a component library that served two masters: the editorial
+                  needs of the website and the dense, data-heavy requirements of the
+                  dashboard.&rdquo;
+                </PullQuote>
+                <BulletItem label="Atomic Alignment:">
+                  Synchronizing color palettes and spacing scales so the &ldquo;Marketing
+                  Pitch&rdquo; felt like the &ldquo;Product Reality.&rdquo;
+                </BulletItem>
+                <BulletItem label="The Component Pivot:">
+                  Moving away from rigid, legacy components to a composable architecture
+                  that empowered engineers to build faster.
+                </BulletItem>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "12px" }}>
+                  {["NDS — Component Library", "Token Architecture"].map(l => (
+                    <div key={l} style={{ aspectRatio: "4/3", background: "#F2F2F2", borderRadius: "10px", border: "1px solid #E8E8E8", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <span style={{ fontFamily: MONO, fontSize: "0.65rem", color: "#B5B5B5" }}>{l}</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            }
+            sidebar={
+              <SidebarComment label="Operational Note">
+                I didn&rsquo;t just hand off a library. I re-engineered the hand-off process
+                itself. By aligning our Figma variables directly with our Tailwind tokens,
+                we created a 1:1 parity between design and production.
+              </SidebarComment>
+            }
+          />
+
+          {/* Divider */}
+          <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
+
+          {/* ── SECTION 3: THE DASHBOARD ─────────────────────── */}
+          <SectionGrid
+            main={
+              <>
+                <SectionEyebrow>The Why</SectionEyebrow>
+                <SectionHeading>
+                  From Data Noise to<br />Actionable Intelligence.
+                </SectionHeading>
+                <PullQuote>
+                  &ldquo;I overhauled the full suite — from Email and Calendar integrations
+                  to the new Agentic tools — focusing on Information Hierarchy. By
+                  introducing a clean, modular &lsquo;Card&rsquo; system and a unified
+                  navigation structure, I transformed the dashboard into a high-clarity
+                  workspace for developers.&rdquo;
+                </PullQuote>
+                <BulletItem label="Logic Audit:">
+                  Redesigning the onboarding flow to prioritise the &ldquo;Time to First
+                  API Call.&rdquo;
+                </BulletItem>
+                <BulletItem label="The UX Shift:">
+                  Reducing the number of clicks required for key administrative tasks by
+                  40% through better layout density.
+                </BulletItem>
+                <ImagePlaceholder label="Dashboard — Suite Transformation" aspectRatio="16/9" />
+              </>
+            }
+            sidebar={
+              <SidebarComment label="Deep Dive">
+                The dashboard needed to transition from a &ldquo;Monitoring Tool&rdquo; to
+                a &ldquo;Strategic Interface&rdquo; for the Agentic Era.
+              </SidebarComment>
+            }
+          />
+
+          {/* Divider */}
+          <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
+
+          {/* ── SECTION 4: THE RESULT ────────────────────────── */}
           <section style={{ paddingBottom: "120px" }}>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "7fr 3fr",
-                gap: "clamp(2rem, 5vw, 80px)",
-                alignItems: "start",
-              }}
-            >
-
-              {/* ── MAIN STAGE ── */}
-              <div>
-                <h2
-                  style={{
-                    fontFamily: MONA,
-                    fontWeight: 700,
-                    fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-                    lineHeight: 1.05,
-                    letterSpacing: "-0.02em",
-                    color: "#0A0A0A",
-                    margin: "0 0 28px",
-                  }}
-                >
-                  From Pixels to Processes.
-                </h2>
-
-                <div
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "1.05rem",
-                    fontWeight: 400,
-                    lineHeight: 1.85,
-                    color: "#3A3A3A",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "20px",
-                    maxWidth: "600px",
-                  }}
-                >
-                  <p>
-                    Design leadership at this scale isn&rsquo;t about how the buttons
-                    look; it&rsquo;s about how the buttons are <em>built</em>. I led the
-                    transition to a modular system that empowers engineering velocity.
+            <SectionGrid
+              main={
+                <>
+                  <SectionEyebrow>The Impact</SectionEyebrow>
+                  <SectionHeading>
+                    Operational Excellence:<br />A Platform Stabilised.
+                  </SectionHeading>
+                  <PullQuote>
+                    &ldquo;The common design language didn&rsquo;t just make the product look
+                    better — it made the company move faster. We achieved a cohesive brand
+                    identity that signalled maturity to our enterprise clients, while the
+                    internal engineering velocity increased because the &lsquo;Messy
+                    Middle&rsquo; of hand-offs had been replaced by a reliable, automated
+                    system.&rdquo;
+                  </PullQuote>
+                  <ImagePlaceholder label="Results — System at Scale" aspectRatio="16/9" />
+                </>
+              }
+              sidebar={
+                <SidebarComment label="Annotation: The Outcome">
+                  <p style={{ marginBottom: "10px" }}>
+                    <strong style={{ color: "#0A0A0A" }}>Strategic maturity</strong> delivered
+                    at the product level.
                   </p>
-                  <p>
-                    By pressure-testing the logic of our agentic infrastructure, we
-                    reduced dev-handoff friction and stabilised the platform&rsquo;s
-                    architectural maturity.
+                  <p style={{ color: "#737373", fontSize: "0.72rem", margin: 0 }}>
+                    This is what Principal-level operational design leadership looks like.
                   </p>
-                </div>
-
-                {/* Image placeholder for this section */}
-                <div style={{ marginTop: "48px" }}>
-                  <ImagePlaceholder label="System Architecture — Design Tokens & Component Map" aspectRatio="4/3" />
-                </div>
-              </div>
-
-              {/* ── SIDEBAR ── */}
-              <aside style={{ position: "sticky", top: "120px", alignSelf: "start", display: "flex", flexDirection: "column", gap: "36px" }}>
-
-                <SidebarBlock label="Real-Talk Snippet">
-                  <p style={{ color: "#3A3A3A", fontStyle: "italic", marginBottom: 0 }}>
-                    &ldquo;We had a Design Debt problem. I solved it by treating the
-                    Design System as a product in itself.&rdquo;
-                  </p>
-                </SidebarBlock>
-
-                <SidebarBlock label="The Result">
-                  <p style={{ marginBottom: "8px" }}>
-                    <span style={{ color: "#0A0A0A", fontWeight: 600 }}>30% faster</span> deployment
-                    cycles for new feature sets.
-                  </p>
-                  <p style={{ color: "#737373", fontSize: "0.73rem", marginBottom: 0 }}>
-                    This is what Principal-level operational excellence looks like.
-                  </p>
-                </SidebarBlock>
-
-              </aside>
-            </div>
+                </SidebarComment>
+              }
+            />
           </section>
 
         </div>

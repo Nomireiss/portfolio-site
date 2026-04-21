@@ -36,11 +36,12 @@ function LogoIcon({ inWorkSection }: { inWorkSection: boolean }) {
   );
 }
 
-export default function Navigation() {
+export default function Navigation({ forceColored = false }: { forceColored?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [inWorkSection, setInWorkSection] = useState(false);
 
   useEffect(() => {
+    if (forceColored) return;
     const workSection = document.querySelector("#work");
     if (!workSection) return;
 
@@ -52,20 +53,22 @@ export default function Navigation() {
     });
 
     return () => trigger.kill();
-  }, []);
+  }, [forceColored]);
+
+  const isColored = forceColored || inWorkSection;
 
   return (
     <header
       className="sticky top-0 z-50 border-b border-[#E5E5E5]"
       style={{
-        backgroundColor: inWorkSection ? "#EFF0F6" : "#ffffff",
+        backgroundColor: isColored ? "#EFF0F6" : "#ffffff",
         transition: "background-color 0.5s ease",
       }}
     >
       <div className="w-full px-4 sm:px-10 md:px-20 py-4">
         <div className="flex items-center justify-between">
           <a href="#" aria-label="Home">
-            <LogoIcon inWorkSection={inWorkSection} />
+            <LogoIcon inWorkSection={isColored} />
           </a>
 
           {/* Desktop nav */}
