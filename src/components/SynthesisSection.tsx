@@ -53,10 +53,17 @@ export default function SynthesisSection() {
   }, []);
 
   return (
-    /* Outer section — tall to drive the scroll (400vh = 100vh dead zone + 2×150vh transitions) */
+    /* Outer section — tall to drive the scroll. Background matches pinned content so the
+       scroll-driving space is invisible to the user before the pin activates. */
     <div
       ref={sectionRef}
-      style={{ height: "400vh" }}
+      style={{
+        height: "400vh",
+        backgroundColor: "#ffffff",
+        backgroundImage:
+          "linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
+        backgroundSize: "10px 10px",
+      }}
       className="relative"
     >
       {/* Pinned row — stays fixed during scroll, 100vh tall */}
@@ -106,16 +113,20 @@ export default function SynthesisSection() {
         </div>
 
         {/* Right — stacked cards */}
-        <div className="flex-1 relative w-full" style={{ height: "calc(100vh - 160px)" }}>
-          {/* Card stack container — overflow hidden so cards below are clipped */}
-          <div className="relative w-full h-full overflow-hidden" style={{ borderRadius: "20px" }}>
+        <div className="flex-1 relative w-full">
+          {/* Card stack container — max-height keeps cards within the viewport;
+              overflow:hidden clips off-screen cards during the slide-in animation */}
+          <div
+            className="relative w-full overflow-hidden"
+            style={{ borderRadius: "20px", maxHeight: "calc(100vh - 180px)" }}
+          >
             {cards.map((card, i) => (
               <div
                 key={card.src}
                 ref={(el) => { cardRefs.current[i] = el; }}
-                className="w-full h-full"
+                className="w-full"
                 style={{
-                  position: "absolute",
+                  position: i === 0 ? "relative" : "absolute",
                   top: 0,
                   left: 0,
                   transformOrigin: "top center",
@@ -127,8 +138,7 @@ export default function SynthesisSection() {
                 <img
                   src={card.src}
                   alt={card.alt}
-                  className="w-full h-full block"
-                  style={{ objectFit: "cover" }}
+                  className="w-full block"
                   draggable={false}
                 />
               </div>
