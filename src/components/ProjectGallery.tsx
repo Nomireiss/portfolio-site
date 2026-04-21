@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,16 +12,19 @@ const projects = [
     title: "Nylas",
     year: "©24",
     image: "/MacBook Pro 16-inch Space Black on the Dark.png",
+    href: "/work/nylas",
   },
   {
     title: "SeeTree",
     year: "©23",
     image: "/Untitled design - 2026-04-20T001356.456.png",
+    href: null,
   },
   {
     title: "ShyMama",
     year: "©23",
     image: "/ShyMama Mockup.png",
+    href: null,
   },
 ];
 
@@ -29,6 +33,7 @@ export default function ProjectGallery() {
   const headingRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [hovered, setHovered] = useState<number | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -160,9 +165,10 @@ export default function ProjectGallery() {
                 ref={(el) => { cardRefs.current[i] = el; }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
+                onClick={() => project.href && router.push(project.href)}
                 className="flex flex-col"
                 style={{
-                  cursor: "pointer",
+                  cursor: project.href ? "pointer" : "default",
                   filter: isBlurred ? "blur(3px)" : "blur(0px)",
                   opacity: isBlurred ? 0.55 : 1,
                   transform: isBlurred ? "scale(0.98)" : "scale(1)",
