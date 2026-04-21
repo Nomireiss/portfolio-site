@@ -21,7 +21,7 @@ export default function Hero() {
             <div
               key={i}
               className={`h-full ${i >= 4 ? "hidden sm:block" : ""} ${i >= 8 ? "sm:hidden md:block" : ""}`}
-              style={{ backgroundColor: "rgba(255, 0, 0, 0.1)" }}
+              style={{ backgroundColor: "rgba(255, 0, 0, 0.08)" }}
             />
           ))}
         </div>

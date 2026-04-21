@@ -109,7 +109,7 @@ export default function ProjectGallery() {
                 width: 6,
                 height: 6,
                 borderRadius: "50%",
-                background: "#FF06F6",
+                background: "#A3A3A3",
                 flexShrink: 0,
               }}
             />
@@ -130,7 +130,7 @@ export default function ProjectGallery() {
           <h2
             style={{
               fontFamily: '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif',
-              fontWeight: 700,
+              fontWeight: 600,
               fontSize: "clamp(2.5rem, 5vw, 5.5rem)",
               letterSpacing: "-3px",
               lineHeight: 0.95,
@@ -138,7 +138,7 @@ export default function ProjectGallery() {
               margin: 0,
             }}
           >
-            <span style={{ color: "#FF06F6" }}>Resolved</span> Realities
+            The Proven Results
           </h2>
 
           <p

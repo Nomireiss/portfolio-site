@@ -57,7 +57,7 @@ export default function SkillsGrid() {
             style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}
           >
             <span className="text-[#0A0A0A]">The Architect of </span>
-            <span style={{ color: "#FF06F6" }} className="font-bold">Clarity</span>
+            <span style={{ color: "#0A0A0A" }} className="font-bold">Clarity</span>
             <span className="text-[#0A0A0A]">.</span>
           </h2>
           <p className="text-[#0A0A0A] text-lg leading-6" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
