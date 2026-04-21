@@ -14,7 +14,7 @@ export default function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-[#E5E5E5]">
-      <div className="w-full max-w-[1280px] mx-auto px-6 py-4">
+      <div className="w-full px-4 sm:px-10 md:px-20 py-4">
         <div className="flex items-center justify-between">
           <a href="#" aria-label="Home">
             <LogoIcon />

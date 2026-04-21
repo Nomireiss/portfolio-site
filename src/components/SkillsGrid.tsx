@@ -27,7 +27,15 @@ const skills = [
 
 export default function SkillsGrid() {
   return (
-    <section id="about" className="relative bg-white py-12 md:py-24 overflow-visible">
+    <section
+      id="about"
+      className="relative bg-white py-12 md:py-24 overflow-visible"
+      style={{
+        backgroundImage:
+          "linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
+        backgroundSize: "10px 10px",
+      }}
+    >
       {/* Figma comment card — desktop only, floats above section */}
       <div className="hidden lg:block">
         <CommentCard time="1 minute ago" className="left-[92px] top-[32px]">

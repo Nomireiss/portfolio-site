@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CommentCard, { Mention, Bold } from "@/components/CommentCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +20,7 @@ const projects = [
   {
     title: "ShyMama",
     year: "©23",
-    image: "/Untitled design - 2026-04-20T001950.162.png",
+    image: "/ShyMama Mockup.png",
   },
 ];
 
@@ -75,24 +74,6 @@ export default function ProjectGallery() {
 
   return (
     <section ref={sectionRef} id="work" className="relative bg-black">
-      {/* Comment card — desktop only */}
-      <div className="hidden lg:block">
-        <CommentCard time="30 seconds ago" className="right-6 top-8">
-          <p>
-            <Bold>Typographic Note: </Bold>
-            Dialing Mona Sans up to its full expression here. By tightening the
-            tracking and expanding the axis, the type moves from &lsquo;Utility&rsquo;
-            to &lsquo;Identity.&rsquo;
-          </p>
-          <p>
-            <Mention>Hiring Manager </Mention>
-            We&rsquo;ve officially left the wireframe behind. This section is the
-            100% resolution of the &lsquo;Map&rsquo; I&rsquo;ve been building.
-            It&rsquo;s the final deliverable, polished, intentional, and built to
-            scale.
-          </p>
-        </CommentCard>
-      </div>
 
       {/* Top divider */}
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
