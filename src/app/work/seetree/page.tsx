@@ -339,7 +339,6 @@ export default function SeeTreePage() {
                     for Tier 1 agribusiness clients. We didn&rsquo;t just build an app; we
                     built a global standard for agricultural intelligence.&rdquo;
                   </PullQuote>
-                  <ImagePlaceholder label="Impact — Field-to-Office Data Loop" aspectRatio="16/9" />
                 </>
               }
               sidebar={
@@ -351,6 +350,9 @@ export default function SeeTreePage() {
                 </SidebarComment>
               }
             />
+            <div style={{ borderRadius: "10px", overflow: "hidden", marginTop: "48px" }}>
+              <img src="/Widgets.png" alt="Impact — Field-to-Office Data Loop" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}
@@ -368,18 +370,15 @@ export default function SeeTreePage() {
                   href={project.href ?? undefined}
                   style={{ display: "block", textDecoration: "none", cursor: project.href ? "pointer" : "default" }}
                 >
-                  <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "16px", overflow: "hidden", marginBottom: "14px" }}>
+                  <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "0", overflow: "hidden", marginBottom: "14px" }}>
                     <img
                       src={project.image}
                       alt={project.title}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   </div>
-                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px", letterSpacing: "-0.02em" }}>
+                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 400, color: "#0A0A0A", margin: 0, letterSpacing: "-0.02em" }}>
                     {project.title}
-                  </p>
-                  <p style={{ fontFamily: INTER, fontSize: "0.8rem", color: "#A3A3A3", margin: 0 }}>
-                    {project.year}
                   </p>
                 </a>
               ))}
