@@ -42,29 +42,30 @@ export default function CustomCursor() {
         transition: "opacity 0.15s ease",
       }}
     >
-      {/* Figma-style arrow */}
-      <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Cursor arrow — simple triangle head, no tail */}
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
-          d="M2 2L2 18.5L6.2 13.8L9.6 21.2L12.4 20L9 12.5L16 12.5Z"
+          d="M1 1L17 7L11 11L7 17Z"
           fill="#E8009A"
           stroke="white"
-          strokeWidth="1"
+          strokeWidth="1.5"
           strokeLinejoin="round"
+          strokeLinecap="round"
         />
       </svg>
       {/* Name badge */}
       <div
         style={{
           position: "absolute",
-          top: "20px",
-          left: "14px",
+          top: "18px",
+          left: "16px",
           backgroundColor: "#E8009A",
           color: "#fff",
           fontFamily: "Inter, sans-serif",
-          fontSize: "0.72rem",
+          fontSize: "0.78rem",
           fontWeight: 500,
-          padding: "3px 8px",
-          borderRadius: "4px",
+          padding: "4px 10px",
+          borderRadius: "2px",
           whiteSpace: "nowrap",
           letterSpacing: "0.01em",
         }}

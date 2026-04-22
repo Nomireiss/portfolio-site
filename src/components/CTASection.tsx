@@ -65,7 +65,7 @@ export default function CTASection() {
               display: "inline-flex", alignItems: "center",
               height: "52px", padding: "0 32px",
               border: "1.5px solid rgba(255,255,255,0.8)",
-              borderRadius: "4px",
+              borderRadius: "6px",
               fontFamily: "Inter, sans-serif",
               fontSize: "0.95rem", fontWeight: 500,
               color: "#fff",

@@ -68,7 +68,9 @@ export default function ProjectGallery() {
                   fontFamily: INTER,
                   fontSize: "0.75rem",
                   fontWeight: 400,
-                  color: "#C7C7C7",
+                  color: isActive ? "#3998EA" : "#C7C7C7",
+                  fontWeight: isActive ? 600 : 400,
+                  transition: "color 0.2s ease, font-weight 0.2s ease",
                   margin: 0,
                   letterSpacing: "0.01em",
                 }}>
