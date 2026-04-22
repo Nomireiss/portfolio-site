@@ -18,7 +18,7 @@ const projects = [
     title: "SeeTree",
     year: "©23",
     image: "/Untitled design - 2026-04-20T001356.456.png",
-    href: null,
+    href: "/work/seetree",
   },
   {
     title: "ShyMama",
