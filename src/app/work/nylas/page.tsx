@@ -87,7 +87,7 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
 
 function SidebarComment({ label, mention, children }: { label: string; mention?: string; children: React.ReactNode }) {
   return (
-    <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px" }}>
+    <div style={{ borderLeft: "2px solid #EFF0F6", paddingLeft: "16px" }}>
       <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
         {label}
       </p>
@@ -341,10 +341,10 @@ export default function NylasPage() {
                 { title: "SeeTree", year: "©23", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
                 { title: "ShyMama", year: "©23", image: "/ShyMama Mockup.png", href: "/work/shymama" },
               ].map((project) => (
-                <div
+                <a
                   key={project.title}
-                  onClick={() => project.href && (window.location.href = project.href)}
-                  style={{ cursor: project.href ? "pointer" : "default" }}
+                  href={project.href ?? undefined}
+                  style={{ display: "block", textDecoration: "none", cursor: project.href ? "pointer" : "default" }}
                 >
                   <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "16px", overflow: "hidden", marginBottom: "14px" }}>
                     <img
@@ -359,7 +359,7 @@ export default function NylasPage() {
                   <p style={{ fontFamily: INTER, fontSize: "0.8rem", color: "#A3A3A3", margin: 0 }}>
                     {project.year}
                   </p>
-                </div>
+                </a>
               ))}
             </div>
           </section>

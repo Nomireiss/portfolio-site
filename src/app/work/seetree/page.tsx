@@ -87,7 +87,7 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
 
 function SidebarComment({ label, mention, children }: { label: string; mention?: string; children: React.ReactNode }) {
   return (
-    <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px" }}>
+    <div style={{ borderLeft: "2px solid #EFF0F6", paddingLeft: "16px" }}>
       <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
         {label}
       </p>
@@ -158,16 +158,16 @@ export default function SeeTreePage() {
 
             <h1 style={{
               fontFamily: MONA,
-              fontWeight: 800,
+              fontWeight: 300,
               fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
               color: "#0A0A0A",
               margin: "0 0 48px",
             }}>
-              Digitizing the Orchard:
+              <span style={{ fontWeight: 800 }}>Digitizing the Orchard:</span>
               <br />
-              <span style={{ fontWeight: 800 }}>The Intelligence-First Pivot.</span>
+              The Intelligence-First Pivot.
             </h1>
 
             {/* Metadata row */}
@@ -181,23 +181,31 @@ export default function SeeTreePage() {
             }}>
               {[
                 { label: "Client", value: "SeeTree" },
-                { label: "Role", value: "Principal Product Designer" },
+                { label: "Role", value: "Lead Product Designer" },
                 { label: "Scope", value: "Mobile App + Manager Dashboard" },
                 { label: "Year", value: "2023" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
                   <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
-                  <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#0A0A0A", margin: 0 }}>{value}</p>
+                  <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 700, color: "#0A0A0A", margin: 0 }}>{value}</p>
                 </div>
               ))}
             </div>
           </header>
 
+          {/* ── HERO IMAGE ───────────────────────────────────── */}
+          <div style={{ marginBottom: "48px" }}>
+            <img
+              src="/Untitled design - 2026-04-22T155542.913.png"
+              alt="SeeTree Platform — Hero Shot"
+              style={{ width: "100%", borderRadius: "16px", display: "block" }}
+            />
+          </div>
+
           {/* ── SECTION 1: THE AGRICULTURAL DATA GAP ────────── */}
           <SectionGrid
             main={
               <>
-                <ImagePlaceholder label="SeeTree Platform — Hero Shot" aspectRatio="16/10" />
                 <PullQuote>
                   &ldquo;I joined SeeTree to transform a fragmented collection of drone maps
                   and sensor logs into a unified, actionable &lsquo;Medical File&rsquo; for
@@ -208,7 +216,7 @@ export default function SeeTreePage() {
               </>
             }
             sidebar={
-              <SidebarComment label="Annotation: The Environment">
+              <SidebarComment label="The Environment">
                 The &ldquo;Messy Middle&rdquo; here was literal. We had to design for 40°C
                 heat, screen glare, and zero-latency requirements in areas with no Wi-Fi.
                 This wasn&rsquo;t just a UI challenge; it was a physics challenge.
@@ -243,12 +251,13 @@ export default function SeeTreePage() {
                   imagery, soil sensors, and historical growth data into a single source
                   of truth.
                 </BulletItem>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "12px" }}>
-                  {["MapConnect — GIS Redesign", "Tree Medical File — Detail View"].map(l => (
-                    <div key={l} style={{ aspectRatio: "4/3", background: "#F2F2F2", borderRadius: "10px", border: "1px solid #E8E8E8", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <span style={{ fontFamily: MONO, fontSize: "0.65rem", color: "#B5B5B5", textAlign: "center", padding: "0 12px" }}>{l}</span>
-                    </div>
-                  ))}
+                <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "32px" }}>
+                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                    <img src="/Forestry 2.png" alt="Tree Medical File — Detail View" style={{ width: "100%", height: "auto", display: "block" }} />
+                  </div>
+                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                    <img src="/Forest 4.jpg" alt="MapConnect — GIS Redesign" style={{ width: "100%", height: "auto", display: "block" }} />
+                  </div>
                 </div>
               </>
             }
@@ -288,7 +297,14 @@ export default function SeeTreePage() {
                   Ensuring field data synced seamlessly with executive reports, closing
                   the loop on agricultural ROI.
                 </BulletItem>
-                <ImagePlaceholder label="Mobile Scout App + Manager Dashboard" aspectRatio="16/9" />
+                <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "32px" }}>
+                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                    <img src="/Fruit Farms.png" alt="Fruit Farms" style={{ width: "100%", height: "auto", display: "block" }} />
+                  </div>
+                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                    <img src="/Oil Palms.png" alt="Oil Palms" style={{ width: "100%", height: "auto", display: "block" }} />
+                  </div>
+                </div>
               </>
             }
             sidebar={
@@ -347,10 +363,10 @@ export default function SeeTreePage() {
                 { title: "Nylas", year: "©24", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
                 { title: "ShyMama", year: "©23", image: "/ShyMama Mockup.png", href: "/work/shymama" },
               ].map((project) => (
-                <div
+                <a
                   key={project.title}
-                  onClick={() => project.href && (window.location.href = project.href)}
-                  style={{ cursor: project.href ? "pointer" : "default" }}
+                  href={project.href ?? undefined}
+                  style={{ display: "block", textDecoration: "none", cursor: project.href ? "pointer" : "default" }}
                 >
                   <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "16px", overflow: "hidden", marginBottom: "14px" }}>
                     <img
@@ -365,7 +381,7 @@ export default function SeeTreePage() {
                   <p style={{ fontFamily: INTER, fontSize: "0.8rem", color: "#A3A3A3", margin: 0 }}>
                     {project.year}
                   </p>
-                </div>
+                </a>
               ))}
             </div>
           </section>
