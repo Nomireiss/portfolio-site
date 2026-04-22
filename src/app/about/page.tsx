@@ -92,31 +92,27 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Right — profile image placeholder */}
+              {/* Right — profile image */}
               <div style={{ position: "sticky", top: "120px" }}>
-                <div style={{
-                  width: "100%",
-                  aspectRatio: "4/5",
-                  background: "#F2F2F2",
-                  borderRadius: "16px",
-                  border: "1px solid #E8E8E8",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  maxWidth: "380px",
-                }}>
-                  <span style={{ fontFamily: INTER, fontSize: "0.75rem", color: "#B5B5B5" }}>
-                    Profile photo — to be provided
-                  </span>
-                </div>
+                <img
+                  src="/nomi-avatar.png"
+                  alt="Nomi Reiss"
+                  style={{
+                    width: "100%",
+                    maxWidth: "460px",
+                    height: "auto",
+                    borderRadius: "16px",
+                    display: "block",
+                  }}
+                />
               </div>
             </div>
           </section>
 
           <Divider />
 
-          {/* ── SECTION 2 + 3: WORKFLOW + SIDEBAR ───────────── */}
-          <section style={{ paddingBottom: "120px" }}>
+          {/* ── SECTION 2 + 3: WORKFLOW + SIDEBAR + CTA ─────── */}
+          <section style={{ paddingBottom: "120px", display: "flex", flexDirection: "column", }}>
             <div style={{
               display: "grid",
               gridTemplateColumns: "7fr 3fr",
@@ -145,12 +141,45 @@ export default function AboutPage() {
                   simulate edge cases, and stress-test the logic of a feature long
                   before I open Figma.
                 </p>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: 0 }}>
+                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 40px" }}>
                   By the time I&rsquo;m designing, the ambiguity has been resolved,
                   and the path to implementation is clear. It&rsquo;s about being
                   an &ldquo;Architect of Clarity&rdquo; in a world that is
                   increasingly complex.
                 </p>
+
+                {/* CTA */}
+                <h3 style={{
+                  fontFamily: MONA,
+                  fontWeight: 300,
+                  fontSize: "clamp(1.2rem, 1.8vw, 1.8rem)",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.02em",
+                  color: "#0A0A0A",
+                  margin: "0 0 20px",
+                }}>
+                  Let&rsquo;s build something{" "}
+                  <span style={{ fontWeight: 800 }}>worth finding.</span>
+                </h3>
+                <a
+                  href="mailto:hello@nomireiss.com"
+                  className="hover:bg-[#0B87E0] transition-colors"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    height: "52px",
+                    padding: "0 32px",
+                    backgroundColor: "#0D99FF",
+                    borderRadius: "6px",
+                    fontFamily: INTER,
+                    fontSize: "0.95rem",
+                    fontWeight: 500,
+                    color: "#fff",
+                    textDecoration: "none",
+                  }}
+                >
+                  Get in touch
+                </a>
               </div>
 
               {/* Sidebar — the direct handshake */}
@@ -187,6 +216,7 @@ export default function AboutPage() {
                 </div>
               </aside>
             </div>
+
           </section>
 
         </div>
