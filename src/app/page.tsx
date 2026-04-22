@@ -4,7 +4,6 @@ import SkillsGrid from "@/components/SkillsGrid";
 import SynthesisSection from "@/components/SynthesisSection";
 import ProjectGallery from "@/components/ProjectGallery";
 import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -13,11 +12,8 @@ export default function Home() {
       <Hero />
       <SkillsGrid />
       <SynthesisSection />
-      <div style={{ background: "#000" }}>
-        <ProjectGallery />
-        <CTASection />
-      </div>
-      <Footer />
+      <ProjectGallery />
+      <CTASection />
     </main>
   );
 }

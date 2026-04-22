@@ -1,150 +1,76 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-const cards = [
-  { src: "/Synthesizing Workflows Card 1.png", alt: "Synthesizing Workflows — Card 1" },
-  { src: "/Synthesizing Workflows Card 2.png", alt: "Synthesizing Workflows — Card 2" },
-  { src: "/Synthesizing Workflows Card 3.png", alt: "Synthesizing Workflows — Card 3" },
-];
+const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
+const INTER = "Inter, sans-serif";
 
 export default function SynthesisSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const pinnedRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const [card1, card2, card3] = cardRefs.current;
-
-      // Cards 2 & 3 start below the container
-      gsap.set(card2, { yPercent: 108 });
-      gsap.set(card3, { yPercent: 108 });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1.2,
-          pin: pinnedRef.current,
-          pinSpacing: false,
-        },
-      });
-
-      // Dead zone (0→1): section fully visible, nothing animates yet
-      tl.to({}, { duration: 1 });
-
-      // Phase 1 (1→2): Card 2 slides in over Card 1; Card 1 scales down
-      tl.to(card2, { yPercent: 0, duration: 1, ease: "none" }, 1)
-        .to(card1, { scale: 0.94, duration: 1, ease: "none" }, 1);
-
-      // Phase 2 (2→3): Card 3 slides in over Card 2; cards scale further
-      tl.to(card3, { yPercent: 0, duration: 1, ease: "none" }, 2)
-        .to(card2, { scale: 0.94, duration: 1, ease: "none" }, 2)
-        .to(card1, { scale: 0.88, duration: 1, ease: "none" }, 2);
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    /* Outer section — tall to drive the scroll. Background matches pinned content so the
-       scroll-driving space is invisible to the user before the pin activates. */
     <div
-      ref={sectionRef}
       style={{
-        height: "400vh",
         backgroundColor: "#ffffff",
         backgroundImage:
           "linear-gradient(to bottom, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 65%), linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
         backgroundSize: "100% 100%, 10px 10px, 10px 10px",
+        padding: "100px 0",
       }}
-      className="relative"
     >
-      {/* Pinned row — stays fixed during scroll, 100vh tall */}
-      <div
-        ref={pinnedRef}
-        className="w-full h-screen flex flex-col lg:flex-row items-center"
-        style={{
-          backgroundColor: "#ffffff",
-          backgroundImage:
-            "linear-gradient(to bottom, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 65%), linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
-          backgroundSize: "100% 100%, 10px 10px, 10px 10px",
-          paddingLeft: "clamp(1rem, 6.94vw, 80px)",
-          paddingRight: "clamp(1rem, 6.94vw, 80px)",
-          paddingTop: "100px",  /* clear sticky nav (97px) */
-          paddingBottom: "48px",
-          gap: "5vw",
-        }}
-      >
-        {/* Left — heading + body */}
-        <div className="flex-1 flex flex-col gap-8 shrink-0">
+      <div className="w-full max-w-[1280px] mx-auto px-6">
+
+        {/* Centred heading + subtext */}
+        <div
+          style={{
+            textAlign: "center",
+            maxWidth: "680px",
+            margin: "0 auto 64px",
+          }}
+        >
           <h2
-            className="text-[#0A0A0A] leading-[0.93]"
             style={{
-              fontFamily: '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif',
+              fontFamily: MONA,
               fontWeight: 800,
-              fontSize: "clamp(2.5rem, 4.6vw, 4.6rem)",
+              fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)",
               letterSpacing: "-0.03em",
+              lineHeight: 0.95,
+              color: "#0A0A0A",
+              margin: "0 0 24px",
             }}
           >
-            Synthesizing Our Workforces.
+            Finding Our Alignment.
           </h2>
           <p
-            className="text-[#3A3A3A] leading-7"
             style={{
-              fontFamily: "Inter, sans-serif",
+              fontFamily: INTER,
               fontSize: "1.05rem",
               fontWeight: 400,
-              textWrap: "balance",
-            } as React.CSSProperties}
+              lineHeight: 1.75,
+              color: "#3A3A3A",
+              margin: 0,
+            }}
           >
-            Great products are born when specialized talent meets organized need.
-            My role is to bridge the gap between where the industry is going,
-            logic-first, AI-augmented design, and where your product needs to be.
-            This section visualizes the Strategic Grey Area — synthesizing our
-            mutual needs into a cohesive system that moves the needle.
+            Great products aren&rsquo;t built in a vacuum. They happen when
+            specialized design meets a clear business need. I treat this portfolio
+            as a logic test: an opportunity to show how my skills in system
+            architecture and AI-first workflows can solve the specific challenges
+            your team is facing. This is the &ldquo;Strategic Grey Area,&rdquo;
+            where we stop guessing and start building.
           </p>
         </div>
 
-        {/* Right — stacked cards */}
-        <div className="flex-1 relative w-full">
-          {/* Card stack container — max-height keeps cards within the viewport;
-              overflow:hidden clips off-screen cards during the slide-in animation */}
-          <div
-            className="relative w-full overflow-hidden"
-            style={{ borderRadius: "20px", maxHeight: "calc(100vh - 180px)" }}
-          >
-            {cards.map((card, i) => (
-              <div
-                key={card.src}
-                ref={(el) => { cardRefs.current[i] = el; }}
-                className="w-full"
-                style={{
-                  position: i === 0 ? "relative" : "absolute",
-                  top: 0,
-                  left: 0,
-                  transformOrigin: "top center",
-                  willChange: "transform",
-                  borderRadius: "20px",
-                  overflow: "hidden",
-                }}
-              >
-                <img
-                  src={card.src}
-                  alt={card.alt}
-                  className="w-full block"
-                  draggable={false}
-                />
-              </div>
-            ))}
-          </div>
+        {/* GIF */}
+        <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+          <img
+            src="/Scene (3).gif"
+            alt="Finding Our Alignment"
+            style={{
+              width: "auto",
+              maxWidth: "100%",
+              maxHeight: "calc(100vh - 320px)",
+              display: "block",
+              objectFit: "contain",
+            }}
+          />
         </div>
+
       </div>
     </div>
   );

@@ -77,7 +77,7 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
               <a href="#work" className="h-9 px-4 py-2 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors inline-flex items-center">
                 Work
               </a>
-              <a href="#about" className="h-9 px-4 py-2 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors inline-flex items-center">
+              <a href="/about" className="h-9 px-4 py-2 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors inline-flex items-center">
                 About
               </a>
             </div>
@@ -107,7 +107,7 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
             <a href="#work" onClick={() => setMobileOpen(false)} className="h-10 px-3 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors flex items-center">
               Work
             </a>
-            <a href="#about" onClick={() => setMobileOpen(false)} className="h-10 px-3 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors flex items-center">
+            <a href="/about" onClick={() => setMobileOpen(false)} className="h-10 px-3 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors flex items-center">
               About
             </a>
           </nav>
