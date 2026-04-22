@@ -74,11 +74,13 @@ export default function CTASection() {
               backgroundColor: "transparent",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#fff";
-              e.currentTarget.style.color = "#0A0A0A";
+              e.currentTarget.style.backgroundColor = "#0D99FF";
+              e.currentTarget.style.borderColor = "#0D99FF";
+              e.currentTarget.style.color = "#fff";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.8)";
               e.currentTarget.style.color = "#fff";
             }}
           >

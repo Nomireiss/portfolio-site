@@ -1,13 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-function LogoIcon({ inWorkSection }: { inWorkSection: boolean }) {
+function LogoIcon({ colored }: { colored: boolean }) {
   return (
     <div style={{ display: "grid", height: "64px", alignItems: "center" }}>
       <img
@@ -17,7 +13,7 @@ function LogoIcon({ inWorkSection }: { inWorkSection: boolean }) {
           gridArea: "1 / 1",
           height: "64px",
           width: "auto",
-          opacity: inWorkSection ? 0 : 1,
+          opacity: colored ? 0 : 1,
           transition: "opacity 0.5s ease",
         }}
       />
@@ -28,7 +24,7 @@ function LogoIcon({ inWorkSection }: { inWorkSection: boolean }) {
           gridArea: "1 / 1",
           height: "64px",
           width: "auto",
-          opacity: inWorkSection ? 1 : 0,
+          opacity: colored ? 1 : 0,
           transition: "opacity 0.5s ease",
         }}
       />
@@ -38,24 +34,8 @@ function LogoIcon({ inWorkSection }: { inWorkSection: boolean }) {
 
 export default function Navigation({ forceColored = false }: { forceColored?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [inWorkSection, setInWorkSection] = useState(false);
 
-  useEffect(() => {
-    if (forceColored) return;
-    const workSection = document.querySelector("#work");
-    if (!workSection) return;
-
-    const trigger = ScrollTrigger.create({
-      trigger: workSection,
-      start: "top top",
-      onEnter: () => setInWorkSection(true),
-      onLeaveBack: () => setInWorkSection(false),
-    });
-
-    return () => trigger.kill();
-  }, [forceColored]);
-
-  const isColored = forceColored || inWorkSection;
+  const isColored = forceColored;
 
   return (
     <header
@@ -68,7 +48,7 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
       <div className="w-full px-4 sm:px-10 md:px-20 py-4">
         <div className="flex items-center justify-between">
           <a href="#" aria-label="Home">
-            <LogoIcon inWorkSection={isColored} />
+            <LogoIcon colored={isColored} />
           </a>
 
           {/* Desktop nav */}
@@ -81,14 +61,14 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
                 About
               </a>
             </div>
-            <a href="#contact" className="h-11 px-6 py-2.5 bg-[#171717] text-[#FAFAFA] text-sm font-medium rounded-[10px] hover:bg-[#333] transition-colors inline-flex items-center">
+            <a href="#contact" className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[10px] hover:bg-[#0B87E0] transition-colors inline-flex items-center">
               Get in touch
             </a>
           </div>
 
           {/* Mobile: CTA + hamburger */}
           <div className="flex md:hidden items-center gap-3">
-            <a href="#contact" className="h-11 px-6 py-2.5 bg-[#171717] text-[#FAFAFA] text-sm font-medium rounded-[10px] hover:bg-[#333] transition-colors inline-flex items-center">
+            <a href="#contact" className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[10px] hover:bg-[#0B87E0] transition-colors inline-flex items-center">
               Get in touch
             </a>
             <button

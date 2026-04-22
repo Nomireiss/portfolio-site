@@ -94,8 +94,9 @@ export default function ProjectGallery() {
                   overflow: "hidden",
                   borderRadius: 0,
                   backgroundColor: "#1a1a1a",
-                  boxShadow: isActive ? "0 0 0 3px #3998EA" : "0 0 0 3px transparent",
-                  transition: "box-shadow 0.2s ease",
+                  outline: isActive ? "3px solid #3998EA" : "3px solid transparent",
+                  outlineOffset: "1px",
+                  transition: "outline-color 0.2s ease",
                 }}
               >
                 <img
