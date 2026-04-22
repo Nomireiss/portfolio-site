@@ -39,7 +39,7 @@ function BulletItem({ label, children }: { label: string; children: React.ReactN
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONO, fontSize: "0.65rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A3A3A3", textTransform: "uppercase", marginBottom: "16px" }}>
+    <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "16px" }}>
       {children}
     </p>
   );
@@ -49,7 +49,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
     <h2 style={{
       fontFamily: MONA,
-      fontWeight: 800,
+      fontWeight: 300,
       fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
       lineHeight: 0.96,
       letterSpacing: "-0.025em",
@@ -88,15 +88,15 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
 function SidebarComment({ label, mention, children }: { label: string; mention?: string; children: React.ReactNode }) {
   return (
     <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px" }}>
-      <p style={{ fontFamily: MONO, fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A3A3A3", textTransform: "uppercase", marginBottom: "10px" }}>
-        // {label}
+      <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
+        {label}
       </p>
       {mention && (
-        <p style={{ fontFamily: MONO, fontSize: "0.78rem", color: "#4497F7", fontWeight: 600, marginBottom: "10px" }}>
+        <p style={{ fontFamily: INTER, fontSize: "1rem", color: "#4497F7", fontWeight: 600, marginBottom: "10px" }}>
           {mention}
         </p>
       )}
-      <div style={{ fontFamily: MONO, fontSize: "0.78rem", lineHeight: 1.75, color: "#3A3A3A" }}>
+      <div style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#1A1A1A" }}>
         {children}
       </div>
     </div>
@@ -146,7 +146,7 @@ export default function NylasPage() {
           <header style={{ paddingBottom: "48px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
-              <span style={{ fontFamily: MONO, fontSize: "0.65rem", fontWeight: 500, letterSpacing: "0.14em", color: "#A3A3A3", textTransform: "uppercase" }}>
+              <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
                 Case Study · Platform Design · 2024
               </span>
             </div>
@@ -154,16 +154,15 @@ export default function NylasPage() {
             <h1 style={{
               fontFamily: MONA,
               fontWeight: 800,
-              fontSize: "clamp(2.6rem, 4.8vw, 5.2rem)",
+              fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
               color: "#0A0A0A",
               margin: "0 0 48px",
-              maxWidth: "820px",
             }}>
               The Unification Mandate:
               <br />
-              <span style={{ fontWeight: 700 }}>Erasing the Friction<br />of Fragmentation.</span>
+              <span style={{ fontWeight: 800 }}>Erasing the Friction of Fragmentation.</span>
             </h1>
 
             {/* Metadata row */}
@@ -182,7 +181,7 @@ export default function NylasPage() {
                 { label: "Year", value: "2024" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
-                  <p style={{ fontFamily: MONO, fontSize: "0.62rem", letterSpacing: "0.1em", color: "#A3A3A3", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
+                  <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
                   <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#0A0A0A", margin: 0 }}>{value}</p>
                 </div>
               ))}
@@ -223,7 +222,7 @@ export default function NylasPage() {
                 <SectionEyebrow>The How</SectionEyebrow>
                 <SectionHeading>
                   Building the Bridge:<br />
-                  The Nylas Design System (NDS).
+                  <span style={{ fontWeight: 800 }}>The Nylas Design System (NDS).</span>
                 </SectionHeading>
                 <PullQuote>
                   &ldquo;I architected the NDS as a multi-layered system. By leveraging
@@ -267,7 +266,7 @@ export default function NylasPage() {
               <>
                 <SectionEyebrow>The Why</SectionEyebrow>
                 <SectionHeading>
-                  From Data Noise to<br />Actionable Intelligence.
+                  From Data Noise to<br /><span style={{ fontWeight: 800 }}>Actionable Intelligence.</span>
                 </SectionHeading>
                 <PullQuote>
                   &ldquo;I overhauled the full suite — from Email and Calendar integrations
@@ -305,7 +304,7 @@ export default function NylasPage() {
                 <>
                   <SectionEyebrow>The Impact</SectionEyebrow>
                   <SectionHeading>
-                    Operational Excellence:<br />A Platform Stabilised.
+                    Operational Excellence:<br /><span style={{ fontWeight: 800 }}>A Platform Stabilised.</span>
                   </SectionHeading>
                   <PullQuote>
                     &ldquo;The common design language didn&rsquo;t just make the product look
@@ -330,6 +329,39 @@ export default function NylasPage() {
                 </SidebarComment>
               }
             />
+          </section>
+
+          {/* ── MORE WORK ────────────────────────────────────── */}
+          <section style={{ borderTop: "1px solid #E5E5E5", paddingTop: "64px", paddingBottom: "120px" }}>
+            <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "32px" }}>
+              More Work
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px" }}>
+              {[
+                { title: "SeeTree", year: "©23", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
+                { title: "ShyMama", year: "©23", image: "/ShyMama Mockup.png", href: null },
+              ].map((project) => (
+                <div
+                  key={project.title}
+                  onClick={() => project.href && (window.location.href = project.href)}
+                  style={{ cursor: project.href ? "pointer" : "default" }}
+                >
+                  <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "16px", overflow: "hidden", marginBottom: "14px" }}>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px", letterSpacing: "-0.02em" }}>
+                    {project.title}
+                  </p>
+                  <p style={{ fontFamily: INTER, fontSize: "0.8rem", color: "#A3A3A3", margin: 0 }}>
+                    {project.year}
+                  </p>
+                </div>
+              ))}
+            </div>
           </section>
 
         </div>

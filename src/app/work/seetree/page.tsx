@@ -39,7 +39,7 @@ function BulletItem({ label, children }: { label: string; children: React.ReactN
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONO, fontSize: "0.65rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A3A3A3", textTransform: "uppercase", marginBottom: "16px" }}>
+    <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "16px" }}>
       {children}
     </p>
   );
@@ -49,7 +49,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
     <h2 style={{
       fontFamily: MONA,
-      fontWeight: 800,
+      fontWeight: 300,
       fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
       lineHeight: 0.96,
       letterSpacing: "-0.025em",
@@ -88,15 +88,15 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
 function SidebarComment({ label, mention, children }: { label: string; mention?: string; children: React.ReactNode }) {
   return (
     <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px" }}>
-      <p style={{ fontFamily: MONO, fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A3A3A3", textTransform: "uppercase", marginBottom: "10px" }}>
-        // {label}
+      <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
+        {label}
       </p>
       {mention && (
-        <p style={{ fontFamily: MONO, fontSize: "0.78rem", color: "#4497F7", fontWeight: 600, marginBottom: "10px" }}>
+        <p style={{ fontFamily: INTER, fontSize: "1rem", color: "#4497F7", fontWeight: 600, marginBottom: "10px" }}>
           {mention}
         </p>
       )}
-      <div style={{ fontFamily: MONO, fontSize: "0.78rem", lineHeight: 1.75, color: "#3A3A3A" }}>
+      <div style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#1A1A1A" }}>
         {children}
       </div>
     </div>
@@ -151,7 +151,7 @@ export default function SeeTreePage() {
           <header style={{ paddingBottom: "48px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
-              <span style={{ fontFamily: MONO, fontSize: "0.65rem", fontWeight: 500, letterSpacing: "0.14em", color: "#A3A3A3", textTransform: "uppercase" }}>
+              <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
                 Case Study · AgriTech / GIS · 2023
               </span>
             </div>
@@ -159,16 +159,15 @@ export default function SeeTreePage() {
             <h1 style={{
               fontFamily: MONA,
               fontWeight: 800,
-              fontSize: "clamp(2.6rem, 4.8vw, 5.2rem)",
+              fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
               color: "#0A0A0A",
               margin: "0 0 48px",
-              maxWidth: "820px",
             }}>
               Digitizing the Orchard:
               <br />
-              <span style={{ fontWeight: 700 }}>The Intelligence-First<br />Pivot.</span>
+              <span style={{ fontWeight: 800 }}>The Intelligence-First Pivot.</span>
             </h1>
 
             {/* Metadata row */}
@@ -187,7 +186,7 @@ export default function SeeTreePage() {
                 { label: "Year", value: "2023" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
-                  <p style={{ fontFamily: MONO, fontSize: "0.62rem", letterSpacing: "0.1em", color: "#A3A3A3", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
+                  <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
                   <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#0A0A0A", margin: 0 }}>{value}</p>
                 </div>
               ))}
@@ -209,7 +208,7 @@ export default function SeeTreePage() {
               </>
             }
             sidebar={
-              <SidebarComment label="Annotation: The Environment" mention="@Hiring Manager">
+              <SidebarComment label="Annotation: The Environment">
                 The &ldquo;Messy Middle&rdquo; here was literal. We had to design for 40°C
                 heat, screen glare, and zero-latency requirements in areas with no Wi-Fi.
                 This wasn&rsquo;t just a UI challenge; it was a physics challenge.
@@ -226,7 +225,7 @@ export default function SeeTreePage() {
                 <SectionEyebrow>The Core Logic</SectionEyebrow>
                 <SectionHeading>
                   Beyond the Map:<br />
-                  Architecting Actionable Insights.
+                  <span style={{ fontWeight: 800 }}>Architecting Actionable Insights.</span>
                 </SectionHeading>
                 <PullQuote>
                   &ldquo;I led the redesign of the core SeeTree experience, shifting the
@@ -271,7 +270,7 @@ export default function SeeTreePage() {
               <>
                 <SectionEyebrow>The Scale</SectionEyebrow>
                 <SectionHeading>
-                  One System,<br />Two Realities.
+                  One System,<br /><span style={{ fontWeight: 800 }}>Two Realities.</span>
                 </SectionHeading>
                 <PullQuote>
                   &ldquo;I architected a cross-platform design language that maintained
@@ -316,7 +315,7 @@ export default function SeeTreePage() {
                 <>
                   <SectionEyebrow>The Resolution</SectionEyebrow>
                   <SectionHeading>
-                    Stability Found:<br />The Result of Clarity.
+                    Stability Found:<br /><span style={{ fontWeight: 800 }}>The Result of Clarity.</span>
                   </SectionHeading>
                   <PullQuote>
                     &ldquo;The impact was immediate. By resolving the ambiguity of the
@@ -336,6 +335,39 @@ export default function SeeTreePage() {
                 </SidebarComment>
               }
             />
+          </section>
+
+          {/* ── MORE WORK ────────────────────────────────────── */}
+          <section style={{ borderTop: "1px solid #E5E5E5", paddingTop: "64px", paddingBottom: "120px" }}>
+            <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "32px" }}>
+              More Work
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px" }}>
+              {[
+                { title: "Nylas", year: "©24", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
+                { title: "ShyMama", year: "©23", image: "/ShyMama Mockup.png", href: null },
+              ].map((project) => (
+                <div
+                  key={project.title}
+                  onClick={() => project.href && (window.location.href = project.href)}
+                  style={{ cursor: project.href ? "pointer" : "default" }}
+                >
+                  <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "16px", overflow: "hidden", marginBottom: "14px" }}>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px", letterSpacing: "-0.02em" }}>
+                    {project.title}
+                  </p>
+                  <p style={{ fontFamily: INTER, fontSize: "0.8rem", color: "#A3A3A3", margin: 0 }}>
+                    {project.year}
+                  </p>
+                </div>
+              ))}
+            </div>
           </section>
 
         </div>
