@@ -1,49 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
 
 const projects = [
-  { title: "Nylas", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
-  { title: "SeeTree", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
-  { title: "ShyMama", image: "/ShyMama Mockup.png", href: "/work/shymama" },
+  { title: "Nylas", label: "Nylas - 1", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
+  { title: "SeeTree", label: "SeeTree - 2", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
+  { title: "ShyMama", label: "ShyMama - 3", image: "/ShyMama Mockup.png", href: "/work/shymama" },
 ];
 
 export default function ProjectGallery() {
-  const cursorRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState<number | null>(null);
-  const [cursorVisible, setCursorVisible] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate(${e.clientX - 24}px, ${e.clientY - 24}px)`;
-      }
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
-
   return (
-    <section id="work" style={{ backgroundColor: "#EFF0F6", padding: "80px clamp(60px, 6.94vw, 80px)" }}>
-
-      {/* Custom circle cursor */}
-      <div
-        ref={cursorRef}
-        style={{
-          position: "fixed", top: 0, left: 0,
-          width: 48, height: 48, borderRadius: "50%",
-          backgroundColor: "#0A0A0A",
-          pointerEvents: "none", zIndex: 9999,
-          opacity: cursorVisible ? 1 : 0,
-          transition: "opacity 0.2s ease",
-          willChange: "transform",
-        }}
-      />
+    <section id="work" style={{ backgroundColor: "#F5F5F5", padding: "80px 0" }}>
+      <div className="w-full max-w-[1280px] mx-auto px-6">
 
       {/* Section header */}
       <div style={{ marginBottom: "48px" }}>
@@ -56,11 +31,11 @@ export default function ProjectGallery() {
         <h2 style={{
           fontFamily: MONA,
           fontWeight: 800,
-          fontSize: "clamp(2.8rem, 5vw, 5.5rem)",
+          fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)",
           letterSpacing: "-0.03em",
           lineHeight: 0.95,
           color: "#0A0A0A",
-          margin: "0 0 20px",
+          margin: "0 0 24px",
         }}>
           The Proven Results
         </h2>
@@ -81,60 +56,61 @@ export default function ProjectGallery() {
         </p>
       </div>
 
-      {/* 3-column portrait grid */}
+      {/* 3-column portrait grid — Figma canvas style */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "15px" }}>
         {projects.map((project, i) => {
           const isActive = hovered === i;
           return (
-            <div
-              key={i}
-              onMouseEnter={() => { setHovered(i); setCursorVisible(true); }}
-              onMouseLeave={() => { setHovered(null); setCursorVisible(false); }}
-              onClick={() => project.href && router.push(project.href)}
-              style={{
-                cursor: "none",
-                aspectRatio: "3 / 4",
-                position: "relative",
-                overflow: "hidden",
-                borderRadius: 0,
-                backgroundColor: "#1a1a1a",
-              }}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                style={{
-                  position: "absolute", inset: 0,
-                  width: "100%", height: "100%", objectFit: "cover",
-                  transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
-                  transform: isActive ? "scale(1.05)" : "scale(1)",
-                }}
-              />
-
-              {/* Hover overlay + title */}
-              <div style={{
-                position: "absolute", inset: 0,
-                backgroundColor: "rgba(0,0,0,0.5)",
-                opacity: isActive ? 1 : 0,
-                transition: "opacity 0.4s ease",
-                display: "flex", alignItems: "flex-end",
-                padding: "clamp(20px, 3vw, 32px)",
-              }}>
-                <h3 style={{
-                  fontFamily: MONA,
-                  fontSize: "clamp(1.4rem, 2vw, 1.9rem)",
-                  fontWeight: 300,
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1,
-                  color: "#fff",
+            <div key={i}>
+              {/* Figma-style frame label row */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3px" }}>
+                <p style={{
+                  fontFamily: INTER,
+                  fontSize: "0.75rem",
+                  fontWeight: 400,
+                  color: "#C7C7C7",
                   margin: 0,
+                  letterSpacing: "0.01em",
                 }}>
-                  {project.title}
-                </h3>
+                  {project.label}
+                </p>
+                {/* Component icon */}
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="20" height="20" rx="5" fill="#3DB96B"/>
+                  <path d="M7.5 7L5 10L7.5 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12.5 7L15 10L12.5 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+
+              {/* Card */}
+              <div
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
+                onClick={() => project.href && router.push(project.href)}
+                style={{
+                  cursor: "pointer",
+                  aspectRatio: "3 / 4",
+                  position: "relative",
+                  overflow: "hidden",
+                  borderRadius: 0,
+                  backgroundColor: "#1a1a1a",
+                  boxShadow: isActive ? "0 0 0 3px #3998EA" : "0 0 0 3px transparent",
+                  transition: "box-shadow 0.2s ease",
+                }}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  style={{
+                    position: "absolute", inset: 0,
+                    width: "100%", height: "100%", objectFit: "cover",
+                  }}
+                />
               </div>
             </div>
           );
         })}
+      </div>
       </div>
     </section>
   );

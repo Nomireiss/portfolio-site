@@ -6,13 +6,16 @@ export default function CTASection() {
       id="contact"
       style={{
         backgroundColor: "#0A0A0A",
-        minHeight: "100vh",
+        minHeight: "unset",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
-        padding: "clamp(1.5rem, 4vw, 48px) clamp(1rem, 6.94vw, 80px)",
+        padding: "clamp(1.5rem, 4vw, 48px) 0",
       }}
     >
+      <div
+        className="w-full max-w-[1280px] mx-auto px-6"
+        style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}
+      >
       {/* Top row — social links */}
       <div style={{ display: "flex", justifyContent: "flex-end", gap: "32px" }}>
         {["LinkedIn", "Dribbble", "Read.cv"].map((link) => (
@@ -41,18 +44,17 @@ export default function CTASection() {
         <h2
           style={{
             fontFamily: '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif',
-            fontWeight: 700,
-            fontSize: "clamp(2.8rem, 6vw, 7rem)",
-            lineHeight: 1.05,
+            fontWeight: 800,
+            fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)",
+            lineHeight: 0.95,
             letterSpacing: "-0.03em",
+            color: "#fff",
             margin: 0,
           }}
         >
-          <span style={{ color: "#fff" }}>Ready to resolve </span>
-          <span style={{ color: "rgba(255,255,255,0.35)" }}>the ambiguity?</span>
+          Ready to resolve the ambiguity?
           <br />
-          <span style={{ color: "rgba(255,255,255,0.6)" }}>Let&rsquo;s make </span>
-          <span style={{ color: "rgba(255,255,255,0.2)" }}>something inevitable.</span>
+          Let&rsquo;s make something inevitable.
         </h2>
 
         {/* Button + status */}
@@ -129,6 +131,7 @@ export default function CTASection() {
             NOMI &copy;{new Date().getFullYear()}
           </span>
         </div>
+      </div>
       </div>
     </section>
   );

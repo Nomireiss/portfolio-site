@@ -41,11 +41,9 @@ export default function SkillsGrid() {
       <div className="hidden lg:block">
         <CommentCard time="just now" className="right-[92px] bottom-[-200px]">
           <p>
-            Too much white space here, we need to adjust the spacing.{" "}
-            <Mention>@Claude </Mention>
-            is telling me it&rsquo;s due to the padding required for the fun
-            card scroll we have in the next section — but we need to do
-            something about this.
+            There&rsquo;s a lot of white space here. I don&rsquo;t mind it as
+            we&rsquo;re still mapping things out, but let&rsquo;s keep it in
+            mind as we move through the design stage.
           </p>
         </CommentCard>
       </div>
