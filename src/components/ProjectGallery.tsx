@@ -24,7 +24,7 @@ const projects = [
     title: "ShyMama",
     year: "©23",
     image: "/ShyMama Mockup.png",
-    href: null,
+    href: "/work/shymama",
   },
 ];
 

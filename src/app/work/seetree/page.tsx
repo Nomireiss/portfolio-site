@@ -345,7 +345,7 @@ export default function SeeTreePage() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px" }}>
               {[
                 { title: "Nylas", year: "©24", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
-                { title: "ShyMama", year: "©23", image: "/ShyMama Mockup.png", href: null },
+                { title: "ShyMama", year: "©23", image: "/ShyMama Mockup.png", href: "/work/shymama" },
               ].map((project) => (
                 <div
                   key={project.title}

@@ -2,7 +2,6 @@ import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-const MONO = "'JetBrains Mono', 'Courier New', monospace";
 const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
 
@@ -76,7 +75,7 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
       border: "1px solid #E8E8E8",
       margin: "40px 0",
     }}>
-      <span style={{ fontFamily: MONO, fontSize: "0.7rem", color: "#B5B5B5" }}>
+      <span style={{ fontFamily: INTER, fontSize: "0.7rem", color: "#B5B5B5" }}>
         {label ?? "Image — to be provided"}
       </span>
     </div>
@@ -121,14 +120,19 @@ function SectionGrid({ main, sidebar }: { main: React.ReactNode; sidebar: React.
   );
 }
 
+function Divider() {
+  return <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />;
+}
+
 /* ─── Page ────────────────────────────────────────────────────── */
 
-export default function NylasPage() {
+export default function ShyMamaPage() {
   const pad = "clamp(1rem, 6.94vw, 80px)";
 
   return (
     <>
       <Navigation forceColored />
+
       <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", paddingLeft: pad, paddingRight: pad }}>
 
@@ -147,22 +151,22 @@ export default function NylasPage() {
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
               <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
-                Case Study · Platform Design · 2024
+                Case Study · E-Commerce / DTC · 2023
               </span>
             </div>
 
             <h1 style={{
               fontFamily: MONA,
-              fontWeight: 800,
+              fontWeight: 300,
               fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
               color: "#0A0A0A",
               margin: "0 0 48px",
             }}>
-              The Unification Mandate:
+              Designing for the
               <br />
-              <span style={{ fontWeight: 800 }}>Erasing the Friction of Fragmentation.</span>
+              <span style={{ fontWeight: 800 }}>One-Handed User.</span>
             </h1>
 
             {/* Metadata row */}
@@ -175,10 +179,10 @@ export default function NylasPage() {
               paddingBottom: "20px",
             }}>
               {[
-                { label: "Client", value: "Nylas" },
-                { label: "Role", value: "Principal Product Designer" },
-                { label: "Stack", value: "Shadcn / Tailwind / React" },
-                { label: "Year", value: "2024" },
+                { label: "Client", value: "ShyMama" },
+                { label: "Role", value: "Lead Product Designer" },
+                { label: "Scope", value: "Mobile E-Commerce + Subscription" },
+                { label: "Year", value: "2023" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
                   <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
@@ -188,144 +192,142 @@ export default function NylasPage() {
             </div>
           </header>
 
-          {/* ── SECTION 1: THE MANDATE ───────────────────────── */}
+          {/* ── SECTION 1: THE ENTRY ─────────────────────────── */}
           <SectionGrid
             main={
               <>
-                <ImagePlaceholder label="Nylas Platform — Hero Shot (100% Fidelity)" aspectRatio="16/10" />
+                <ImagePlaceholder label="ShyMama Platform — Hero Shot" aspectRatio="16/10" />
                 <PullQuote>
-                  &ldquo;When I joined Nylas, the user journey felt like crossing borders
-                  between three different countries. My mandate was to eliminate the
-                  cognitive load of &lsquo;context switching&rsquo; by building a singular,
-                  high-performance design language that scaled from a marketing headline to
-                  a complex API configuration.&rdquo;
+                  &ldquo;I transformed ShyMama from a generic storefront into a subscription
+                  platform built for the physical reality of its users. By prioritizing
+                  Contextual Ergonomics, I architected a mobile-first flow that converted
+                  first-time visitors by respecting their constraints rather than ignoring
+                  them.&rdquo;
                 </PullQuote>
               </>
             }
             sidebar={
-              <SidebarComment label="Annotation: The Problem" mention="@Hiring Manager">
-                I identified 14 different button styles across the suite in week one.
-                Fragmentation isn&rsquo;t just an aesthetic issue — it&rsquo;s a velocity
-                killer. Every inconsistent component is a decision an engineer shouldn&rsquo;t
-                have to make.
+              <SidebarComment label="Annotation: The Empathy Gap" mention="@Hiring Manager">
+                This wasn&rsquo;t just a UI refresh. I conducted primary research to map the
+                &lsquo;Empathy Gap&rsquo; between a standard checkout and the actual lived
+                experience of a nursing mother. In this space, every extra tap is a reason
+                to abandon the cart.
               </SidebarComment>
             }
           />
 
-          {/* Divider */}
-          <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
+          <Divider />
 
-          {/* ── SECTION 2: THE NDS ───────────────────────────── */}
+          {/* ── SECTION 2: THE CORE LOGIC ────────────────────── */}
           <SectionGrid
             main={
               <>
-                <SectionEyebrow>The How</SectionEyebrow>
+                <SectionEyebrow>The Core Logic</SectionEyebrow>
                 <SectionHeading>
-                  Building the Bridge:<br />
-                  <span style={{ fontWeight: 800 }}>The Nylas Design System (NDS).</span>
+                  Minimalist Utility,<br />
+                  <span style={{ fontWeight: 800 }}>Maximum Reach.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I architected the NDS as a multi-layered system. By leveraging
-                  Shadcn&rsquo;s accessible foundations and Tailwind&rsquo;s utility-first
-                  logic, I created a component library that served two masters: the editorial
-                  needs of the website and the dense, data-heavy requirements of the
-                  dashboard.&rdquo;
+                  &ldquo;I led the end-to-end design process, from primary persona development
+                  to high-fidelity handoff. The breakthrough came from the Ergonomic Audit:
+                  I re-engineered the information architecture so that 90% of critical
+                  interactions — selection, subscription toggling, and checkout — lived within
+                  the &lsquo;Natural Thumb Zone&rsquo; of a mobile device.&rdquo;
                 </PullQuote>
-                <BulletItem label="Atomic Alignment:">
-                  Synchronizing color palettes and spacing scales so the &ldquo;Marketing
-                  Pitch&rdquo; felt like the &ldquo;Product Reality.&rdquo;
+                <BulletItem label="The Subscription Pivot:">
+                  Optimizing the checkout flow to prioritize trust signals and reduce friction
+                  for first-time buyers.
                 </BulletItem>
-                <BulletItem label="The Component Pivot:">
-                  Moving away from rigid, legacy components to a composable architecture
-                  that empowered engineers to build faster.
+                <BulletItem label="Semantic Hierarchy:">
+                  Using large tap targets and a clean style guide to ensure clarity during
+                  distracted, low-light browsing sessions.
                 </BulletItem>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "12px" }}>
-                  {["NDS — Component Library", "Token Architecture"].map(l => (
+                  {["Ergonomic Audit — Thumb Zone Map", "Subscription Flow — Checkout Redesign"].map(l => (
                     <div key={l} style={{ aspectRatio: "4/3", background: "#F2F2F2", borderRadius: "10px", border: "1px solid #E8E8E8", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <span style={{ fontFamily: MONO, fontSize: "0.65rem", color: "#B5B5B5" }}>{l}</span>
+                      <span style={{ fontFamily: INTER, fontSize: "0.65rem", color: "#B5B5B5", textAlign: "center", padding: "0 12px" }}>{l}</span>
                     </div>
                   ))}
                 </div>
               </>
             }
             sidebar={
-              <SidebarComment label="Operational Note">
-                I didn&rsquo;t just hand off a library. I re-engineered the hand-off process
-                itself. By aligning our Figma variables directly with our Tailwind tokens,
-                we created a 1:1 parity between design and production.
+              <SidebarComment label="Technical Logic">
+                We optimised for &lsquo;Distracted Browsing.&rsquo; I designed the logic so
+                that if a user was interrupted, their progress was preserved and the
+                &lsquo;Next Step&rsquo; was always visually dominant. No cognitive heavy
+                lifting required.
               </SidebarComment>
             }
           />
 
-          {/* Divider */}
-          <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
+          <Divider />
 
-          {/* ── SECTION 3: THE DASHBOARD ─────────────────────── */}
+          {/* ── SECTION 3: THE SCALE ─────────────────────────── */}
           <SectionGrid
             main={
               <>
-                <SectionEyebrow>The Why</SectionEyebrow>
+                <SectionEyebrow>The Scale</SectionEyebrow>
                 <SectionHeading>
-                  From Data Noise to<br /><span style={{ fontWeight: 800 }}>Actionable Intelligence.</span>
+                  Scaling Trust<br />
+                  <span style={{ fontWeight: 800 }}>through Clarity.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I overhauled the full suite — from Email and Calendar integrations
-                  to the new Agentic tools — focusing on Information Hierarchy. By
-                  introducing a clean, modular &lsquo;Card&rsquo; system and a unified
-                  navigation structure, I transformed the dashboard into a high-clarity
-                  workspace for developers.&rdquo;
+                  &ldquo;I built a unified design system that balanced the warmth of a
+                  consumer brand with the structural rigour of a subscription service. By
+                  synthesizing user interviews and empathy mapping, I created a responsive UI
+                  that felt intuitive across every touchpoint — ensuring the
+                  &lsquo;ShyMama&rsquo; brand felt like a supportive partner, not just a
+                  vendor.&rdquo;
                 </PullQuote>
-                <BulletItem label="Logic Audit:">
-                  Redesigning the onboarding flow to prioritise the &ldquo;Time to First
-                  API Call.&rdquo;
+                <BulletItem label="The Style Guide:">
+                  A refined palette and typography system that signalled premium quality and
+                  safety.
                 </BulletItem>
-                <BulletItem label="The UX Shift:">
-                  Reducing the number of clicks required for key administrative tasks by
-                  40% through better layout density.
+                <BulletItem label="The Handshake:">
+                  A seamless transition from educational content (the &ldquo;Why&rdquo;) to
+                  the subscription engine (the &ldquo;How&rdquo;).
                 </BulletItem>
-                <ImagePlaceholder label="Dashboard — Suite Transformation" aspectRatio="16/9" />
+                <ImagePlaceholder label="Design System + Responsive UI" aspectRatio="16/9" />
               </>
             }
             sidebar={
-              <SidebarComment label="Deep Dive">
-                The dashboard needed to transition from a &ldquo;Monitoring Tool&rdquo; to
-                a &ldquo;Strategic Interface&rdquo; for the Agentic Era.
+              <SidebarComment label="Annotation: Brand as Trust Signal">
+                The design system wasn&rsquo;t decorative — it was functional. Every colour,
+                typeface, and spacing decision was made to signal safety and expertise to a
+                first-time mother making a nutritional decision for her child.
               </SidebarComment>
             }
           />
 
-          {/* Divider */}
-          <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
+          <Divider />
 
-          {/* ── SECTION 4: THE RESULT ────────────────────────── */}
+          {/* ── SECTION 4: THE RESOLUTION ────────────────────── */}
           <section style={{ paddingBottom: "120px" }}>
             <SectionGrid
               main={
                 <>
-                  <SectionEyebrow>The Impact</SectionEyebrow>
+                  <SectionEyebrow>The Resolution</SectionEyebrow>
                   <SectionHeading>
-                    Operational Excellence:<br /><span style={{ fontWeight: 800 }}>A Platform Stabilised.</span>
+                    Efficiency Found:<br />
+                    <span style={{ fontWeight: 800 }}>The ROI of Contextual Design.</span>
                   </SectionHeading>
                   <PullQuote>
-                    &ldquo;The common design language didn&rsquo;t just make the product look
-                    better — it made the company move faster. We achieved a cohesive brand
-                    identity that signalled maturity to our enterprise clients, while the
-                    internal engineering velocity increased because the &lsquo;Messy
-                    Middle&rsquo; of hand-offs had been replaced by a reliable, automated
-                    system.&rdquo;
+                    &ldquo;The result was a high-conversion platform that eliminated the
+                    &lsquo;Subscription Roadblock.&rsquo; By resolving the physical ambiguity
+                    of the user&rsquo;s environment, I delivered an end-to-end product that
+                    was ready for development handoff and optimised for growth. We proved that
+                    when you design for the user&rsquo;s reality, the business goals take care
+                    of themselves.&rdquo;
                   </PullQuote>
-                  <ImagePlaceholder label="Results — System at Scale" aspectRatio="16/9" />
+                  <ImagePlaceholder label="Impact — Conversion Funnel Transformation" aspectRatio="16/9" />
                 </>
               }
               sidebar={
-                <SidebarComment label="Annotation: The Outcome">
-                  <p style={{ marginBottom: "10px" }}>
-                    <strong style={{ color: "#0A0A0A" }}>Strategic maturity</strong> delivered
-                    at the product level.
-                  </p>
-                  <p style={{ color: "#737373", fontSize: "0.72rem", margin: 0 }}>
-                    This is what Principal-level operational design leadership looks like.
-                  </p>
+                <SidebarComment label="Final Take" mention="@Hiring Manager">
+                  ShyMama is proof that I can take a sensitive, underserved audience and
+                  build a high-performance system for them. I don&rsquo;t just design for
+                  &lsquo;users&rsquo;; I design for humans in their most demanding contexts.
                 </SidebarComment>
               }
             />
@@ -338,13 +340,13 @@ export default function NylasPage() {
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px" }}>
               {[
+                { title: "Nylas", year: "©24", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
                 { title: "SeeTree", year: "©23", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
-                { title: "ShyMama", year: "©23", image: "/ShyMama Mockup.png", href: "/work/shymama" },
               ].map((project) => (
                 <div
                   key={project.title}
-                  onClick={() => project.href && (window.location.href = project.href)}
-                  style={{ cursor: project.href ? "pointer" : "default" }}
+                  onClick={() => window.location.href = project.href}
+                  style={{ cursor: "pointer" }}
                 >
                   <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "16px", overflow: "hidden", marginBottom: "14px" }}>
                     <img
