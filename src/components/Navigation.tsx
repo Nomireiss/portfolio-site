@@ -61,14 +61,14 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
                 About
               </a>
             </div>
-            <a href="#contact" className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[6px] hover:bg-[#0B87E0] transition-colors inline-flex items-center">
+            <a href="/contact" className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[6px] hover:bg-[#0B87E0] transition-colors inline-flex items-center">
               Get in touch
             </a>
           </div>
 
           {/* Mobile: CTA + hamburger */}
           <div className="flex md:hidden items-center gap-3">
-            <a href="#contact" className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[6px] hover:bg-[#0B87E0] transition-colors inline-flex items-center">
+            <a href="/contact" className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[6px] hover:bg-[#0B87E0] transition-colors inline-flex items-center">
               Get in touch
             </a>
             <button

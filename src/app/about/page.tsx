@@ -6,7 +6,7 @@ const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
 
 function Divider() {
-  return <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />;
+  return <div className="my-10 md:my-[72px]" style={{ borderTop: "1px solid #E5E5E5" }} />;
 }
 
 export default function AboutPage() {
@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: "1280px", margin: "0 auto", paddingLeft: pad, paddingRight: pad }}>
 
           {/* Back */}
-          <div style={{ paddingTop: "40px", paddingBottom: "56px" }}>
+          <div className="pt-8 pb-8 md:pt-10 md:pb-14">
             <Link
               href="/"
               style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: INTER, fontSize: "0.85rem", fontWeight: 500, color: "#737373", textDecoration: "none" }}
@@ -31,7 +31,7 @@ export default function AboutPage() {
           </div>
 
           {/* ── PAGE HEADER ──────────────────────────────────── */}
-          <header style={{ paddingBottom: "64px" }}>
+          <header className="pb-8 md:pb-16">
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
               <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
@@ -107,7 +107,7 @@ export default function AboutPage() {
           <Divider />
 
           {/* ── SECTION 2 + 3: WORKFLOW + SIDEBAR + CTA ─────── */}
-          <section style={{ paddingBottom: "120px", display: "flex", flexDirection: "column", }}>
+          <section className="pb-16 md:pb-[120px]" style={{ display: "flex", flexDirection: "column" }}>
             <div className="grid grid-cols-1 md:[grid-template-columns:7fr_3fr] items-start" style={{ gap: "clamp(2rem, 5vw, 72px)" }}>
               {/* Main — workflow */}
               <div>
