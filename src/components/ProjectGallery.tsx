@@ -9,7 +9,7 @@ const INTER = "Inter, sans-serif";
 const projects = [
   { title: "Nylas", label: "Nylas - 1", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
   { title: "SeeTree", label: "SeeTree - 2", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
-  { title: "ShyMama", label: "ShyMama - 3", image: "/ShyMama Mockup.png", href: "/work/shymama" },
+  { title: "MyTzedakah", label: "MyTzedakah - 3", image: "/MTF Card.png", href: "/work/mytzedakah" },
 ];
 
 export default function ProjectGallery() {
@@ -39,14 +39,13 @@ export default function ProjectGallery() {
         }}>
           The Proven Results
         </h2>
-        <p style={{
+        <p className="w-full md:max-w-[55%]" style={{
           fontFamily: INTER,
           fontSize: "clamp(1rem, 1.3vw, 1.1rem)",
           fontWeight: 300,
           color: "#3A3A3A",
           lineHeight: 1.7,
           margin: 0,
-          maxWidth: "55%",
         }}>
           Every fold, transition, and interaction has led here. This collection
           represents the transition from abstract concepts to high-fidelity
@@ -57,7 +56,7 @@ export default function ProjectGallery() {
       </div>
 
       {/* 3-column portrait grid — Figma canvas style */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "15px" }}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[15px]">
         {projects.map((project, i) => {
           const isActive = hovered === i;
           return (
@@ -66,9 +65,9 @@ export default function ProjectGallery() {
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3px" }}>
                 <p style={{
                   fontFamily: INTER,
-                  fontSize: "0.75rem",
+                  fontSize: "0.9rem",
                   fontWeight: 400,
-                  color: isActive ? "#3998EA" : "#C7C7C7",
+                  color: isActive ? "#3998EA" : "#999999",
                   fontWeight: isActive ? 600 : 400,
                   transition: "color 0.2s ease, font-weight 0.2s ease",
                   margin: 0,

@@ -106,9 +106,7 @@ export default function CTASection() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr 1fr",
+      <div className="grid grid-cols-1 md:grid-cols-3" style={{
         alignItems: "flex-end",
         borderTop: "1px solid rgba(255,255,255,0.1)",
         paddingTop: "24px",

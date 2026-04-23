@@ -106,14 +106,9 @@ function SidebarComment({ label, mention, children }: { label: string; mention?:
 
 function SectionGrid({ main, sidebar }: { main: React.ReactNode; sidebar: React.ReactNode }) {
   return (
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "7fr 3fr",
-      gap: "clamp(2rem, 5vw, 72px)",
-      alignItems: "start",
-    }}>
+    <div className="grid grid-cols-1 md:[grid-template-columns:7fr_3fr] items-start" style={{ gap: "clamp(2rem, 5vw, 72px)" }}>
       <div>{main}</div>
-      <aside style={{ position: "sticky", top: "120px", alignSelf: "start", display: "flex", flexDirection: "column", gap: "32px" }}>
+      <aside className="md:sticky md:top-[120px]" style={{ alignSelf: "start", display: "flex", flexDirection: "column", gap: "32px" }}>
         {sidebar}
       </aside>
     </div>
@@ -171,13 +166,11 @@ export default function ShyMamaPage() {
 
             {/* Metadata row */}
             <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
               borderTop: "1px solid #E5E5E5",
               borderBottom: "1px solid #E5E5E5",
               paddingTop: "20px",
               paddingBottom: "20px",
-            }}>
+            }} className="grid grid-cols-2 md:grid-cols-4">
               {[
                 { label: "Client", value: "ShyMama" },
                 { label: "Role", value: "Lead Product Designer" },
@@ -192,11 +185,15 @@ export default function ShyMamaPage() {
             </div>
           </header>
 
+          {/* ── HERO IMAGE ───────────────────────────────────── */}
+          <div style={{ marginBottom: "48px" }}>
+            <img src="/ShyMama Cover.png" alt="ShyMama Platform — Hero Shot" style={{ width: "100%", borderRadius: "16px", display: "block" }} />
+          </div>
+
           {/* ── SECTION 1: THE ENTRY ─────────────────────────── */}
           <SectionGrid
             main={
               <>
-                <ImagePlaceholder label="ShyMama Platform — Hero Shot" aspectRatio="16/10" />
                 <PullQuote>
                   &ldquo;I transformed ShyMama from a generic storefront into a subscription
                   platform built for the physical reality of its users. By prioritizing
@@ -207,7 +204,7 @@ export default function ShyMamaPage() {
               </>
             }
             sidebar={
-              <SidebarComment label="Annotation: The Empathy Gap" mention="@Hiring Manager">
+              <SidebarComment label="The Empathy Gap" mention="@Hiring Manager">
                 This wasn&rsquo;t just a UI refresh. I conducted primary research to map the
                 &lsquo;Empathy Gap&rsquo; between a standard checkout and the actual lived
                 experience of a nursing mother. In this space, every extra tap is a reason
@@ -338,7 +335,7 @@ export default function ShyMamaPage() {
             <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "32px" }}>
               More Work
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px" }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 { title: "Nylas", year: "©24", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
                 { title: "SeeTree", year: "©23", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },

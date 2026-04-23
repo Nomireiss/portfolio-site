@@ -133,3 +133,34 @@
     @apply font-sans;
   }
 }
+
+/* ── Responsive layout utilities ─────────────────────────────── */
+@media (max-width: 767px) {
+  .responsive-section-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .responsive-section-grid > aside {
+    position: static !important;
+    top: auto !important;
+  }
+  .responsive-meta-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .responsive-gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .responsive-two-col {
+    grid-template-columns: 1fr !important;
+  }
+  .responsive-sticky-reset {
+    position: static !important;
+    top: auto !important;
+  }
+  .responsive-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .responsive-footer-grid > div {
+    text-align: left !important;
+  }
+}

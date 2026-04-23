@@ -107,14 +107,9 @@ function SidebarComment({ label, mention, children }: { label: string; mention?:
 
 function SectionGrid({ main, sidebar }: { main: React.ReactNode; sidebar: React.ReactNode }) {
   return (
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "7fr 3fr",
-      gap: "clamp(2rem, 5vw, 72px)",
-      alignItems: "start",
-    }}>
+    <div className="grid grid-cols-1 md:[grid-template-columns:7fr_3fr] items-start" style={{ gap: "clamp(2rem, 5vw, 72px)" }}>
       <div>{main}</div>
-      <aside style={{ position: "sticky", top: "120px", alignSelf: "start", display: "flex", flexDirection: "column", gap: "32px" }}>
+      <aside className="md:sticky md:top-[120px]" style={{ alignSelf: "start", display: "flex", flexDirection: "column", gap: "32px" }}>
         {sidebar}
       </aside>
     </div>
@@ -167,13 +162,11 @@ export default function NylasPage() {
 
             {/* Metadata row */}
             <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
               borderTop: "1px solid #E5E5E5",
               borderBottom: "1px solid #E5E5E5",
               paddingTop: "20px",
               paddingBottom: "20px",
-            }}>
+            }} className="grid grid-cols-2 md:grid-cols-4">
               {[
                 { label: "Client", value: "Nylas" },
                 { label: "Role", value: "Principal Product Designer" },
@@ -336,10 +329,10 @@ export default function NylasPage() {
             <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "32px" }}>
               More Work
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px" }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 { title: "SeeTree", year: "©23", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
-                { title: "ShyMama", year: "©23", image: "/ShyMama Mockup.png", href: "/work/shymama" },
+                { title: "MyTzedakah", year: "©24", image: "/MTF Card.png", href: "/work/mytzedakah" },
               ].map((project) => (
                 <a
                   key={project.title}

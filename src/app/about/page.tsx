@@ -54,14 +54,9 @@ export default function AboutPage() {
 
           {/* ── SECTION 1: THE BIO ───────────────────────────── */}
           <section>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "clamp(2rem, 5vw, 80px)",
-              alignItems: "start",
-            }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 items-start" style={{ gap: "clamp(2rem, 5vw, 80px)" }}>
               {/* Left — bio text */}
-              <div>
+              <div className="order-2 md:order-1">
                 <h2 style={{
                   fontFamily: MONA,
                   fontWeight: 300,
@@ -93,7 +88,7 @@ export default function AboutPage() {
               </div>
 
               {/* Right — profile image */}
-              <div style={{ position: "sticky", top: "120px" }}>
+              <div className="order-1 md:order-2 md:sticky md:top-[120px]">
                 <img
                   src="/nomi-avatar.png"
                   alt="Nomi Reiss"
@@ -113,12 +108,7 @@ export default function AboutPage() {
 
           {/* ── SECTION 2 + 3: WORKFLOW + SIDEBAR + CTA ─────── */}
           <section style={{ paddingBottom: "120px", display: "flex", flexDirection: "column", }}>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "7fr 3fr",
-              gap: "clamp(2rem, 5vw, 72px)",
-              alignItems: "start",
-            }}>
+            <div className="grid grid-cols-1 md:[grid-template-columns:7fr_3fr] items-start" style={{ gap: "clamp(2rem, 5vw, 72px)" }}>
               {/* Main — workflow */}
               <div>
                 <h2 style={{
@@ -183,7 +173,7 @@ export default function AboutPage() {
               </div>
 
               {/* Sidebar — the direct handshake */}
-              <aside style={{ position: "sticky", top: "120px", display: "flex", flexDirection: "column", gap: "32px" }}>
+              <aside className="md:sticky md:top-[120px] pb-16 md:pb-0" style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
                 <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px" }}>
                   <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
                     The Direct Handshake
