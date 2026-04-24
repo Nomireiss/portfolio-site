@@ -181,11 +181,15 @@ export default function NylasPage() {
             </div>
           </header>
 
+          {/* ── HERO IMAGE ───────────────────────────────────── */}
+          <div style={{ marginBottom: "48px", borderRadius: "10px", overflow: "hidden" }}>
+            <img src="/Nylas Hero.png" alt="Nylas Platform — Hero Shot" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+
           {/* ── SECTION 1: THE ENTRY ─────────────────────────── */}
           <SectionGrid
             main={
               <>
-                <ImagePlaceholder label="Nylas Platform — Hero Shot (100% Fidelity)" aspectRatio="16/10" />
                 <SectionHeading>
                   Architecting for Velocity:<br />
                   <span style={{ fontWeight: 800 }}>The Dashboard Rebirth.</span>
@@ -229,12 +233,8 @@ export default function NylasPage() {
                 <BulletItem label="Engineering Velocity:">
                   Reduced the time from &ldquo;Design Intent&rdquo; to &ldquo;Production Ready&rdquo; by standardizing the implementation framework.
                 </BulletItem>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "12px" }}>
-                  {["NDS — Component Library", "Token Architecture"].map(l => (
-                    <div key={l} style={{ aspectRatio: "4/3", background: "#F2F2F2", borderRadius: "10px", border: "1px solid #E8E8E8", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <span style={{ fontFamily: MONO, fontSize: "0.65rem", color: "#B5B5B5" }}>{l}</span>
-                    </div>
-                  ))}
+                <div style={{ marginTop: "32px", transform: "scale(1.08)", transformOrigin: "left center" }}>
+                  <img src="/Components.png" alt="NDS — Component Library" style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px" }} />
                 </div>
               </>
             }
@@ -265,7 +265,14 @@ export default function NylasPage() {
                 <BulletItem label="Onboarding Efficiency:">
                   Streamlined the time-to-first-API-call by reducing the &ldquo;clutter&rdquo; of legacy onboarding steps.
                 </BulletItem>
-                <ImagePlaceholder label="Dashboard — Suite Transformation" aspectRatio="16/9" />
+                <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "16px", marginTop: "32px", alignItems: "start", transform: "scale(1.08)", transformOrigin: "left center" }}>
+                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                    <img src="/Sandbox Email Explorer Step 2.png" alt="Sandbox Email Explorer" style={{ width: "100%", height: "auto", display: "block" }} />
+                  </div>
+                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                    <img src="/KBD Search (1).png" alt="KBD Search" style={{ width: "100%", height: "auto", display: "block" }} />
+                  </div>
+                </div>
               </>
             }
             sidebar={
@@ -290,7 +297,6 @@ export default function NylasPage() {
                   <PullQuote>
                     &ldquo;The redesign resulted in a unified platform that successfully supported the launch of our most complex AI features to date. By resolving the ambiguity of our legacy system, I provided Nylas with a stable foundation for the next decade of growth. This wasn&rsquo;t just a design win; it was an operational victory for the entire product org.&rdquo;
                   </PullQuote>
-                  <ImagePlaceholder label="Results — System at Scale" aspectRatio="16/9" />
                 </>
               }
               sidebar={
@@ -299,6 +305,9 @@ export default function NylasPage() {
                 </SidebarComment>
               }
             />
+            <div style={{ marginTop: "48px", borderRadius: "10px", overflow: "hidden" }}>
+              <img src="/Nylas UI.png" alt="Results — System at Scale" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}
