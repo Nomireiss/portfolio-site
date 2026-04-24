@@ -190,7 +190,7 @@ export default function MyTzedakahPage() {
 
           {/* ── HERO IMAGE ───────────────────────────────────── */}
           <div style={{ marginBottom: "48px" }}>
-            <ImagePlaceholder label="MyTzedakah Platform — Hero Shot" aspectRatio="16/9" />
+            <img src="/MTF Cover.png" alt="MyTzedakah Platform — Hero Shot" style={{ width: "85%", height: "auto", display: "block", borderRadius: "10px", margin: "0 auto" }} />
           </div>
 
           {/* ── SECTION 1: THE ENTRY ─────────────────────────── */}
@@ -225,35 +225,26 @@ export default function MyTzedakahPage() {
               <>
                 <SectionEyebrow>The Core Logic</SectionEyebrow>
                 <SectionHeading>
-                  From Reactive to<br />
-                  <span style={{ fontWeight: 800 }}>Proactive Giving.</span>
+                  Closing the Loop:<br />
+                  <span style={{ fontWeight: 800 }}>Building an In-App Charity Ecosystem.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I re-engineered the MyTzedakah experience around the concept of
-                  Ideological Commitment. I replaced the fragmented, &lsquo;slick&rsquo;
-                  marketing of individual campaigns with a clean, unified dashboard where
-                  users could curate their own &lsquo;Impact Funds.&rsquo; I audited the
-                  giving logic to prioritize transparency and frequency, respecting the
-                  user&rsquo;s intent above the platform&rsquo;s pressure.&rdquo;
+                  &ldquo;One of the biggest friction points in the legacy experience was &lsquo;The Exit.&rsquo; Users were forced to leave the platform to research charities, breaking the momentum of fund creation. I re-architected the selection process to bring the discovery experience directly into the app. By creating a unified &lsquo;Charity Spotlight&rsquo; system, I ensured that every non-profit had a high-fidelity home within MyTzedakah&mdash;keeping users immersed and informed without ever losing their place in the flow.&rdquo;
                 </PullQuote>
-                <BulletItem label="The Portfolio Logic:">
-                  Designing a modular &ldquo;Fund&rdquo; system that lets users distribute
-                  a single monthly amount across multiple charities.
+                <BulletItem label="Mobile-First Selection:">
+                  Designing an intuitive, tactile process for adding and tracking charities within a fund, specifically optimized for one-handed mobile browsing.
                 </BulletItem>
-                <BulletItem label="The Frequency Anchor:">
-                  Introducing &ldquo;Daily Rhythm&rdquo; features that mimic the physical
-                  act of dropping a coin into a Tzedakah box, keeping the momentum of
-                  kindness alive.
+                <BulletItem label="The Active Fund Tracker:">
+                  Introducing a persistent, interactive &ldquo;Fund Tray&rdquo; that allows users to see their selections grow in real-time, providing immediate visual feedback and a sense of ownership.
                 </BulletItem>
-                <ImagePlaceholder label="Impact Fund Dashboard — Core Logic" aspectRatio="4/3" />
+                <div style={{ marginTop: "32px", borderRadius: "10px", overflow: "hidden" }}>
+                  <img src="/Mobile Create Fund.png" alt="Mobile Create Fund — In-App Discovery" style={{ width: "100%", height: "auto", display: "block" }} />
+                </div>
               </>
             }
             sidebar={
               <SidebarComment label="Technical Logic">
-                I implemented a custom &lsquo;Auto-Refill&rsquo; and &lsquo;Streak&rsquo;
-                system. By normalizing the data flow between Stripe and the user&rsquo;s
-                ideological goals, we achieved a near-zero churn rate. Stability is the
-                hallmark of trust.
+                We eliminated the &lsquo;External Tab&rsquo; fatigue. I designed a modular content system that could ingest various charity data points and render them into a consistent, premium &lsquo;In-App Spotlight.&rsquo; This kept the conversion rate stable by preventing users from dropping off into a browser rabbit hole.
               </SidebarComment>
             }
           />
@@ -266,34 +257,38 @@ export default function MyTzedakahPage() {
               <>
                 <SectionEyebrow>The Scale</SectionEyebrow>
                 <SectionHeading>
-                  Modernising<br />
-                  <span style={{ fontWeight: 800 }}>the Mitzvah.</span>
+                  Architecting Social Impact:<br />
+                  <span style={{ fontWeight: 800 }}>The Fundraising &amp; White-Label Ecosystem.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I architected a design language that felt both timeless and
-                  technical. By using high-end typography and generous white space, I
-                  ensured that the &lsquo;sacredness&rsquo; of the act wasn&rsquo;t lost
-                  in the digital noise. The result was a platform that scaled from a simple
-                  mobile app to a robust charity management tool, providing a common
-                  language for donors and non-profits alike.&rdquo;
+                  &ldquo;To truly scale MyTzedakah, we had to move beyond the individual fund. I architected a dual-stream ecosystem that empowered both users and organizations to act as catalysts for generosity. This involved designing a high-conversion peer-to-peer (P2P) campaign builder for users and a robust &lsquo;White-Label&rsquo; template system for organizations&mdash;providing a professional-grade donation infrastructure powered by the MyTzedakah engine.&rdquo;
                 </PullQuote>
-                <BulletItem label="The Transparency Engine:">
-                  Developing &ldquo;Impact Reports&rdquo; that converted raw donation data
-                  into clear, human narratives.
+                <BulletItem label="Peer-to-Peer Campaign Builder:">
+                  I designed a streamlined flow for users to select charities, craft a campaign profile, and generate unique sharing links&mdash;turning donors into advocates.
                 </BulletItem>
-                <BulletItem label="The Ethical UI:">
-                  Removing &ldquo;Guilt-Based&rdquo; dark patterns and replacing them with
-                  moments of calm, intentional choice.
+                <BulletItem label="The Social Proof Wall:">
+                  Introduced a live &ldquo;Comment Wall&rdquo; and donor feedback system, allowing for public messages of support and creating a real-time narrative around the fundraising goal.
                 </BulletItem>
-                <ImagePlaceholder label="Mobile App + Charity Dashboard" aspectRatio="16/9" />
+                <BulletItem label="B2B White-Label Templates:">
+                  Created a modular UI framework for organizations to deploy their own branded donation sites. These templates were designed for rapid deployment while maintaining the core technical logic and security of our platform.
+                </BulletItem>
+                <div style={{ marginTop: "32px", width: "115%", marginLeft: "-7.5%" }}>
+                  <img src="/Zoe Fundraiser.png" alt="P2P Campaign Builder — Zoe Fundraiser" style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px" }} />
+                </div>
               </>
             }
             sidebar={
-              <SidebarComment label="Design Language">
-                The visual system had to hold two contradictions at once: the weight of
-                tradition and the lightness of a daily habit. Every typographic choice was
-                in service of making generosity feel effortless, not obligatory.
-              </SidebarComment>
+              <>
+                <SidebarComment label="The Social Logic" mention="@Hiring Manager">
+                  The challenge here was maintaining brand integrity while allowing for user customization.
+                  <p style={{ margin: "12px 0 0" }}>
+                    I built a &lsquo;White-Label&rsquo; design system that allowed organizations to skin the interface with their own brand identity without compromising the high-fidelity user experience or the mission-critical giving logic.
+                  </p>
+                </SidebarComment>
+                <SidebarComment label="Technical Logic">
+                  I focused on the &lsquo;Handshake&rsquo; of the sharing link. I optimized the social metadata and landing page hierarchy to ensure that when a donor arrived from a shared link, the &lsquo;Campaigner&rsquo;s Narrative&rsquo; and the &lsquo;Call to Action&rsquo; were the primary focus&mdash;reducing the bounce rate for P2P gifts.
+                </SidebarComment>
+              </>
             }
           />
 
@@ -327,7 +322,9 @@ export default function MyTzedakahPage() {
                 </SidebarComment>
               }
             />
-            <ImagePlaceholder label="Impact — A Democracy of Giving" aspectRatio="16/9" />
+            <div style={{ marginTop: "48px", borderRadius: "10px", overflow: "hidden" }}>
+              <img src="/Choose Amounts.jpg" alt="Impact — A Democracy of Giving" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}

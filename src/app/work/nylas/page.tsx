@@ -148,7 +148,7 @@ export default function NylasPage() {
 
             <h1 style={{
               fontFamily: MONA,
-              fontWeight: 800,
+              fontWeight: 300,
               fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
@@ -181,26 +181,33 @@ export default function NylasPage() {
             </div>
           </header>
 
-          {/* ── SECTION 1: THE MANDATE ───────────────────────── */}
+          {/* ── HERO IMAGE ───────────────────────────────────── */}
+          <div style={{ marginBottom: "48px", borderRadius: "10px", overflow: "hidden" }}>
+            <img src="/Nylas Hero.png" alt="Nylas Platform — Hero Shot" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+
+          {/* ── SECTION 1: THE ENTRY ─────────────────────────── */}
           <SectionGrid
             main={
               <>
-                <ImagePlaceholder label="Nylas Platform — Hero Shot (100% Fidelity)" aspectRatio="16/10" />
+                <SectionHeading>
+                  Architecting for Velocity:<br />
+                  <span style={{ fontWeight: 800 }}>The Dashboard Rebirth.</span>
+                </SectionHeading>
+                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 20px" }}>
+                  <strong style={{ color: "#0A0A0A" }}>The Mission:</strong> To transform a legacy developer dashboard into a unified, high-velocity architectural ecosystem.
+                </p>
+                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+                  <strong style={{ color: "#0A0A0A" }}>The Problem:</strong> Nylas was facing a &ldquo;fragmentation tax.&rdquo; The existing dashboard was a collection of siloed features rather than a cohesive product. This slowed down engineering cycles, confused new users, and hindered the platform&rsquo;s ability to scale for the &ldquo;Agentic Era&rdquo; of AI.
+                </p>
                 <PullQuote>
-                  &ldquo;When I joined Nylas, the user journey felt like crossing borders
-                  between three different countries. My mandate was to eliminate the
-                  cognitive load of &lsquo;context switching&rsquo; by building a singular,
-                  high-performance design language that scaled from a marketing headline to
-                  a complex API configuration.&rdquo;
+                  &ldquo;I led the end-to-end redesign of the Nylas Dashboard, functioning as both a Principal Designer and a Strategic Product Partner. My goal was to eliminate the structural debt that was slowing us down and replace it with a design system built for speed, clarity, and the future of AI-integrated developer tools.&rdquo;
                 </PullQuote>
               </>
             }
             sidebar={
-              <SidebarComment label="Annotation: The Problem" mention="@Hiring Manager">
-                I identified 14 different button styles across the suite in week one.
-                Fragmentation isn&rsquo;t just an aesthetic issue — it&rsquo;s a velocity
-                killer. Every inconsistent component is a decision an engineer shouldn&rsquo;t
-                have to make.
+              <SidebarComment label="The Operational Bottleneck" mention="@Hiring Manager">
+                This wasn&rsquo;t just a UI refresh. I identified that our &lsquo;Messy Middle&rsquo; was actually an operational bottleneck. By unifying our design and engineering handshakes, we didn&rsquo;t just change pixels&mdash;we changed how fast we could ship.
               </SidebarComment>
             }
           />
@@ -208,44 +215,32 @@ export default function NylasPage() {
           {/* Divider */}
           <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
 
-          {/* ── SECTION 2: THE NDS ───────────────────────────── */}
+          {/* ── SECTION 2: THE CORE LOGIC ────────────────────── */}
           <SectionGrid
             main={
               <>
-                <SectionEyebrow>The How</SectionEyebrow>
+                <SectionEyebrow>The Core Logic</SectionEyebrow>
                 <SectionHeading>
-                  Building the Bridge:<br />
-                  <span style={{ fontWeight: 800 }}>The Nylas Design System (NDS).</span>
+                  Systemizing<br />
+                  <span style={{ fontWeight: 800 }}>the Handshake.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I architected the NDS as a multi-layered system. By leveraging
-                  Shadcn&rsquo;s accessible foundations and Tailwind&rsquo;s utility-first
-                  logic, I created a component library that served two masters: the editorial
-                  needs of the website and the dense, data-heavy requirements of the
-                  dashboard.&rdquo;
+                  &ldquo;I spearheaded the migration to a modern technical stack using Shadcn and Tailwind, moving Nylas away from fragmented UI components toward a mature, documented Design System. This allowed us to treat the dashboard as a living architecture where new features&mdash;like our AI-to-AI communication tools&mdash;could be &lsquo;plugged in&rsquo; without breaking the existing logic.&rdquo;
                 </PullQuote>
-                <BulletItem label="Atomic Alignment:">
-                  Synchronizing color palettes and spacing scales so the &ldquo;Marketing
-                  Pitch&rdquo; felt like the &ldquo;Product Reality.&rdquo;
+                <BulletItem label="Component Maturity:">
+                  Audited and rebuilt the library to ensure 100% parity between design and code.
                 </BulletItem>
-                <BulletItem label="The Component Pivot:">
-                  Moving away from rigid, legacy components to a composable architecture
-                  that empowered engineers to build faster.
+                <BulletItem label="Engineering Velocity:">
+                  Reduced the time from &ldquo;Design Intent&rdquo; to &ldquo;Production Ready&rdquo; by standardizing the implementation framework.
                 </BulletItem>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "12px" }}>
-                  {["NDS — Component Library", "Token Architecture"].map(l => (
-                    <div key={l} style={{ aspectRatio: "4/3", background: "#F2F2F2", borderRadius: "10px", border: "1px solid #E8E8E8", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <span style={{ fontFamily: MONO, fontSize: "0.65rem", color: "#B5B5B5" }}>{l}</span>
-                    </div>
-                  ))}
+                <div style={{ marginTop: "32px", transform: "scale(1.08)", transformOrigin: "left center" }}>
+                  <img src="/Components.png" alt="NDS — Component Library" style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px" }} />
                 </div>
               </>
             }
             sidebar={
-              <SidebarComment label="Operational Note">
-                I didn&rsquo;t just hand off a library. I re-engineered the hand-off process
-                itself. By aligning our Figma variables directly with our Tailwind tokens,
-                we created a 1:1 parity between design and production.
+              <SidebarComment label="Technical Logic">
+                We moved away from &lsquo;custom everything.&rsquo; I enforced a strict 1:1 token system between Figma and Tailwind. If it wasn&rsquo;t in the system, it wasn&rsquo;t in the product. This discipline is what allowed us to scale the dashboard for enterprise-level data density.
               </SidebarComment>
             }
           />
@@ -253,36 +248,36 @@ export default function NylasPage() {
           {/* Divider */}
           <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
 
-          {/* ── SECTION 3: THE DASHBOARD ─────────────────────── */}
+          {/* ── SECTION 3: THE SCALE ─────────────────────────── */}
           <SectionGrid
             main={
               <>
-                <SectionEyebrow>The Why</SectionEyebrow>
+                <SectionEyebrow>The Scale</SectionEyebrow>
                 <SectionHeading>
-                  From Data Noise to<br /><span style={{ fontWeight: 800 }}>Actionable Intelligence.</span>
+                  Designing for<br /><span style={{ fontWeight: 800 }}>the Next Frontier.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I overhauled the full suite — from Email and Calendar integrations
-                  to the new Agentic tools — focusing on Information Hierarchy. By
-                  introducing a clean, modular &lsquo;Card&rsquo; system and a unified
-                  navigation structure, I transformed the dashboard into a high-clarity
-                  workspace for developers.&rdquo;
+                  &ldquo;As Nylas moved into the &lsquo;Agentic Era,&rsquo; I focused on ensuring the dashboard could handle the increased complexity of AI-driven data flows. I redesigned the navigation and information architecture to prioritize &lsquo;Actionable Clarity,&rsquo; ensuring that developers could manage millions of data points without cognitive overload.&rdquo;
                 </PullQuote>
-                <BulletItem label="Logic Audit:">
-                  Redesigning the onboarding flow to prioritise the &ldquo;Time to First
-                  API Call.&rdquo;
+                <BulletItem label="Universal Search:">
+                  Built a &ldquo;Command-K&rdquo; style logic that moved beyond simple navigation to act as a global functional hub.
                 </BulletItem>
-                <BulletItem label="The UX Shift:">
-                  Reducing the number of clicks required for key administrative tasks by
-                  40% through better layout density.
+                <BulletItem label="Onboarding Efficiency:">
+                  Streamlined the time-to-first-API-call by reducing the &ldquo;clutter&rdquo; of legacy onboarding steps.
                 </BulletItem>
-                <ImagePlaceholder label="Dashboard — Suite Transformation" aspectRatio="16/9" />
+                <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "16px", marginTop: "32px", alignItems: "start", transform: "scale(1.08)", transformOrigin: "left center" }}>
+                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                    <img src="/Sandbox Email Explorer Step 2.png" alt="Sandbox Email Explorer" style={{ width: "100%", height: "auto", display: "block" }} />
+                  </div>
+                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                    <img src="/KBD Search (1).png" alt="KBD Search" style={{ width: "100%", height: "auto", display: "block" }} />
+                  </div>
+                </div>
               </>
             }
             sidebar={
-              <SidebarComment label="Deep Dive">
-                The dashboard needed to transition from a &ldquo;Monitoring Tool&rdquo; to
-                a &ldquo;Strategic Interface&rdquo; for the Agentic Era.
+              <SidebarComment label="The Agentic Era">
+                The dashboard needed to transition from a &ldquo;Monitoring Tool&rdquo; to a &ldquo;Strategic Interface&rdquo; for the Agentic Era. Every navigation decision was made to surface the right signal at the right moment.
               </SidebarComment>
             }
           />
@@ -290,38 +285,29 @@ export default function NylasPage() {
           {/* Divider */}
           <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />
 
-          {/* ── SECTION 4: THE RESULT ────────────────────────── */}
+          {/* ── SECTION 4: THE RESOLUTION ────────────────────── */}
           <section style={{ paddingBottom: "120px" }}>
             <SectionGrid
               main={
                 <>
-                  <SectionEyebrow>The Impact</SectionEyebrow>
+                  <SectionEyebrow>The Resolution</SectionEyebrow>
                   <SectionHeading>
-                    Operational Excellence:<br /><span style={{ fontWeight: 800 }}>A Platform Stabilised.</span>
+                    Stability Found:<br /><span style={{ fontWeight: 800 }}>The Principal Handover.</span>
                   </SectionHeading>
                   <PullQuote>
-                    &ldquo;The common design language didn&rsquo;t just make the product look
-                    better — it made the company move faster. We achieved a cohesive brand
-                    identity that signalled maturity to our enterprise clients, while the
-                    internal engineering velocity increased because the &lsquo;Messy
-                    Middle&rsquo; of hand-offs had been replaced by a reliable, automated
-                    system.&rdquo;
+                    &ldquo;The redesign resulted in a unified platform that successfully supported the launch of our most complex AI features to date. By resolving the ambiguity of our legacy system, I provided Nylas with a stable foundation for the next decade of growth. This wasn&rsquo;t just a design win; it was an operational victory for the entire product org.&rdquo;
                   </PullQuote>
-                  <ImagePlaceholder label="Results — System at Scale" aspectRatio="16/9" />
                 </>
               }
               sidebar={
-                <SidebarComment label="Annotation: The Outcome">
-                  <p style={{ marginBottom: "10px" }}>
-                    <strong style={{ color: "#0A0A0A" }}>Strategic maturity</strong> delivered
-                    at the product level.
-                  </p>
-                  <p style={{ color: "#737373", fontSize: "0.72rem", margin: 0 }}>
-                    This is what Principal-level operational design leadership looks like.
-                  </p>
+                <SidebarComment label="Final Take" mention="@Hiring Manager">
+                  My Impact Review at Nylas highlighted my ability to &lsquo;increase velocity through clarity.&rsquo; I&rsquo;m not just a designer; I&rsquo;m an architect who ensures your team can build faster because the foundation is sound.
                 </SidebarComment>
               }
             />
+            <div style={{ marginTop: "48px", borderRadius: "10px", overflow: "hidden" }}>
+              <img src="/Nylas UI.png" alt="Results — System at Scale" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}
@@ -331,13 +317,13 @@ export default function NylasPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { title: "SeeTree", year: "©23", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
-                { title: "MyTzedakah", year: "©24", image: "/MTF Card.png", href: "/work/mytzedakah" },
+                { title: "SeeTree", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
+                { title: "MyTzedakah", image: "/MTF Card.png", href: "/work/mytzedakah" },
               ].map((project) => (
                 <a
                   key={project.title}
-                  href={project.href ?? undefined}
-                  style={{ display: "block", textDecoration: "none", cursor: project.href ? "pointer" : "default" }}
+                  href={project.href}
+                  style={{ display: "block", textDecoration: "none", cursor: "pointer" }}
                 >
                   <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "0", overflow: "hidden", marginBottom: "14px" }}>
                     <img
