@@ -66,9 +66,8 @@ export default function ProjectGallery() {
                 <p style={{
                   fontFamily: INTER,
                   fontSize: "0.9rem",
-                  fontWeight: 400,
-                  color: isActive ? "#3998EA" : "#999999",
                   fontWeight: isActive ? 600 : 400,
+                  color: isActive ? "#3998EA" : "#999999",
                   transition: "color 0.2s ease, font-weight 0.2s ease",
                   margin: 0,
                   letterSpacing: "0.01em",
