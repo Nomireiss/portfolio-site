@@ -47,7 +47,7 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
     >
       <div className="w-full px-4 sm:px-10 md:px-20 py-4">
         <div className="flex items-center justify-between">
-          <a href="#" aria-label="Home">
+          <a href="/" aria-label="Home">
             <LogoIcon colored={isColored} />
           </a>
 
