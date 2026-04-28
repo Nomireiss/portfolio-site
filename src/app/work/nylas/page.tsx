@@ -110,13 +110,13 @@ function SectionGrid({ main, sidebar }: { main: React.ReactNode; sidebar: React.
 /* ─── Page ────────────────────────────────────────────────────── */
 
 export default function NylasPage() {
-  const pad = "clamp(1rem, 6.94vw, 80px)";
+  const pad = "clamp(1rem, 3.5vw, 48px)";
 
   return (
     <>
       <Navigation forceColored />
       <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", paddingLeft: pad, paddingRight: pad }}>
+        <div style={{ maxWidth: "1440px", margin: "0 auto", paddingLeft: pad, paddingRight: pad }}>
 
           {/* Back */}
           <div style={{ paddingTop: "40px", paddingBottom: "56px" }}>
