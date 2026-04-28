@@ -57,9 +57,9 @@ export default function CTASection() {
             margin: 0,
           }}
         >
-          Ready to resolve the ambiguity?
+          Have a vision that needs a system?
           <br />
-          Let&rsquo;s make something inevitable.
+          Let&rsquo;s talk about making it a reality.
         </h2>
 
         {/* Button + status */}
