@@ -142,7 +142,7 @@ export default function NylasPage() {
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
               <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
-                Case Study · Platform Design · 2024
+                Case Study · Platform Design · 2024–present
               </span>
             </div>
 
