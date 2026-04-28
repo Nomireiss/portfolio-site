@@ -57,11 +57,6 @@ export default function SkillsGrid() {
             Does the origami crane icon hit the right note here? I love that
             it refers to craft and precision, but is that obvious enough?
           </p>
-          <p>
-            The skeletal logic is stabilized. Now, I&rsquo;m increasing the
-            resolution to 75%, transitioning from raw requirements into the
-            functional reality of the components.
-          </p>
         </CommentCard>
       </div>
 
