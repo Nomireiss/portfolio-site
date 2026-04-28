@@ -18,10 +18,15 @@ export default function CTASection() {
       >
       {/* Top row — social links */}
       <div style={{ display: "flex", justifyContent: "flex-end", gap: "32px" }}>
-        {["LinkedIn", "Dribbble", "Read.cv"].map((link) => (
+        {[
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/nomi-reiss-8a7a69b7" },
+          { label: "Read.cv", href: "https://read.cv/nomireiss" },
+        ].map(({ label, href }) => (
           <a
-            key={link}
-            href="#"
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "0.85rem",
@@ -33,7 +38,7 @@ export default function CTASection() {
             onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
           >
-            {link}
+            {label}
           </a>
         ))}
       </div>
@@ -122,7 +127,7 @@ export default function CTASection() {
 
         <div style={{ textAlign: "center" }}>
           <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.25)" }}>
-            Designed &amp; Built by Nomi Reiss
+            Designed &amp; Built by Nomi Reiss (and Claude)
           </span>
         </div>
 
