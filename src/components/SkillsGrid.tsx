@@ -41,9 +41,10 @@ export default function SkillsGrid() {
       <div className="hidden lg:block">
         <CommentCard time="just now" className="right-[92px] bottom-[-200px]">
           <p>
-            There&rsquo;s a lot of white space here. I don&rsquo;t mind it as
-            we&rsquo;re still mapping things out, but let&rsquo;s keep it in
-            mind as we move through the design stage.
+            There&rsquo;s a lot of white space here. I don&rsquo;t mind it
+            for the mapping stage, it keeps the hierarchy clean while
+            we&rsquo;re still architecting the flow. Let&rsquo;s just keep
+            an eye on the density as the components get more complex.
           </p>
         </CommentCard>
       </div>
@@ -53,18 +54,13 @@ export default function SkillsGrid() {
         <CommentCard time="1 minute ago" className="left-[92px] top-[32px]">
           <p>
             <Bold>Note to Self: </Bold>
-            Does the origami crane icon in the Visual Interaction section hit
-            the right note? I love that it refers to craft and precision, but
-            is that obvious enough from this icon?
+            Does the origami crane icon hit the right note here? I love that
+            it refers to craft and precision, but is that obvious enough?
           </p>
           <p>
-            <Mention>@Hiring Manager / Head of Product </Mention>
-            This is where I stop talking about the map and start showing you
-            the treasure. The goal here is to prove that I can handle the
-            &lsquo;heavy lifting&rsquo; of your most complex features while
-            keeping the aesthetic at a premium level. Let&rsquo;s dial up the
-            fidelity to 75% here, it&rsquo;s time you see what I can actually
-            do.
+            The skeletal logic is stabilized. Now, I&rsquo;m increasing the
+            resolution to 75%, transitioning from raw requirements into the
+            functional reality of the components.
           </p>
         </CommentCard>
       </div>

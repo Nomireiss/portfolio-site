@@ -80,22 +80,13 @@ export default function Hero() {
           {/* Figma comment card */}
           <CommentCard time="2 minutes ago" className="-top-4 -right-16">
             <p>
-              <Mention>DesignTeam </Mention>
-              Since we know the users on this page are likely Heads of Product
-              and Decision Makers, let&rsquo;s swap this wireframe placeholder
-              for the Multidimensional Value Prism.
-            </p>
-            <p>
-              We need to kill the ambiguity of &lsquo;what I do&rsquo;
-              immediately. They&rsquo;ve probably got 20 other tabs open, so
-              let&rsquo;s give them the &lsquo;Treasure&rsquo; up front: a
-              high-fidelity visual of my process that proves I can handle their
-              most complex logic. Let&rsquo;s make the interaction on this
-              crisp;{" "}
-              <strong>
-                if they&rsquo;re going to judge the &lsquo;Treasure,&rsquo;
-                let&rsquo;s give them something worth finding.&rdquo;
-              </strong>
+              <Mention>@DesignTeam </Mention>
+              Let&rsquo;s cut the fluff. The people landing here are busy.
+              Heads of Product don&rsquo;t have time to hunt for the value.
+              Let&rsquo;s swap this placeholder for the SeeTree Logic Audit.
+              If they&rsquo;re looking for a partner who can handle
+              high-stakes complexity, let&rsquo;s show them the proof
+              immediately.
             </p>
           </CommentCard>
         </div>
