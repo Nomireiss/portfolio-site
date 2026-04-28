@@ -10,18 +10,9 @@ const INTER = "Inter, sans-serif";
 
 function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <blockquote style={{
-      margin: "0 0 28px",
-      paddingLeft: "20px",
-      borderLeft: "3px solid #0A0A0A",
-      fontFamily: INTER,
-      fontSize: "1.1rem",
-      fontStyle: "italic",
-      lineHeight: 1.8,
-      color: "#3A3A3A",
-    }}>
+    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
       {children}
-    </blockquote>
+    </p>
   );
 }
 
@@ -200,11 +191,11 @@ export default function SeeTreePage() {
             main={
               <>
                 <PullQuote>
-                  &ldquo;I joined SeeTree to transform a fragmented collection of drone maps
+                  I joined SeeTree to transform a fragmented collection of drone maps
                   and sensor logs into a unified, actionable &lsquo;Medical File&rsquo; for
                   every tree. The challenge was to create a design system that scaled from
                   the muddy reality of field scouting to the high-level strategic needs of
-                  enterprise agronomists.&rdquo;
+                  enterprise agronomists.
                 </PullQuote>
               </>
             }
@@ -229,11 +220,11 @@ export default function SeeTreePage() {
                   <span style={{ fontWeight: 800 }}>Architecting Actionable Insights.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I led the redesign of the core SeeTree experience, shifting the
+                  I led the redesign of the core SeeTree experience, shifting the
                   focus from passive observation to proactive management. By introducing a
                   &lsquo;Mission-Based&rsquo; architecture, we ensured that every user —
                   from the scout in the field to the manager in the office — knew exactly
-                  which &lsquo;at-risk&rsquo; trees required immediate intervention.&rdquo;
+                  which &lsquo;at-risk&rsquo; trees required immediate intervention.
                 </PullQuote>
                 <BulletItem label="The GIS System:">
                   Re-engineering the MapConnect logic to handle 2M+ data points without
@@ -275,12 +266,12 @@ export default function SeeTreePage() {
                   One System,<br /><span style={{ fontWeight: 800 }}>Two Realities.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I architected a cross-platform design language that maintained
+                  I architected a cross-platform design language that maintained
                   brand integrity while adapting to vastly different environmental
                   constraints. The high-contrast, &lsquo;big-button&rsquo; mobile UI
                   enabled rapid data entry in the field, while the expansive, data-rich
                   desktop dashboard provided the &lsquo;God-view&rsquo; required for
-                  global orchard management.&rdquo;
+                  global orchard management.
                 </PullQuote>
                 <BulletItem label="The Component Library:">
                   Built for scalability to accommodate 8+ different agricultural sectors
@@ -327,10 +318,10 @@ export default function SeeTreePage() {
                     Stability Found:<br /><span style={{ fontWeight: 800 }}>The Result of Clarity.</span>
                   </SectionHeading>
                   <PullQuote>
-                    &ldquo;The impact was immediate. By resolving the ambiguity of the
+                    The impact was immediate. By resolving the ambiguity of the
                     field-to-office data loop, we achieved a 40% reduction in labour hours
                     for Tier 1 agribusiness clients. We didn&rsquo;t just build an app; we
-                    built a global standard for agricultural intelligence.&rdquo;
+                    built a global standard for agricultural intelligence.
                   </PullQuote>
                 </>
               }

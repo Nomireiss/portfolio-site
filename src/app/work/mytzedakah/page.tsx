@@ -10,18 +10,9 @@ const INTER = "Inter, sans-serif";
 
 function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <blockquote style={{
-      margin: "0 0 28px",
-      paddingLeft: "20px",
-      borderLeft: "3px solid #0A0A0A",
-      fontFamily: INTER,
-      fontSize: "1.1rem",
-      fontStyle: "italic",
-      lineHeight: 1.8,
-      color: "#3A3A3A",
-    }}>
+    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
       {children}
-    </blockquote>
+    </p>
   );
 }
 
@@ -198,12 +189,12 @@ export default function MyTzedakahPage() {
             main={
               <>
                 <PullQuote>
-                  &ldquo;I led the end-to-end design of MyTzedakah, a digital ecosystem
+                  I led the end-to-end design of MyTzedakah, a digital ecosystem
                   built to turn the ancient tradition of giving into a frictionless daily
                   rhythm. By moving beyond &lsquo;emergency&rsquo; philanthropy, I
                   architected a platform that empowers users to build personalized
                   portfolios of impact&mdash;stabilizing the recurring revenue for charities
-                  while simplifying the act of giving for the donor.&rdquo;
+                  while simplifying the act of giving for the donor.
                 </PullQuote>
               </>
             }
@@ -229,7 +220,7 @@ export default function MyTzedakahPage() {
                   <span style={{ fontWeight: 800 }}>Building an In-App Charity Ecosystem.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;One of the biggest friction points in the legacy experience was &lsquo;The Exit.&rsquo; Users were forced to leave the platform to research charities, breaking the momentum of fund creation. I re-architected the selection process to bring the discovery experience directly into the app. By creating a unified &lsquo;Charity Spotlight&rsquo; system, I ensured that every non-profit had a high-fidelity home within MyTzedakah&mdash;keeping users immersed and informed without ever losing their place in the flow.&rdquo;
+                  One of the biggest friction points in the legacy experience was &lsquo;The Exit.&rsquo; Users were forced to leave the platform to research charities, breaking the momentum of fund creation. I re-architected the selection process to bring the discovery experience directly into the app. By creating a unified &lsquo;Charity Spotlight&rsquo; system, I ensured that every non-profit had a high-fidelity home within MyTzedakah&mdash;keeping users immersed and informed without ever losing their place in the flow.
                 </PullQuote>
                 <BulletItem label="Mobile-First Selection:">
                   Designing an intuitive, tactile process for adding and tracking charities within a fund, specifically optimized for one-handed mobile browsing.
@@ -261,7 +252,7 @@ export default function MyTzedakahPage() {
                   <span style={{ fontWeight: 800 }}>The Fundraising &amp; White-Label Ecosystem.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;To truly scale MyTzedakah, we had to move beyond the individual fund. I architected a dual-stream ecosystem that empowered both users and organizations to act as catalysts for generosity. This involved designing a high-conversion peer-to-peer (P2P) campaign builder for users and a robust &lsquo;White-Label&rsquo; template system for organizations&mdash;providing a professional-grade donation infrastructure powered by the MyTzedakah engine.&rdquo;
+                  To truly scale MyTzedakah, we had to move beyond the individual fund. I architected a dual-stream ecosystem that empowered both users and organizations to act as catalysts for generosity. This involved designing a high-conversion peer-to-peer (P2P) campaign builder for users and a robust &lsquo;White-Label&rsquo; template system for organizations&mdash;providing a professional-grade donation infrastructure powered by the MyTzedakah engine.
                 </PullQuote>
                 <BulletItem label="Peer-to-Peer Campaign Builder:">
                   I designed a streamlined flow for users to select charities, craft a campaign profile, and generate unique sharing links&mdash;turning donors into advocates.
@@ -305,12 +296,12 @@ export default function MyTzedakahPage() {
                     <span style={{ fontWeight: 800 }}>Catalyst for Change.</span>
                   </SectionHeading>
                   <PullQuote>
-                    &ldquo;The impact was profound. By resolving the ambiguity of
+                    The impact was profound. By resolving the ambiguity of
                     &lsquo;where my money goes,&rsquo; we empowered a new generation of
                     donors to give authentically. We proved that recurring micro-donations
                     are more impactful than one-time checks. I didn&rsquo;t just design an
                     app; I built a financial infrastructure for kindness&mdash;one that is
-                    operationally sound and emotionally resonant.&rdquo;
+                    operationally sound and emotionally resonant.
                   </PullQuote>
                 </>
               }

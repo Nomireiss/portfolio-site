@@ -152,7 +152,7 @@ export default function AboutPage() {
                   <span style={{ fontWeight: 800 }}>worth finding.</span>
                 </h3>
                 <a
-                  href="mailto:hello@nomireiss.com"
+                  href="mailto:nomi.reiss@gmail.com"
                   className="hover:bg-[#0B87E0] transition-colors"
                   style={{
                     display: "inline-flex",

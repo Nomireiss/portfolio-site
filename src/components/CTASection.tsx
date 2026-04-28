@@ -65,7 +65,7 @@ export default function CTASection() {
         {/* Button + status */}
         <div style={{ display: "flex", alignItems: "center", gap: "28px", flexWrap: "wrap" }}>
           <a
-            href="mailto:hello@nomireiss.com"
+            href="mailto:nomi.reiss@gmail.com"
             style={{
               display: "inline-flex", alignItems: "center",
               height: "52px", padding: "0 32px",
@@ -118,7 +118,7 @@ export default function CTASection() {
       }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.4)" }}>
-            hello@nomireiss.com
+            nomi.reiss@gmail.com
           </span>
           <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.4)" }}>
             Toronto / Remote

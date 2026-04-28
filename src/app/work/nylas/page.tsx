@@ -10,18 +10,9 @@ const INTER = "Inter, sans-serif";
 
 function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <blockquote style={{
-      margin: "0 0 28px",
-      paddingLeft: "20px",
-      borderLeft: "3px solid #0A0A0A",
-      fontFamily: INTER,
-      fontSize: "1.1rem",
-      fontStyle: "italic",
-      lineHeight: 1.8,
-      color: "#3A3A3A",
-    }}>
+    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
       {children}
-    </blockquote>
+    </p>
   );
 }
 
@@ -201,7 +192,7 @@ export default function NylasPage() {
                   <strong style={{ color: "#0A0A0A" }}>The Problem:</strong> Nylas was facing a &ldquo;fragmentation tax.&rdquo; The existing dashboard was a collection of siloed features rather than a cohesive product. This slowed down engineering cycles, confused new users, and hindered the platform&rsquo;s ability to scale for the &ldquo;Agentic Era&rdquo; of AI.
                 </p>
                 <PullQuote>
-                  &ldquo;I led the end-to-end redesign of the Nylas Dashboard, functioning as both a Principal Designer and a Strategic Product Partner. My goal was to eliminate the structural debt that was slowing us down and replace it with a design system built for speed, clarity, and the future of AI-integrated developer tools.&rdquo;
+                  I led the end-to-end redesign of the Nylas Dashboard, functioning as both a Principal Designer and a Strategic Product Partner. My goal was to eliminate the structural debt that was slowing us down and replace it with a design system built for speed, clarity, and the future of AI-integrated developer tools.
                 </PullQuote>
               </>
             }
@@ -225,7 +216,7 @@ export default function NylasPage() {
                   <span style={{ fontWeight: 800 }}>the Handshake.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I spearheaded the migration to a modern technical stack using Shadcn and Tailwind, moving Nylas away from fragmented UI components toward a mature, documented Design System. This allowed us to treat the dashboard as a living architecture where new features&mdash;like our AI-to-AI communication tools&mdash;could be &lsquo;plugged in&rsquo; without breaking the existing logic.&rdquo;
+                  I spearheaded the migration to a modern technical stack using Shadcn and Tailwind, moving Nylas away from fragmented UI components toward a mature, documented Design System. This allowed us to treat the dashboard as a living architecture where new features&mdash;like our AI-to-AI communication tools&mdash;could be &lsquo;plugged in&rsquo; without breaking the existing logic.
                 </PullQuote>
                 <BulletItem label="Component Maturity:">
                   Audited and rebuilt the library to ensure 100% parity between design and code.
@@ -257,7 +248,7 @@ export default function NylasPage() {
                   Designing for<br /><span style={{ fontWeight: 800 }}>the Next Frontier.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;As Nylas moved into the &lsquo;Agentic Era,&rsquo; I focused on ensuring the dashboard could handle the increased complexity of AI-driven data flows. I redesigned the navigation and information architecture to prioritize &lsquo;Actionable Clarity,&rsquo; ensuring that developers could manage millions of data points without cognitive overload.&rdquo;
+                  As Nylas moved into the &lsquo;Agentic Era,&rsquo; I focused on ensuring the dashboard could handle the increased complexity of AI-driven data flows. I redesigned the navigation and information architecture to prioritize &lsquo;Actionable Clarity,&rsquo; ensuring that developers could manage millions of data points without cognitive overload.
                 </PullQuote>
                 <BulletItem label="Universal Search:">
                   Built a &ldquo;Command-K&rdquo; style logic that moved beyond simple navigation to act as a global functional hub.
@@ -295,7 +286,7 @@ export default function NylasPage() {
                     Stability Found:<br /><span style={{ fontWeight: 800 }}>The Principal Handover.</span>
                   </SectionHeading>
                   <PullQuote>
-                    &ldquo;The redesign resulted in a unified platform that successfully supported the launch of our most complex AI features to date. By resolving the ambiguity of our legacy system, I provided Nylas with a stable foundation for the next decade of growth. This wasn&rsquo;t just a design win; it was an operational victory for the entire product org.&rdquo;
+                    The redesign resulted in a unified platform that successfully supported the launch of our most complex AI features to date. By resolving the ambiguity of our legacy system, I provided Nylas with a stable foundation for the next decade of growth. This wasn&rsquo;t just a design win; it was an operational victory for the entire product org.
                   </PullQuote>
                 </>
               }

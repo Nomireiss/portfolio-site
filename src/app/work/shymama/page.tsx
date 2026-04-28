@@ -9,18 +9,9 @@ const INTER = "Inter, sans-serif";
 
 function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <blockquote style={{
-      margin: "0 0 28px",
-      paddingLeft: "20px",
-      borderLeft: "3px solid #0A0A0A",
-      fontFamily: INTER,
-      fontSize: "1.1rem",
-      fontStyle: "italic",
-      lineHeight: 1.8,
-      color: "#3A3A3A",
-    }}>
+    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
       {children}
-    </blockquote>
+    </p>
   );
 }
 
@@ -195,11 +186,11 @@ export default function ShyMamaPage() {
             main={
               <>
                 <PullQuote>
-                  &ldquo;I transformed ShyMama from a generic storefront into a subscription
+                  I transformed ShyMama from a generic storefront into a subscription
                   platform built for the physical reality of its users. By prioritizing
                   Contextual Ergonomics, I architected a mobile-first flow that converted
                   first-time visitors by respecting their constraints rather than ignoring
-                  them.&rdquo;
+                  them.
                 </PullQuote>
               </>
             }
@@ -225,11 +216,11 @@ export default function ShyMamaPage() {
                   <span style={{ fontWeight: 800 }}>Maximum Reach.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I led the end-to-end design process, from primary persona development
+                  I led the end-to-end design process, from primary persona development
                   to high-fidelity handoff. The breakthrough came from the Ergonomic Audit:
                   I re-engineered the information architecture so that 90% of critical
                   interactions — selection, subscription toggling, and checkout — lived within
-                  the &lsquo;Natural Thumb Zone&rsquo; of a mobile device.&rdquo;
+                  the &lsquo;Natural Thumb Zone&rsquo; of a mobile device.
                 </PullQuote>
                 <BulletItem label="The Subscription Pivot:">
                   Optimizing the checkout flow to prioritize trust signals and reduce friction
@@ -270,12 +261,12 @@ export default function ShyMamaPage() {
                   <span style={{ fontWeight: 800 }}>through Clarity.</span>
                 </SectionHeading>
                 <PullQuote>
-                  &ldquo;I built a unified design system that balanced the warmth of a
+                  I built a unified design system that balanced the warmth of a
                   consumer brand with the structural rigour of a subscription service. By
                   synthesizing user interviews and empathy mapping, I created a responsive UI
                   that felt intuitive across every touchpoint — ensuring the
                   &lsquo;ShyMama&rsquo; brand felt like a supportive partner, not just a
-                  vendor.&rdquo;
+                  vendor.
                 </PullQuote>
                 <BulletItem label="The Style Guide:">
                   A refined palette and typography system that signalled premium quality and
@@ -310,12 +301,12 @@ export default function ShyMamaPage() {
                     <span style={{ fontWeight: 800 }}>The ROI of Contextual Design.</span>
                   </SectionHeading>
                   <PullQuote>
-                    &ldquo;The result was a high-conversion platform that eliminated the
+                    The result was a high-conversion platform that eliminated the
                     &lsquo;Subscription Roadblock.&rsquo; By resolving the physical ambiguity
                     of the user&rsquo;s environment, I delivered an end-to-end product that
                     was ready for development handoff and optimised for growth. We proved that
                     when you design for the user&rsquo;s reality, the business goals take care
-                    of themselves.&rdquo;
+                    of themselves.
                   </PullQuote>
                   <ImagePlaceholder label="Impact — Conversion Funnel Transformation" aspectRatio="16/9" />
                 </>
