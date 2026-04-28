@@ -22,7 +22,7 @@ export default function Footer() {
           </a>
           <div className="flex flex-wrap gap-x-8 gap-y-3">
             {navLinks.map(({ label, href }) => (
-              <a key={label} href={href} className="text-[#737373] text-sm leading-5 hover:text-[#0A0A0A] transition-colors">
+              <a key={label} href={href} className="text-[#3A3A3A] text-sm leading-5 hover:text-[#0A0A0A] transition-colors">
                 {label}
               </a>
             ))}
@@ -34,7 +34,7 @@ export default function Footer() {
 
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0">
-          <span className="text-[#737373] text-sm leading-5">
+          <span className="text-[#0A0A0A] text-sm leading-5">
             © {new Date().getFullYear()} Nomi Reiss. All rights reserved.
           </span>
         </div>
