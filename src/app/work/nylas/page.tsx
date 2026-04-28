@@ -224,7 +224,7 @@ export default function NylasPage() {
                 <BulletItem label="Engineering Velocity:">
                   Reduced the time from &ldquo;Design Intent&rdquo; to &ldquo;Production Ready&rdquo; by standardizing the implementation framework.
                 </BulletItem>
-                <div style={{ marginTop: "32px", transform: "scale(1.08)", transformOrigin: "left center" }}>
+                <div style={{ marginTop: "32px" }}>
                   <img src="/Components.png" alt="NDS — Component Library" style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px" }} />
                 </div>
               </>
@@ -256,7 +256,7 @@ export default function NylasPage() {
                 <BulletItem label="Onboarding Efficiency:">
                   Streamlined the time-to-first-API-call by reducing the &ldquo;clutter&rdquo; of legacy onboarding steps.
                 </BulletItem>
-                <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "16px", marginTop: "32px", alignItems: "start", transform: "scale(1.08)", transformOrigin: "left center" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "16px", marginTop: "32px", alignItems: "start" }}>
                   <div style={{ borderRadius: "10px", overflow: "hidden" }}>
                     <img src="/Sandbox Email Explorer Step 2.png" alt="Sandbox Email Explorer" style={{ width: "100%", height: "auto", display: "block" }} />
                   </div>
