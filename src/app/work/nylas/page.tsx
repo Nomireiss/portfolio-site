@@ -171,7 +171,7 @@ export default function NylasPage() {
                 { label: "Client", value: "Nylas" },
                 { label: "Role", value: "Principal Product Designer" },
                 { label: "Stack", value: "Shadcn / Tailwind / React" },
-                { label: "Year", value: "2024" },
+                { label: "Year", value: "2024–present" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
                   <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
