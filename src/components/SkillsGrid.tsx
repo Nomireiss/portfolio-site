@@ -3,6 +3,7 @@
 import { Map, Origami, BarChart2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import CommentCard, { Mention, Bold } from "@/components/CommentCard";
+import FigmaTooltip from "@/components/FigmaTooltip";
 
 const skills = [
   {
@@ -83,10 +84,11 @@ export default function SkillsGrid() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skills.map((skill) => {
             const Icon = skill.icon;
-            return (
+            const isOrigami = Icon === Origami;
+            const card = (
               <Card
                 key={skill.title}
-                className="bg-white border border-[#E5E5E5] rounded-2xl shadow-sm"
+                className="bg-white border border-[#E5E5E5] rounded-2xl shadow-sm w-full"
               >
                 <CardContent className="p-6 flex flex-col gap-6">
                   <div className="w-10 h-10 bg-black/5 rounded-lg flex items-center justify-center">
@@ -103,6 +105,11 @@ export default function SkillsGrid() {
                 </CardContent>
               </Card>
             );
+            return isOrigami ? (
+              <FigmaTooltip key={skill.title} label="asset: craft-crane-v1.svg // origin: pastry-roots" display="block">
+                {card}
+              </FigmaTooltip>
+            ) : card;
           })}
         </div>
       </div>

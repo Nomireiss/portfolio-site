@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import FigmaTooltip from "@/components/FigmaTooltip";
 
 const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
@@ -60,7 +61,8 @@ export default function ProjectGallery() {
         {projects.map((project, i) => {
           const isActive = hovered === i;
           return (
-            <div key={i}>
+            <FigmaTooltip key={i} label="frame: project-grid-item // layout: flex-col" display="block">
+            <div>
               {/* Figma-style frame label row */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3px" }}>
                 <p style={{
@@ -109,6 +111,7 @@ export default function ProjectGallery() {
                 />
               </div>
             </div>
+            </FigmaTooltip>
           );
         })}
       </div>
