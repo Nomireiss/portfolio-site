@@ -9,19 +9,19 @@ const skills = [
     icon: Map,
     title: "Skill 01: Information Architecture",
     description:
-      'The "Map" Skill: Designing the skeletal logic that keeps users from getting lost.',
+      'The "Map" Skill: Designing the skeletal logic that prevents user friction.',
   },
   {
     icon: Origami,
     title: "Skill 02: Visual Interaction & Craft",
     description:
-      'The "Treasure" Skill: Obsessing over micro-interactions, lighting, and the tactile feel of the UI.',
+      'The "Precision" Skill: Obsessing over tactile interactions, physics, and the structural integrity of the UI.',
   },
   {
     icon: BarChart2,
     title: "Skill 03: Product Strategy",
     description:
-      'The "Business" Skill: Aligning the design with the actual KPIs that Heads of Product care about.',
+      'The "Business" Skill: Aligning product goals with the operational needs of the organization.',
   },
 ];
 
@@ -67,16 +67,15 @@ export default function SkillsGrid() {
             className="font-semibold leading-tight"
             style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif', fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)", lineHeight: 1.1 }}
           >
-            <span className="text-[#0A0A0A]">The Architect of </span>
-            <span style={{ color: "#0A0A0A" }} className="font-bold">Clarity</span>
-            <span className="text-[#0A0A0A]">.</span>
+            <span className="text-[#0A0A0A]">Resolving </span>
+            <span style={{ color: "#0A0A0A" }} className="font-bold">the Ambiguity.</span>
           </h2>
           <p className="text-[#0A0A0A] text-lg leading-6" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-            I specialize in the &lsquo;messy middle&rsquo; of the design process.
-            While others might see ambiguity as a roadblock, I treat it as raw
-            material. My role is to act as the bridge, translating high-level
-            business goals and fragmented user needs into cohesive digital systems
-            that are as logically sound as they are visually compelling.
+            I treat the design process as an exercise in structural clarity. This
+            is the stage where fragmented needs become a cohesive system. By
+            mapping the architecture and pressure-testing the strategy early, I
+            ensure that the final result isn&rsquo;t just visually compelling,
+            but operationally sound.
           </p>
         </div>
 
