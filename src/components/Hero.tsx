@@ -81,7 +81,7 @@ export default function Hero() {
           <CommentCard time="2 minutes ago" className="-top-4 -right-16">
             <p>
               <Mention>@DesignTeam </Mention>
-              Let&rsquo;s cut the fluff. The people landing here are busy.
+              The people landing here are busy.
               Heads of Product don&rsquo;t have time to hunt for the value.
               Let&rsquo;s swap this placeholder for the SeeTree Logic Audit.
               If they&rsquo;re looking for a partner who can handle
