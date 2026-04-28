@@ -64,8 +64,8 @@ export default function SkillsGrid() {
         {/* Heading */}
         <div className="flex flex-col items-center gap-5 max-w-[672px] mx-auto text-center">
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight md:leading-10"
-            style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}
+            className="font-semibold leading-tight"
+            style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif', fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)", lineHeight: 1.1 }}
           >
             <span className="text-[#0A0A0A]">The Architect of </span>
             <span style={{ color: "#0A0A0A" }} className="font-bold">Clarity</span>
