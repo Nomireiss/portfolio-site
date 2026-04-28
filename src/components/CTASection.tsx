@@ -126,7 +126,7 @@ export default function CTASection() {
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.25)" }}>
+          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.6)" }}>
             Designed &amp; Built by Nomi Reiss (and Claude)
           </span>
         </div>
