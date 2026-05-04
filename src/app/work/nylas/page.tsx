@@ -302,7 +302,9 @@ export default function NylasPage() {
             }
           />
 
-          <ImagePlaceholder label="Redesigned dashboard: Sandbox/Production parity or org settings" />
+          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
+            <img src="/organization-settings.jpg" alt="Organization Settings" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
 
           <Divider />
 
