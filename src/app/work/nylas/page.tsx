@@ -239,7 +239,7 @@ export default function NylasPage() {
           />
 
           <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
-            <img src="/new-sandbox-experience.png" alt="New Sandbox Experience" style={{ width: "100%", height: "auto", display: "block" }} />
+            <img src="/new-sandbox-experience.jpg" alt="New Sandbox Experience" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
