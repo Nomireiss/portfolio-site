@@ -421,27 +421,6 @@ export default function NylasPage() {
                 whiteSpace: "pre",
                 tabSize: 2,
               }}><code>{`// components/dashboard/CreateAgentModal.tsx
-//
-// ──────────────────────────────────────────────────────
-// PORTFOLIO NOTE
-// This component is an example of consuming an in-house
-// design system on top of a dashboard codebase. The
-// imports from "@acme/nds-react" below are placeholders
-// representing the Nylas Design System (NDS); in a real
-// Nylas codebase these would resolve to the published
-// package. The component APIs (Modal, Input, Dropdown,
-// etc.) follow the naming conventions documented in NDS.
-// ──────────────────────────────────────────────────────
-//
-// Design system: Nylas Design System (NDS)
-//   • Color tokens → NDS / Foundations / Color (slate)
-//   • Radius       → NDS / Foundations / Shape (4px)
-//   • Typography   → NDS / Foundations / Type
-//   • Forms        → NDS / Patterns / Forms & Validation
-//   • Modals       → NDS / Patterns / Modals & Overlays
-//
-// Form state is handled with react-hook-form + zod,
-// since NDS does not ship its own form/validation layer.
 
 "use client";
 
