@@ -76,17 +76,12 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
 
 /* ─── Sidebar comment card ────────────────────────────────────── */
 
-function SidebarComment({ label, mention, children }: { label: string; mention?: string; children: React.ReactNode }) {
+function SidebarComment({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ borderLeft: "2px solid #EFF0F6", paddingLeft: "16px" }}>
       <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
         {label}
       </p>
-      {mention && (
-        <p style={{ fontFamily: INTER, fontSize: "1rem", color: "#4497F7", fontWeight: 600, marginBottom: "10px" }}>
-          {mention}
-        </p>
-      )}
       <div style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#1A1A1A" }}>
         {children}
       </div>
@@ -133,7 +128,7 @@ export default function SeeTreePage() {
             </Link>
           </div>
 
-          {/* ── PROJECT HEADER — full width ──────────────────── */}
+          {/* ── PROJECT HEADER ──────────────────────────────── */}
           <header style={{ paddingBottom: "48px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
@@ -151,9 +146,9 @@ export default function SeeTreePage() {
               color: "#0A0A0A",
               margin: "0 0 48px",
             }}>
-              <span style={{ fontWeight: 800 }}>Digitizing the Orchard:</span>
+              <span style={{ fontWeight: 800 }}>One system, eight industries:</span>
               <br />
-              The Intelligence-First Pivot.
+              designing SeeTree&rsquo;s multi-sector platform.
             </h1>
 
             {/* Metadata row */}
@@ -165,8 +160,8 @@ export default function SeeTreePage() {
             }} className="grid grid-cols-2 md:grid-cols-4">
               {[
                 { label: "Client", value: "SeeTree" },
-                { label: "Role", value: "Lead Product Designer" },
-                { label: "Scope", value: "Mobile App + Manager Dashboard" },
+                { label: "Role", value: "Sole Product Designer (end-to-end)" },
+                { label: "Scope", value: "Mobile field app + Manager dashboard" },
                 { label: "Year", value: "2022–2024" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
@@ -177,8 +172,22 @@ export default function SeeTreePage() {
             </div>
           </header>
 
+          {/* ── CHALLENGE INTRO ─────────────────────────────── */}
+          <SectionGrid
+            main={
+              <PullQuote>
+                The challenge: Build a single product that works for citrus growers in California, oil palm operations in Indonesia, coffee plantations in Brazil, and forestry companies across multiple continents — without forking the codebase or fragmenting the brand.
+              </PullQuote>
+            }
+            sidebar={
+              <SidebarComment label="The Scale">
+                Eight agricultural sectors. Four continents. One design system. Every decision had to survive translation across industries with genuinely different vocabularies and workflows.
+              </SidebarComment>
+            }
+          />
+
           {/* ── HERO IMAGE ───────────────────────────────────── */}
-          <div style={{ marginBottom: "48px" }}>
+          <div style={{ marginBottom: "48px", marginTop: "24px" }}>
             <img
               src="/Untitled design - 2026-04-22T155542.913.png"
               alt="SeeTree Platform — Hero Shot"
@@ -186,151 +195,223 @@ export default function SeeTreePage() {
             />
           </div>
 
-          {/* ── SECTION 1: THE AGRICULTURAL DATA GAP ────────── */}
+          <Divider />
+
+          {/* ── THE PROBLEM ─────────────────────────────────── */}
           <SectionGrid
             main={
               <>
+                <SectionHeading>
+                  <span style={{ fontWeight: 800 }}>The problem.</span>
+                </SectionHeading>
                 <PullQuote>
-                  I joined SeeTree to transform a fragmented collection of drone maps
-                  and sensor logs into a unified, actionable &lsquo;Medical File&rsquo; for
-                  every tree. The challenge was to create a design system that scaled from
-                  the muddy reality of field scouting to the high-level strategic needs of
-                  enterprise agronomists.
+                  SeeTree gives farmers individual tree-level intelligence — drone imagery, sensor data, ground observations, and ML-driven health analysis, all stitched into a per-tree &ldquo;medical file.&rdquo; The technology was powerful. The product experience was struggling to keep up with the company&rsquo;s growth.
                 </PullQuote>
+                <PullQuote>
+                  By the time I joined, SeeTree&rsquo;s customer base had expanded well beyond its original citrus-grower roots. Each new vertical — nuts, coffee, oil palm, forestry — brought different workflows, different user populations, different reporting requirements, and different field conditions. The product was being asked to serve all of them, but the design wasn&rsquo;t built for that kind of range. Components had drifted, mobile and desktop didn&rsquo;t share a system, and onboarding a new sector meant rebuilding rather than configuring.
+                </PullQuote>
+                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+                  This is the classic agritech scaling problem: you have one technology platform, but the product needs to feel native in radically different industries.
+                </p>
               </>
             }
             sidebar={
               <SidebarComment label="The Environment">
-                The &ldquo;Messy Middle&rdquo; here was literal. We had to design for 40°C
-                heat, screen glare, and zero-latency requirements in areas with no Wi-Fi.
-                This wasn&rsquo;t just a UI challenge; it was a physics challenge.
+                The &ldquo;messy middle&rdquo; here was literal. We had to design for 40°C heat, screen glare, and zero-latency requirements in areas with no Wi-Fi. This wasn&rsquo;t just a UI challenge; it was a physics challenge.
+              </SidebarComment>
+            }
+          />
+
+          <ImagePlaceholder label="Legacy interface or annotated diagram showing the cross-sector challenge" />
+
+          <Divider />
+
+          {/* ── MY ROLE ─────────────────────────────────────── */}
+          <SectionGrid
+            main={
+              <>
+                <SectionHeading>
+                  <span style={{ fontWeight: 800 }}>My role.</span>
+                </SectionHeading>
+                <PullQuote>
+                  I was SeeTree&rsquo;s sole product designer, owning the end-to-end product experience across both the mobile field app and the manager-facing web dashboard. I partnered with the Product team on prioritization and research, and worked closely with engineering on implementation and the design system that underpinned both surfaces.
+                </PullQuote>
+              </>
+            }
+            sidebar={
+              <SidebarComment label="Scope">
+                Sole designer. Owned both mobile and desktop surfaces, the component library, persona definition, information architecture, and sector-specific configurations across five verticals.
               </SidebarComment>
             }
           />
 
           <Divider />
 
-          {/* ── SECTION 2: THE MEDICAL FILE ──────────────────── */}
+          {/* ── SECTION 1: TWO DIFFERENT USERS ──────────────── */}
           <SectionGrid
             main={
               <>
-                <SectionEyebrow>The Core Logic</SectionEyebrow>
+                <SectionEyebrow>01</SectionEyebrow>
                 <SectionHeading>
-                  Beyond the Map:<br />
-                  <span style={{ fontWeight: 800 }}>Architecting Actionable Insights.</span>
+                  Designing for two<br />
+                  <span style={{ fontWeight: 800 }}>very different users.</span>
                 </SectionHeading>
                 <PullQuote>
-                  I led the redesign of the core SeeTree experience, shifting the
-                  focus from passive observation to proactive management. By introducing a
-                  &lsquo;Mission-Based&rsquo; architecture, we ensured that every user —
-                  from the scout in the field to the manager in the office — knew exactly
-                  which &lsquo;at-risk&rsquo; trees required immediate intervention.
+                  The mobile app and the desktop dashboard serve almost opposite jobs.
                 </PullQuote>
-                <BulletItem label="The GIS System:">
-                  Re-engineering the MapConnect logic to handle 2M+ data points without
-                  cognitive overload.
-                </BulletItem>
-                <BulletItem label="The Hierarchy:">
-                  Creating a &ldquo;Tree-level&rdquo; detail view that aggregated drone
-                  imagery, soil sensors, and historical growth data into a single source
-                  of truth.
-                </BulletItem>
-                <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "32px" }}>
-                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
-                    <img src="/Forestry 2.png" alt="Tree Medical File — Detail View" style={{ width: "100%", height: "auto", display: "block" }} />
-                  </div>
-                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
-                    <img src="/Forest 4.jpg" alt="MapConnect — GIS Redesign" style={{ width: "100%", height: "auto", display: "block" }} />
-                  </div>
-                </div>
+                <PullQuote>
+                  The field app is used by scouts and field workers — often in remote orchards or plantations, often in bright sunlight, often with gloved hands or while moving. They need to capture observations quickly, work offline, and trust that what they record will sync. Design constraints: high contrast, large tap targets, minimal cognitive load, offline-first.
+                </PullQuote>
+                <PullQuote>
+                  The manager dashboard is used by agronomists and farm managers from an office, making strategic decisions across thousands of hectares. They need density, GIS visualization, historical trends, and the ability to drill from a regional view down to a single tree. Design constraints: information richness without overwhelm, fast filtering, clear data hierarchy.
+                </PullQuote>
+                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+                  I designed both as part of one system — shared design language, shared component primitives, shared brand — but tuned for each environment&rsquo;s reality.
+                </p>
               </>
             }
             sidebar={
-              <SidebarComment label="Technical Logic">
-                We moved from &ldquo;feature-based&rdquo; navigation to
-                &ldquo;outcome-based&rdquo; navigation. I audited the workflow of 50+
-                field scouts to ensure the most critical &ldquo;Spray/Don&rsquo;t
-                Spray&rdquo; data was never more than two taps away.
-              </SidebarComment>
-            }
-          />
-
-          <Divider />
-
-          {/* ── SECTION 3: THE MULTI-PERSONA SYSTEM ─────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionEyebrow>The Scale</SectionEyebrow>
-                <SectionHeading>
-                  One System,<br /><span style={{ fontWeight: 800 }}>Two Realities.</span>
-                </SectionHeading>
-                <PullQuote>
-                  I architected a cross-platform design language that maintained
-                  brand integrity while adapting to vastly different environmental
-                  constraints. The high-contrast, &lsquo;big-button&rsquo; mobile UI
-                  enabled rapid data entry in the field, while the expansive, data-rich
-                  desktop dashboard provided the &lsquo;God-view&rsquo; required for
-                  global orchard management.
-                </PullQuote>
-                <BulletItem label="The Component Library:">
-                  Built for scalability to accommodate 8+ different agricultural sectors
-                  (Citrus, Nuts, Coffee, etc.).
-                </BulletItem>
-                <BulletItem label="The Handshake:">
-                  Ensuring field data synced seamlessly with executive reports, closing
-                  the loop on agricultural ROI.
-                </BulletItem>
-                <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "32px" }}>
-                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
-                    <img src="/Fruit Farms.png" alt="Fruit Farms" style={{ width: "100%", height: "auto", display: "block" }} />
-                  </div>
-                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
-                    <img src="/Oil Palms.png" alt="Oil Palms" style={{ width: "100%", height: "auto", display: "block" }} />
-                  </div>
-                </div>
-              </>
-            }
-            sidebar={
-              <SidebarComment label="Annotation: The Two UIs">
+              <SidebarComment label="Annotation">
                 <p style={{ marginBottom: "10px" }}>
-                  <strong style={{ color: "#0A0A0A" }}>Mobile:</strong> High-contrast,
-                  large tap targets, offline-first. Designed for sunlight and muddy gloves.
-                </p>
-                <p style={{ margin: 0 }}>
-                  <strong style={{ color: "#0A0A0A" }}>Desktop:</strong> Data-dense,
-                  multi-panel, GIS-first. Designed for strategic oversight across
-                  thousands of hectares.
+                  The same data flows through both surfaces, but the interfaces are deliberately different. A scout in the field needs to see a single tree&rsquo;s status in two seconds. A manager planning next quarter&rsquo;s spray program needs to see ten thousand trees at once.
                 </p>
               </SidebarComment>
             }
           />
 
+          <ImagePlaceholder label="Side-by-side of mobile field UI and desktop dashboard" />
+
           <Divider />
 
-          {/* ── SECTION 4: THE RESOLUTION ────────────────────── */}
+          {/* ── SECTION 2: THE RESEARCH PROCESS ─────────────── */}
+          <SectionGrid
+            main={
+              <>
+                <SectionEyebrow>02</SectionEyebrow>
+                <SectionHeading>
+                  The research<br />
+                  <span style={{ fontWeight: 800 }}>process.</span>
+                </SectionHeading>
+                <PullQuote>
+                  Working with the Product team, I synthesized insights from user research sessions conducted with field scouts and agronomists across multiple regions and sectors. Sessions were typically PM-led — SeeTree has long-standing on-the-ground relationships with customers — and I worked from the recordings, transcripts, and synthesis to build empathy maps and define personas.
+                </PullQuote>
+                <PullQuote>
+                  I defined three core user personas across the management hierarchy and field workforce, each grounded in real user feedback rather than assumption. Those personas anchored every component decision that followed: who&rsquo;s using this, in what context, with what constraints.
+                </PullQuote>
+              </>
+            }
+            sidebar={
+              <SidebarComment label="Research Method">
+                Persona definition was grounded in real user research, not assumption. Three personas across the management hierarchy and field workforce anchored every component decision.
+              </SidebarComment>
+            }
+          />
+
+          <ImagePlaceholder label="Persona artifacts or research synthesis" />
+
+          <Divider />
+
+          {/* ── SECTION 3: THE SYSTEM THAT SCALED ───────────── */}
+          <SectionGrid
+            main={
+              <>
+                <SectionEyebrow>03</SectionEyebrow>
+                <SectionHeading>
+                  The system that scaled<br />
+                  <span style={{ fontWeight: 800 }}>to eight sectors.</span>
+                </SectionHeading>
+                <PullQuote>
+                  The hardest part of the work was building one component library that could serve eight materially different agricultural industries. A citrus grower thinks in trees and groves. An oil palm operation thinks in blocks and bunches. A forestry company thinks in stands and timber volume. The data, the vocabulary, and the workflows are all different — but the underlying primitives (a map, a list, a tree-level detail view, a mission, a report) can be shared if the system is designed for configurability from the start.
+                </PullQuote>
+                <PullQuote>
+                  I built a token-driven design system with components designed to be composed and configured rather than forked. New sectors could be supported by recombining existing primitives and configuring sector-specific vocabulary, without designing from scratch each time.
+                </PullQuote>
+                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+                  This is the work I&rsquo;m most proud of from SeeTree: a system that absorbed the company&rsquo;s expansion without fragmenting.
+                </p>
+              </>
+            }
+            sidebar={
+              <SidebarComment label="What I Owned">
+                <BulletItem label="The full mobile and desktop design language."> </BulletItem>
+                <BulletItem label="The component library and token system."> </BulletItem>
+                <BulletItem label="Persona definition and research synthesis"> (in partnership with Product).</BulletItem>
+                <BulletItem label="The information architecture"> for both surfaces.</BulletItem>
+                <BulletItem label="Sector-specific configurations"> across citrus, nuts, coffee, oil palm, and forestry.</BulletItem>
+              </SidebarComment>
+            }
+          />
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px", margin: "40px 0" }}>
+            <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+              <img src="/Fruit Farms.png" alt="Fruit Farms" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+              <img src="/Oil Palms.png" alt="Oil Palms" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+          </div>
+
+          <Divider />
+
+          {/* ── SECTION 4: FIELD-TO-OFFICE DATA LOOP ────────── */}
+          <SectionGrid
+            main={
+              <>
+                <SectionEyebrow>04</SectionEyebrow>
+                <SectionHeading>
+                  The field-to-office<br />
+                  <span style={{ fontWeight: 800 }}>data loop.</span>
+                </SectionHeading>
+                <PullQuote>
+                  A central design problem at SeeTree was the handoff between field and office. A scout flagging a stressed tree on their phone needs that observation to surface in the manager&rsquo;s dashboard immediately, in context, with the right metadata. A manager assigning a mission to scout a section of grove needs that mission to appear on the right scouts&rsquo; devices, routed correctly, with offline fallbacks.
+                </PullQuote>
+                <PullQuote>
+                  I designed the patterns that close this loop — mission assignment, field capture, sync states, status surfacing in the dashboard — and worked with engineering on the sync logic that makes them feel reliable in practice.
+                </PullQuote>
+              </>
+            }
+            sidebar={
+              <SidebarComment label="The Loop">
+                Field → capture → sync → dashboard → decision → mission → field. Every pattern had to account for offline conditions, partial sync states, and the reality that connectivity is never guaranteed in a plantation.
+              </SidebarComment>
+            }
+          />
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px", margin: "40px 0" }}>
+            <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+              <img src="/Forestry 2.png" alt="Tree Medical File — Detail View" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+              <img src="/Forest 4.jpg" alt="MapConnect — GIS Redesign" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+          </div>
+
+          <Divider />
+
+          {/* ── REFLECTION ──────────────────────────────────── */}
           <section style={{ paddingBottom: "120px" }}>
             <SectionGrid
               main={
                 <>
-                  <SectionEyebrow>The Resolution</SectionEyebrow>
+                  <SectionEyebrow>Reflection</SectionEyebrow>
                   <SectionHeading>
-                    Stability Found:<br /><span style={{ fontWeight: 800 }}>The Result of Clarity.</span>
+                    Designing<br />
+                    <span style={{ fontWeight: 800 }}>for range.</span>
                   </SectionHeading>
                   <PullQuote>
-                    The impact was immediate. By resolving the ambiguity of the
-                    field-to-office data loop, we achieved a 40% reduction in labour hours
-                    for Tier 1 agribusiness clients. We didn&rsquo;t just build an app; we
-                    built a global standard for agricultural intelligence.
+                    Most product design work happens inside a single industry&rsquo;s mental model. SeeTree gave me an unusual challenge: design one product that feels native across eight industries with genuinely different vocabularies and workflows, while operating as the sole designer in the company.
                   </PullQuote>
+                  <PullQuote>
+                    What I took from it: the difference between &ldquo;designing a feature&rdquo; and &ldquo;designing a system&rdquo; becomes existential when you can&rsquo;t fork. Every component had to earn its place not just in one workflow but in five. Every naming decision had to survive translation across industries. Every screen had to be built for configurability from day one.
+                  </PullQuote>
+                  <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+                    It&rsquo;s the project that taught me to design for range.
+                  </p>
                 </>
               }
               sidebar={
-                <SidebarComment label="Final Take" mention="@Hiring Manager">
-                  If you want to talk about GIS logic, high-latency data syncing, or
-                  designing for extreme physical environments, this is the project we should
-                  discuss. It&rsquo;s the ultimate proof that I can bring order to any
-                  environment.
+                <SidebarComment label="Final Take">
+                  If you want to talk about GIS logic, high-latency data syncing, or designing for extreme physical environments, this is the project we should discuss.
                 </SidebarComment>
               }
             />
