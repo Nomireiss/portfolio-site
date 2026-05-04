@@ -328,9 +328,6 @@ export default function NylasPage() {
                 </p>
                 <BulletItem label="Notetaker Explorer:">488 unique users.</BulletItem>
                 <BulletItem label="Scheduler Explorer:">513 unique users.</BulletItem>
-                <div style={{ borderRadius: "10px", overflow: "hidden", marginTop: "32px" }}>
-                  <img src="/explorers.jpg" alt="Product Explorers" style={{ width: "100%", height: "auto", display: "block" }} />
-                </div>
               </>
             }
             sidebar={
@@ -339,6 +336,10 @@ export default function NylasPage() {
               </SidebarComment>
             }
           />
+
+          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
+            <img src="/explorers.jpg" alt="Product Explorers" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
 
           <Divider />
 
