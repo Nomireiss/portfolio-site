@@ -431,9 +431,6 @@ export default function NylasPage() {
                 </SidebarComment>
               }
             />
-            <div style={{ marginTop: "48px", borderRadius: "10px", overflow: "hidden" }}>
-              <img src="/Nylas UI.png" alt="Results: System at Scale" style={{ width: "100%", height: "auto", display: "block" }} />
-            </div>
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}
