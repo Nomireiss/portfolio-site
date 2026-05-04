@@ -420,193 +420,202 @@ export default function NylasPage() {
                 margin: 0,
                 whiteSpace: "pre",
                 tabSize: 2,
-              }}><code>{`// components/dashboard/CreateAgentModal.tsx
+              }}><code>{`// nds/tokens.ts
+// ─────────────────────────────────────────────────────
+// Nylas Design System — Token definitions
+// Built on shadcn/ui conventions + Tailwind CSS
+// ─────────────────────────────────────────────────────
 
-"use client";
+export const colors = {
+  // Semantic aliases → map to Tailwind config
+  background:    "hsl(var(--background))",
+  foreground:    "hsl(var(--foreground))",
+  card:          "hsl(var(--card))",
+  "card-foreground": "hsl(var(--card-foreground))",
+  primary:       "hsl(var(--primary))",
+  "primary-foreground": "hsl(var(--primary-fg))",
+  secondary:     "hsl(var(--secondary))",
+  muted:         "hsl(var(--muted))",
+  "muted-foreground": "hsl(var(--muted-fg))",
+  accent:        "hsl(var(--accent))",
+  destructive:   "hsl(var(--destructive))",
+  border:        "hsl(var(--border))",
+  input:         "hsl(var(--input))",
+  ring:          "hsl(var(--ring))",
 
-import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Globe, Code2, FolderOpen, Brain, Loader2 }
-  from "lucide-react";
+  // Nylas brand extensions
+  nylas: {
+    blue:    { 50: "#EBF5FF", 500: "#0D99FF",
+               700: "#0066CC", 900: "#003D7A" },
+    slate:   { 50: "#F8FAFC", 100: "#F1F5F9",
+               200: "#E2E8F0", 800: "#1E293B",
+               900: "#0F172A" },
+  },
+} as const;
 
-// NDS primitives
-import {
-  Modal,
-  ModalHeader,
-  ModalTitle,
-  ModalDescription,
-  ModalBody,
-  ModalFooter,
-  ModalTrigger,
-  Button,
-  Input,
-  Textarea,
-  FormField,
-  FormLabel,
-  FormHelperText,
-  FormErrorText,
-  Dropdown,
-  DropdownItem,
-  Slider,
-  Toggle,
-  Card,
-  Stack,
-  Inline,
-  cn,
-} from "@acme/nds-react";
+export const radius = {
+  sm:   "4px",   // inputs, badges
+  md:   "6px",   // cards, buttons
+  lg:   "8px",   // modals, panels
+  full: "9999px" // avatars, pills
+} as const;
 
-// ─── Schema & types ──────────────────────────────────
+export const spacing = {
+  xs: "4px",  sm: "8px",  md: "16px",
+  lg: "24px", xl: "32px", "2xl": "48px",
+} as const;
 
-export const CreateAgentSchema = z.object({
-  name: z
-    .string()
-    .min(1, "Agent name is required")
-    .max(50, "Name must be 50 characters or fewer"),
-  description: z
-    .string()
-    .max(280, "Description must be 280 chars or fewer")
-    .optional()
-    .or(z.literal("")),
-  type: z.enum(
-    ["conversational", "task-based", "research", "custom"],
-    { required_error: "Select an agent type" },
-  ),
-  model: z.enum(
-    ["model-flagship", "model-balanced", "model-fast"],
-    { required_error: "Select a model" },
-  ),
-  systemPrompt: z
-    .string()
-    .min(1, "System prompt is required")
-    .max(8000, "System prompt is too long"),
-  capabilities: z.object({
-    webSearch: z.boolean(),
-    codeExecution: z.boolean(),
-    fileAccess: z.boolean(),
-    memory: z.boolean(),
-  }),
-  temperature: z.number().min(0).max(1),
-});
+// ─────────────────────────────────────────────────────
+// nds/components/button.tsx
+// shadcn-style variant API using cva()
+// ─────────────────────────────────────────────────────
 
-export type CreateAgentFormData =
-  z.infer<typeof CreateAgentSchema>;
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
-interface CreateAgentModalProps {
-  onCreateAgent: (
-    data: CreateAgentFormData,
-  ) => Promise<void> | void;
-  trigger?: React.ReactNode;
+const buttonVariants = cva(
+  // Base classes — shared across all variants
+  \`inline-flex items-center justify-center
+   whitespace-nowrap rounded-md text-sm font-medium
+   ring-offset-background transition-colors
+   focus-visible:outline-none focus-visible:ring-2
+   focus-visible:ring-ring focus-visible:ring-offset-2
+   disabled:pointer-events-none disabled:opacity-50\`,
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-primary text-primary-foreground " +
+          "hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground " +
+          "hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background " +
+          "hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground " +
+          "hover:bg-secondary/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground",
+        link:
+          "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm:      "h-9 rounded-md px-3",
+        lg:      "h-11 rounded-md px-8",
+        icon:    "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
 }
 
-// ─── Constants ───────────────────────────────────────
+const Button = React.forwardRef<
+  HTMLButtonElement, ButtonProps
+>(({ className, variant, size, ...props }, ref) => (
+  <button
+    className={cn(buttonVariants({ variant, size, className }))}
+    ref={ref}
+    {...props}
+  />
+));
 
-const AGENT_TYPES = [
-  { value: "conversational", label: "Conversational" },
-  { value: "task-based", label: "Task-Based" },
-  { value: "research", label: "Research" },
-  { value: "custom", label: "Custom" },
-] as const;
+// ─────────────────────────────────────────────────────
+// nds/components/card.tsx
+// ─────────────────────────────────────────────────────
 
-const MODELS = [
-  { value: "model-flagship", label: "Flagship" },
-  { value: "model-balanced", label: "Balanced" },
-  { value: "model-fast", label: "Fast" },
-] as const;
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-lg border bg-card text-card-foreground",
+      "shadow-sm",
+      className,
+    )}
+    {...props}
+  />
+));
 
-const CAPABILITIES = [
-  {
-    key: "webSearch" as const,
-    label: "Web Search",
-    description: "Query the public web.",
-    Icon: Globe,
-  },
-  {
-    key: "codeExecution" as const,
-    label: "Code Execution",
-    description: "Run code in a sandbox.",
-    Icon: Code2,
-  },
-  {
-    key: "fileAccess" as const,
-    label: "File Access",
-    description: "Read/write workspace files.",
-    Icon: FolderOpen,
-  },
-  {
-    key: "memory" as const,
-    label: "Memory",
-    description: "Persist context across sessions.",
-    Icon: Brain,
-  },
-];
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+));
 
-const DEFAULT_VALUES: CreateAgentFormData = {
-  name: "",
-  description: "",
-  type: "conversational",
-  model: "model-balanced",
-  systemPrompt: "",
-  capabilities: {
-    webSearch: false,
-    codeExecution: false,
-    fileAccess: false,
-    memory: true,
-  },
-  temperature: 0.7,
-};
+const CardTitle = React.forwardRef<
+  HTMLHeadingElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h3
+    ref={ref}
+    className={cn(
+      "text-2xl font-semibold leading-none tracking-tight",
+      className
+    )}
+    {...props}
+  />
+));
 
-// ─── Component ───────────────────────────────────────
+// ─────────────────────────────────────────────────────
+// Usage in dashboard — consuming NDS components
+// with Tailwind utilities + NDS tokens
+// ─────────────────────────────────────────────────────
 
-export function CreateAgentModal({
-  onCreateAgent,
-  trigger,
-}: CreateAgentModalProps) {
-  const [open, setOpen] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+import { Button } from "@nylas/nds";
+import { Card, CardHeader, CardTitle } from "@nylas/nds";
+import { Badge } from "@nylas/nds";
+import { Input } from "@nylas/nds";
 
-  const {
-    control,
-    register,
-    handleSubmit,
-    watch,
-    reset,
-    formState: { errors, isValid },
-  } = useForm<CreateAgentFormData>({
-    resolver: zodResolver(CreateAgentSchema),
-    defaultValues: DEFAULT_VALUES,
-    mode: "onBlur",
-  });
-
-  const description = watch("description") ?? "";
-  const temperature = watch("temperature");
-
-  const onSubmit = async (
-    data: CreateAgentFormData,
-  ) => {
-    try {
-      setSubmitting(true);
-      await onCreateAgent(data);
-      reset(DEFAULT_VALUES);
-      setOpen(false);
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  const handleOpenChange = (next: boolean) => {
-    if (submitting) return;
-    setOpen(next);
-    if (!next) reset(DEFAULT_VALUES);
-  };
-
+export function ApiKeyCard({ apiKey }: Props) {
   return (
-    <Modal
-      open={open}
-      onOpenChange={handleOpenChange}
-      size="md"
-    >`}</code></pre>
+    <Card className="border-nylas-slate-200">
+      <CardHeader>
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-base">
+            {apiKey.label}
+          </CardTitle>
+          <Badge variant={apiKey.active ? "default" : "muted"}>
+            {apiKey.active ? "Active" : "Revoked"}
+          </Badge>
+        </div>
+      </CardHeader>
+      <div className="px-6 pb-6 space-y-4">
+        <Input
+          value={apiKey.maskedValue}
+          readOnly
+          className="font-mono text-sm bg-nylas-slate-50"
+        />
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm">
+            Copy
+          </Button>
+          <Button variant="destructive" size="sm">
+            Revoke
+          </Button>
+        </div>
+      </div>
+    </Card>
+  );
+}`}</code></pre>
             </div>
           </div>
 
