@@ -238,7 +238,9 @@ export default function NylasPage() {
             }
           />
 
-          <ImagePlaceholder label="Legacy dashboard / annotated Sandbox→Production funnel" />
+          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
+            <img src="/New Sanbox Experience.png" alt="New Sandbox Experience" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
 
           <Divider />
 
