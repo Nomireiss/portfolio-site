@@ -279,7 +279,9 @@ export default function SeeTreePage() {
             }
           />
 
-          <ImagePlaceholder label="Side-by-side of mobile field UI and desktop dashboard" />
+          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
+            <img src="/forestry-mobile-desktop.jpg" alt="Forestry — Mobile and Desktop" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
 
           <Divider />
 
