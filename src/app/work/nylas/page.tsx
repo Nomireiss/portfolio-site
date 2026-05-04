@@ -392,9 +392,6 @@ export default function NylasPage() {
                 <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
                   Impact: Measurably increased velocity in design and engineering deliverables, with a shared semantic foundation that scales beyond any single contributor.
                 </p>
-                <div style={{ marginTop: "32px", borderRadius: "10px", overflow: "hidden" }}>
-                  <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
-                </div>
               </>
             }
             sidebar={
@@ -403,6 +400,236 @@ export default function NylasPage() {
               </SidebarComment>
             }
           />
+
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "16px", marginTop: "40px" }}>
+            <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+              <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{
+              borderRadius: "10px",
+              overflow: "auto",
+              backgroundColor: "#1E1E1E",
+              padding: "24px",
+              maxHeight: "600px",
+            }}>
+              <pre style={{
+                fontFamily: MONO,
+                fontSize: "0.65rem",
+                lineHeight: 1.6,
+                color: "#D4D4D4",
+                margin: 0,
+                whiteSpace: "pre",
+                tabSize: 2,
+              }}><code>{`// components/dashboard/CreateAgentModal.tsx
+//
+// ──────────────────────────────────────────────────────
+// PORTFOLIO NOTE
+// This component is an example of consuming an in-house
+// design system on top of a dashboard codebase. The
+// imports from "@acme/nds-react" below are placeholders
+// representing the Nylas Design System (NDS); in a real
+// Nylas codebase these would resolve to the published
+// package. The component APIs (Modal, Input, Dropdown,
+// etc.) follow the naming conventions documented in NDS.
+// ──────────────────────────────────────────────────────
+//
+// Design system: Nylas Design System (NDS)
+//   • Color tokens → NDS / Foundations / Color (slate)
+//   • Radius       → NDS / Foundations / Shape (4px)
+//   • Typography   → NDS / Foundations / Type
+//   • Forms        → NDS / Patterns / Forms & Validation
+//   • Modals       → NDS / Patterns / Modals & Overlays
+//
+// Form state is handled with react-hook-form + zod,
+// since NDS does not ship its own form/validation layer.
+
+"use client";
+
+import { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Globe, Code2, FolderOpen, Brain, Loader2 }
+  from "lucide-react";
+
+// NDS primitives
+import {
+  Modal,
+  ModalHeader,
+  ModalTitle,
+  ModalDescription,
+  ModalBody,
+  ModalFooter,
+  ModalTrigger,
+  Button,
+  Input,
+  Textarea,
+  FormField,
+  FormLabel,
+  FormHelperText,
+  FormErrorText,
+  Dropdown,
+  DropdownItem,
+  Slider,
+  Toggle,
+  Card,
+  Stack,
+  Inline,
+  cn,
+} from "@acme/nds-react";
+
+// ─── Schema & types ──────────────────────────────────
+
+export const CreateAgentSchema = z.object({
+  name: z
+    .string()
+    .min(1, "Agent name is required")
+    .max(50, "Name must be 50 characters or fewer"),
+  description: z
+    .string()
+    .max(280, "Description must be 280 chars or fewer")
+    .optional()
+    .or(z.literal("")),
+  type: z.enum(
+    ["conversational", "task-based", "research", "custom"],
+    { required_error: "Select an agent type" },
+  ),
+  model: z.enum(
+    ["model-flagship", "model-balanced", "model-fast"],
+    { required_error: "Select a model" },
+  ),
+  systemPrompt: z
+    .string()
+    .min(1, "System prompt is required")
+    .max(8000, "System prompt is too long"),
+  capabilities: z.object({
+    webSearch: z.boolean(),
+    codeExecution: z.boolean(),
+    fileAccess: z.boolean(),
+    memory: z.boolean(),
+  }),
+  temperature: z.number().min(0).max(1),
+});
+
+export type CreateAgentFormData =
+  z.infer<typeof CreateAgentSchema>;
+
+interface CreateAgentModalProps {
+  onCreateAgent: (
+    data: CreateAgentFormData,
+  ) => Promise<void> | void;
+  trigger?: React.ReactNode;
+}
+
+// ─── Constants ───────────────────────────────────────
+
+const AGENT_TYPES = [
+  { value: "conversational", label: "Conversational" },
+  { value: "task-based", label: "Task-Based" },
+  { value: "research", label: "Research" },
+  { value: "custom", label: "Custom" },
+] as const;
+
+const MODELS = [
+  { value: "model-flagship", label: "Flagship" },
+  { value: "model-balanced", label: "Balanced" },
+  { value: "model-fast", label: "Fast" },
+] as const;
+
+const CAPABILITIES = [
+  {
+    key: "webSearch" as const,
+    label: "Web Search",
+    description: "Query the public web.",
+    Icon: Globe,
+  },
+  {
+    key: "codeExecution" as const,
+    label: "Code Execution",
+    description: "Run code in a sandbox.",
+    Icon: Code2,
+  },
+  {
+    key: "fileAccess" as const,
+    label: "File Access",
+    description: "Read/write workspace files.",
+    Icon: FolderOpen,
+  },
+  {
+    key: "memory" as const,
+    label: "Memory",
+    description: "Persist context across sessions.",
+    Icon: Brain,
+  },
+];
+
+const DEFAULT_VALUES: CreateAgentFormData = {
+  name: "",
+  description: "",
+  type: "conversational",
+  model: "model-balanced",
+  systemPrompt: "",
+  capabilities: {
+    webSearch: false,
+    codeExecution: false,
+    fileAccess: false,
+    memory: true,
+  },
+  temperature: 0.7,
+};
+
+// ─── Component ───────────────────────────────────────
+
+export function CreateAgentModal({
+  onCreateAgent,
+  trigger,
+}: CreateAgentModalProps) {
+  const [open, setOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const {
+    control,
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors, isValid },
+  } = useForm<CreateAgentFormData>({
+    resolver: zodResolver(CreateAgentSchema),
+    defaultValues: DEFAULT_VALUES,
+    mode: "onBlur",
+  });
+
+  const description = watch("description") ?? "";
+  const temperature = watch("temperature");
+
+  const onSubmit = async (
+    data: CreateAgentFormData,
+  ) => {
+    try {
+      setSubmitting(true);
+      await onCreateAgent(data);
+      reset(DEFAULT_VALUES);
+      setOpen(false);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleOpenChange = (next: boolean) => {
+    if (submitting) return;
+    setOpen(next);
+    if (!next) reset(DEFAULT_VALUES);
+  };
+
+  return (
+    <Modal
+      open={open}
+      onOpenChange={handleOpenChange}
+      size="md"
+    >`}</code></pre>
+            </div>
+          </div>
 
           <Divider />
 
