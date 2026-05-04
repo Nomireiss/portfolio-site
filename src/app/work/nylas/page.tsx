@@ -383,8 +383,8 @@ export default function NylasPage() {
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
                   I designed the foundation for Nylas&rsquo; 2026 AI product vision, shipping the dashboard experiences for:
                 </p>
-                <BulletItem label="MCP (Model Context Protocol) integration." />
-                <BulletItem label="Inbound AI capabilities." />
+                <BulletItem label="MCP (Model Context Protocol) integration."> </BulletItem>
+                <BulletItem label="Inbound AI capabilities."> </BulletItem>
                 <BulletItem label="Templates and Workflows">for agent-driven product use.</BulletItem>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "28px 0 0" }}>
                   This work positions the dashboard to support customers building with AI agents on top of our full product line.
