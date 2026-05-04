@@ -281,7 +281,7 @@ export default function NylasPage() {
                 <BulletItem label="Improved navigation and global search">
                   that moves beyond wayfinding to act as a functional command hub.
                 </BulletItem>
-                <BulletItem label="New notification infrastructure."></BulletItem>
+                <BulletItem label="New notification infrastructure."> </BulletItem>
                 <BulletItem label="Organization-level settings, metrics, and redesigned billing and usage">
                   that gives customers a clear view into what they&rsquo;re consuming and paying for.
                 </BulletItem>
