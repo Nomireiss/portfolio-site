@@ -232,7 +232,7 @@ export default function NylasPage() {
               </>
             }
             sidebar={
-              <SidebarComment label="The Diagnosis" mention="@Hiring Manager">
+              <SidebarComment label="The Diagnosis">
                 Most designers would have started with the UI. I started with the funnel. The &ldquo;fragmentation tax&rdquo; wasn't a visual problem. It was a structural one, and fixing it required thinking like a PM as much as a designer.
               </SidebarComment>
             }
@@ -331,7 +331,7 @@ export default function NylasPage() {
               </>
             }
             sidebar={
-              <SidebarComment label="The PLG Lever" mention="@Hiring Manager">
+              <SidebarComment label="The PLG Lever">
                 Moving the &ldquo;aha moment&rdquo; inside the dashboard wasn&rsquo;t just a UX improvement. It was a growth strategy. Every developer who can see value without leaving the product is a developer closer to converting.
               </SidebarComment>
             }
@@ -454,7 +454,7 @@ export default function NylasPage() {
                 </>
               }
               sidebar={
-                <SidebarComment label="Final Take" mention="@Hiring Manager">
+                <SidebarComment label="Final Take">
                   The metric that matters isn&rsquo;t pixel-perfect components. It&rsquo;s +104% subscription growth. The system is how we got there, but the result is why it matters.
                 </SidebarComment>
               }
