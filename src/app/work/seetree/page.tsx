@@ -307,7 +307,9 @@ export default function SeeTreePage() {
             }
           />
 
-          <ImagePlaceholder label="Persona artifacts or research synthesis" />
+          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
+            <img src="/SeeTree%20Personas.jpg" alt="SeeTree Personas" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
 
           <Divider />
 
