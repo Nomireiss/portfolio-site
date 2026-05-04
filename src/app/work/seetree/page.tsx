@@ -222,8 +222,6 @@ export default function SeeTreePage() {
             }
           />
 
-          <ImagePlaceholder label="Legacy interface or annotated diagram showing the cross-sector challenge" />
-
           <Divider />
 
           {/* ── MY ROLE ─────────────────────────────────────── */}
