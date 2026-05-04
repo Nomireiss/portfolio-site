@@ -68,7 +68,7 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
       margin: "40px 0",
     }}>
       <span style={{ fontFamily: MONO, fontSize: "0.7rem", color: "#B5B5B5" }}>
-        {label ?? "Image — to be provided"}
+        {label ?? "Image to be provided"}
       </span>
     </div>
   );
@@ -200,7 +200,7 @@ export default function NylasPage() {
 
           {/* ── HERO IMAGE ───────────────────────────────────── */}
           <div style={{ marginBottom: "72px", borderRadius: "10px", overflow: "hidden" }}>
-            <img src="/Nylas Hero.png" alt="Nylas Platform — Hero Shot" style={{ width: "100%", height: "auto", display: "block" }} />
+            <img src="/Nylas Hero.png" alt="Nylas Platform Hero Shot" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           {/* ── THE PROBLEM ──────────────────────────────────── */}
@@ -212,7 +212,7 @@ export default function NylasPage() {
                   <span style={{ fontWeight: 800 }}>the dashboard.</span>
                 </SectionHeading>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  Nylas sells developer infrastructure for email, calendar, and contacts. The product is powerful, but the path from sign-up to a production-ready integration was costing the company customers — and we could see it in the funnel.
+                  Nylas sells developer infrastructure for email, calendar, and contacts. The product is powerful, but the path from sign-up to a production-ready integration was costing the company customers, and we could see it in the funnel.
                 </p>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
                   When I started, three things were breaking the developer journey:
@@ -224,7 +224,7 @@ export default function NylasPage() {
                   To see the API actually do anything, developers had to leave the dashboard, set up their own terminal environment, and write code against our docs. The &ldquo;aha&rdquo; moment lived outside our product.
                 </BulletItem>
                 <BulletItem label="Sandbox and Production were two different products.">
-                  They looked different, asked for different setup steps, and didn&rsquo;t share configuration. Worse: the moment a developer tried to move to Production, they hit Google&rsquo;s OAuth verification process for the first time — a multi-week gauntlet they had no idea was coming. Launches slipped by weeks. Some never happened.
+                  They looked different, asked for different setup steps, and didn&rsquo;t share configuration. Worse: the moment a developer tried to move to Production, they hit Google&rsquo;s OAuth verification process for the first time: a multi-week gauntlet they had no idea was coming. Launches slipped by weeks. Some never happened.
                 </BulletItem>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#0A0A0A", margin: "28px 0 0", fontWeight: 500 }}>
                   This wasn&rsquo;t a UI problem. It was a product architecture problem dressed up as a UI problem.
@@ -233,7 +233,7 @@ export default function NylasPage() {
             }
             sidebar={
               <SidebarComment label="The Diagnosis" mention="@Hiring Manager">
-                Most designers would have started with the UI. I started with the funnel. The &ldquo;fragmentation tax&rdquo; wasn&rsquo;t a visual problem — it was a structural one, and fixing it required thinking like a PM as much as a designer.
+                Most designers would have started with the UI. I started with the funnel. The &ldquo;fragmentation tax&rdquo; wasn't a visual problem. It was a structural one, and fixing it required thinking like a PM as much as a designer.
               </SidebarComment>
             }
           />
@@ -252,13 +252,13 @@ export default function NylasPage() {
                   <span style={{ fontWeight: 800 }}>My role.</span>
                 </SectionHeading>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  I was Nylas&rsquo; sole product designer in FY25, owning the end-to-end product experience while also acting as PM for the Dashboard — driving prioritization, cross-functional alignment, and execution across every initiative below. I partnered closely with Engineering, Product, and Marketing to ship work that spanned design, strategy, and roadmap ownership.
+                  I was Nylas&rsquo; sole product designer in FY25, owning the end-to-end product experience while also acting as PM for the Dashboard, driving prioritization, cross-functional alignment, and execution across every initiative below. I partnered closely with Engineering, Product, and Marketing to ship work that spanned design, strategy, and roadmap ownership.
                 </p>
               </>
             }
             sidebar={
               <SidebarComment label="Scope">
-                Sole designer. Also PM for the Dashboard. Every initiative below was owned end-to-end — strategy, design, and execution.
+                Sole designer. Also PM for the Dashboard. Every initiative below was owned end-to-end: strategy, design, and execution.
               </SidebarComment>
             }
           />
@@ -291,18 +291,18 @@ export default function NylasPage() {
                   within the dashboard, opening new growth pathways.
                 </BulletItem>
                 <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", margin: "28px 0 0", fontWeight: 600 }}>
-                  Impact: +104% YoY increase in subscriptions created — 1,104 subscriptions in FY25 vs. FY24.
+                  Impact: +104% YoY increase in subscriptions created. 1,104 subscriptions in FY25 vs. FY24.
                 </p>
               </>
             }
             sidebar={
               <SidebarComment label="The Architecture Bet">
-                The Sandbox/Production split wasn&rsquo;t just a UX inconvenience — it was a revenue leak. Unifying them meant developers could build confidence in Sandbox and carry that directly into production, with no mental reset.
+                The Sandbox/Production split wasn&rsquo;t just a UX inconvenience. It was a revenue leak. Unifying them meant developers could build confidence in Sandbox and carry that directly into production, with no mental reset.
               </SidebarComment>
             }
           />
 
-          <ImagePlaceholder label="Redesigned dashboard — Sandbox/Production parity or org settings" />
+          <ImagePlaceholder label="Redesigned dashboard: Sandbox/Production parity or org settings" />
 
           <Divider />
 
@@ -312,14 +312,14 @@ export default function NylasPage() {
               <>
                 <SectionEyebrow>02</SectionEyebrow>
                 <SectionHeading>
-                  Product Explorers —<br />
+                  Product Explorers<br />
                   <span style={{ fontWeight: 800 }}>bringing the &ldquo;aha&rdquo; inside.</span>
                 </SectionHeading>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  The single biggest activation problem at Nylas was that the moment of value lived in the developer&rsquo;s terminal, not in our product. So I designed and shipped Product Explorers — interactive surfaces inside the dashboard where users can hit our APIs against real data and see the response immediately, without writing a line of code.
+                  The single biggest activation problem at Nylas was that the moment of value lived in the developer&rsquo;s terminal, not in our product. So I designed and shipped Product Explorers: interactive surfaces inside the dashboard where users can hit our APIs against real data and see the response immediately, without writing a line of code.
                 </p>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  I partnered with Engineering and Product to define reusable patterns that make complex features easier to explore, configure, and implement — accelerating time-to-value and supporting our PLG motion.
+                  I partnered with Engineering and Product to define reusable patterns that make complex features easier to explore, configure, and implement, accelerating time-to-value and supporting our PLG motion.
                 </p>
                 <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", margin: "0 0 12px", fontWeight: 600 }}>
                   Impact (since launch on Oct 28):
@@ -338,7 +338,7 @@ export default function NylasPage() {
             }
             sidebar={
               <SidebarComment label="The PLG Lever" mention="@Hiring Manager">
-                Moving the &ldquo;aha moment&rdquo; inside the dashboard wasn&rsquo;t just a UX improvement — it was a growth strategy. Every developer who can see value without leaving the product is a developer closer to converting.
+                Moving the &ldquo;aha moment&rdquo; inside the dashboard wasn&rsquo;t just a UX improvement. It was a growth strategy. Every developer who can see value without leaving the product is a developer closer to converting.
               </SidebarComment>
             }
           />
@@ -351,11 +351,11 @@ export default function NylasPage() {
               <>
                 <SectionEyebrow>03</SectionEyebrow>
                 <SectionHeading>
-                  New pricing &amp; packaging —<br />
+                  New pricing &amp; packaging<br />
                   <span style={{ fontWeight: 800 }}>design that drives revenue.</span>
                 </SectionHeading>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  When Nylas rolled out new pricing and packaging in July, I owned the design across both surfaces: the public pricing page and every dashboard flow that supports the new model — checkout, plan selection, upgrade paths, and post-purchase configuration.
+                  When Nylas rolled out new pricing and packaging in July, I owned the design across both surfaces: the public pricing page and every dashboard flow that supports the new model: checkout, plan selection, upgrade paths, and post-purchase configuration.
                 </p>
                 <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
                   Impact: 740 new subscriptions created under the new pricing model.
@@ -364,7 +364,7 @@ export default function NylasPage() {
             }
             sidebar={
               <SidebarComment label="Revenue Design">
-                Pricing page design is often treated as a marketing problem. I treated it as a conversion funnel — every flow from the public page to post-purchase needed to reduce friction and build confidence in the purchase decision.
+                Pricing page design is often treated as a marketing problem. I treated it as a conversion funnel. Every flow from the public page to post-purchase needed to reduce friction and build confidence in the purchase decision.
               </SidebarComment>
             }
           />
@@ -395,7 +395,7 @@ export default function NylasPage() {
             }
             sidebar={
               <SidebarComment label="The Agentic Era">
-                Designing for AI isn&rsquo;t about adding a chat interface. It&rsquo;s about building surfaces that can be operated by agents and humans alike — with the same clarity and the same trust signals.
+                Designing for AI isn&rsquo;t about adding a chat interface. It&rsquo;s about building surfaces that can be operated by agents and humans alike, with the same clarity and the same trust signals.
               </SidebarComment>
             }
           />
@@ -410,11 +410,11 @@ export default function NylasPage() {
               <>
                 <SectionEyebrow>05</SectionEyebrow>
                 <SectionHeading>
-                  The system underneath —<br />
+                  The system underneath<br />
                   <span style={{ fontWeight: 800 }}>designing for the AI era.</span>
                 </SectionHeading>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  To ship this much surface area as a sole designer, and to set up the team for AI-assisted development, I rebuilt the design system around Shadcn and Tailwind — aligning Figma design tokens with the conventions engineers and LLMs already use.
+                  To ship this much surface area as a sole designer, and to set up the team for AI-assisted development, I rebuilt the design system around Shadcn and Tailwind, aligning Figma design tokens with the conventions engineers and LLMs already use.
                 </p>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
                   The point isn&rsquo;t just consistency. It&rsquo;s that a token-driven, semantically-named system creates a shared layer between design, AI-assisted code generation, and engineering implementation. Prompting an LLM to build a Nylas component now produces something that actually matches our system, because the system speaks the same language the model does.
@@ -423,13 +423,13 @@ export default function NylasPage() {
                   Impact: Measurably increased velocity in design and engineering deliverables, with a shared semantic foundation that scales beyond any single contributor.
                 </p>
                 <div style={{ marginTop: "32px", borderRadius: "10px", overflow: "hidden" }}>
-                  <img src="/Components.png" alt="NDS — Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
+                  <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
                 </div>
               </>
             }
             sidebar={
               <SidebarComment label="Technical Logic">
-                If an LLM can generate a component that passes design review on the first try, that&rsquo;s not a design system — that&rsquo;s a multiplier. The Shadcn/Tailwind migration was about building infrastructure that scales beyond any single contributor.
+                If an LLM can generate a component that passes design review on the first try, that&rsquo;s not a design system. That's a multiplier. The Shadcn/Tailwind migration was about building infrastructure that scales beyond any single contributor.
               </SidebarComment>
             }
           />
@@ -445,24 +445,24 @@ export default function NylasPage() {
                     <span style={{ fontWeight: 800 }}>Reflection.</span>
                   </SectionHeading>
                   <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                    The original dashboard treated each screen as a feature. The redesign treats the dashboard as a developer journey — from first sign-up to production launch to ongoing operations to AI-extended use.
+                    The original dashboard treated each screen as a feature. The redesign treats the dashboard as a developer journey, from first sign-up to production launch to ongoing operations to AI-extended use.
                   </p>
                   <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
                     The Shadcn/Tailwind migration gets attention internally, but it&rsquo;s the enabler, not the headline. The headline is that more developers are reaching production, faster, and Nylas saw subscription growth more than double year over year.
                   </p>
                   <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: 0 }}>
-                    Doing this as a sole designer required treating design as product strategy, not just execution — which is the work I want to keep doing.
+                    Doing this as a sole designer required treating design as product strategy, not just execution, which is the work I want to keep doing.
                   </p>
                 </>
               }
               sidebar={
                 <SidebarComment label="Final Take" mention="@Hiring Manager">
-                  The metric that matters isn&rsquo;t pixel-perfect components. It&rsquo;s +104% subscription growth. The system is how we got there — but the result is why it matters.
+                  The metric that matters isn&rsquo;t pixel-perfect components. It&rsquo;s +104% subscription growth. The system is how we got there, but the result is why it matters.
                 </SidebarComment>
               }
             />
             <div style={{ marginTop: "48px", borderRadius: "10px", overflow: "hidden" }}>
-              <img src="/Nylas UI.png" alt="Results — System at Scale" style={{ width: "100%", height: "auto", display: "block" }} />
+              <img src="/Nylas UI.png" alt="Results: System at Scale" style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
           </section>
 
