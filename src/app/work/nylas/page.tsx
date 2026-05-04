@@ -349,34 +349,6 @@ export default function NylasPage() {
               <>
                 <SectionEyebrow>03</SectionEyebrow>
                 <SectionHeading>
-                  New pricing &amp; packaging<br />
-                  <span style={{ fontWeight: 800 }}>design that drives revenue.</span>
-                </SectionHeading>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  When Nylas rolled out new pricing and packaging in July, I owned the design across both surfaces: the public pricing page and every dashboard flow that supports the new model: checkout, plan selection, upgrade paths, and post-purchase configuration.
-                </p>
-                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
-                  Impact: 740 new subscriptions created under the new pricing model.
-                </p>
-              </>
-            }
-            sidebar={
-              <SidebarComment label="Revenue Design">
-                Pricing page design is often treated as a marketing problem. I treated it as a conversion funnel. Every flow from the public page to post-purchase needed to reduce friction and build confidence in the purchase decision.
-              </SidebarComment>
-            }
-          />
-
-          <ImagePlaceholder label="Pricing page or upgrade flow" />
-
-          <Divider />
-
-          {/* ── SECTION 4 ────────────────────────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionEyebrow>04</SectionEyebrow>
-                <SectionHeading>
                   Setting the stage<br />
                   <span style={{ fontWeight: 800 }}>for Nylas AI.</span>
                 </SectionHeading>
@@ -406,7 +378,7 @@ export default function NylasPage() {
           <SectionGrid
             main={
               <>
-                <SectionEyebrow>05</SectionEyebrow>
+                <SectionEyebrow>04</SectionEyebrow>
                 <SectionHeading>
                   The system underneath<br />
                   <span style={{ fontWeight: 800 }}>designing for the AI era.</span>
