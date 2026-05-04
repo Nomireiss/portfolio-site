@@ -328,13 +328,8 @@ export default function NylasPage() {
                 </p>
                 <BulletItem label="Notetaker Explorer:">488 unique users.</BulletItem>
                 <BulletItem label="Scheduler Explorer:">513 unique users.</BulletItem>
-                <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "16px", marginTop: "32px", alignItems: "start" }}>
-                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
-                    <img src="/Sandbox Email Explorer Step 2.png" alt="Sandbox Email Explorer" style={{ width: "100%", height: "auto", display: "block" }} />
-                  </div>
-                  <div style={{ borderRadius: "10px", overflow: "hidden" }}>
-                    <img src="/KBD Search (1).png" alt="KBD Search" style={{ width: "100%", height: "auto", display: "block" }} />
-                  </div>
+                <div style={{ borderRadius: "10px", overflow: "hidden", marginTop: "32px" }}>
+                  <img src="/explorers.jpg" alt="Product Explorers" style={{ width: "100%", height: "auto", display: "block" }} />
                 </div>
               </>
             }
