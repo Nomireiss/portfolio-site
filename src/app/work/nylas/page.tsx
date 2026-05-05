@@ -181,7 +181,7 @@ export default function NylasPage() {
               paddingBottom: "20px",
             }} className="grid grid-cols-2 md:grid-cols-4">
               {[
-                { label: "Client", value: "Nylas" },
+                { label: "Company", value: "Nylas" },
                 { label: "Role", value: "Principal Product Designer (sole designer + Dashboard PM)" },
                 { label: "Stack", value: "Shadcn / Tailwind / React" },
                 { label: "Year", value: "2024–present" },

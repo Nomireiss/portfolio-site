@@ -159,7 +159,7 @@ export default function SeeTreePage() {
               paddingBottom: "20px",
             }} className="grid grid-cols-2 md:grid-cols-4">
               {[
-                { label: "Client", value: "SeeTree" },
+                { label: "Company", value: "SeeTree" },
                 { label: "Role", value: "Sole Product Designer (end-to-end)" },
                 { label: "Scope", value: "Mobile field app + Manager dashboard" },
                 { label: "Year", value: "2022–2024" },

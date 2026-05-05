@@ -159,7 +159,7 @@ export default function MyTzedakahPage() {
               paddingBottom: "20px",
             }} className="grid grid-cols-2 md:grid-cols-4">
               {[
-                { label: "Client", value: "MyTzedakah" },
+                { label: "Company", value: "MyTzedakah" },
                 { label: "Role", value: "Sole Product Designer (end-to-end)" },
                 { label: "Scope", value: "Consumer mobile app, P2P fundraising, B2B white-label" },
                 { label: "Year", value: "2021–2023" },
@@ -188,7 +188,7 @@ export default function MyTzedakahPage() {
 
           {/* ── HERO IMAGE ───────────────────────────────────── */}
           <div style={{ marginBottom: "48px", marginTop: "24px" }}>
-            <img src="/MTF Cover.png" alt="MyTzedakah Platform Hero Shot" style={{ width: "85%", height: "auto", display: "block", borderRadius: "10px", margin: "0 auto" }} />
+            <img src="/MTF Cover.png" alt="MyTzedakah Platform Hero Shot" style={{ width: "65%", height: "auto", display: "block", borderRadius: "10px", margin: "0 auto" }} />
           </div>
 
           <Divider />
@@ -219,7 +219,7 @@ export default function MyTzedakahPage() {
           />
 
           <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px auto", maxWidth: "85%" }}>
-            <img src="/mtf-choose-charities.jpg" alt="MyTzedakah: Choose Charities" style={{ width: "100%", height: "auto", display: "block" }} />
+            <img src="/mtf-myfund.jpg" alt="MyTzedakah: Mobile Donation" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
@@ -255,7 +255,7 @@ export default function MyTzedakahPage() {
                   <span style={{ fontWeight: 800 }}>making giving a habit, not an event.</span>
                 </SectionHeading>
                 <PullQuote>
-                  The core consumer flow is fund creation. A user picks a giving cadence (monthly, weekly, custom), sets an amount, and selects the charities the fund will support over time. The design problem was that every prior charity app I studied treated &ldquo;find a charity&rdquo; as an exit: users would tap out to a browser, research on a charity&rsquo;s external site, and often never return.
+                  The core consumer flow is fund creation. A user picks a giving cadence (monthly, weekly, custom), sets an amount, and selects the charities the fund will support over time. The design problem was that MyTzedakah had been treating &ldquo;Learn more about this charity&rdquo; as an exit: users would tap out to a browser, research on a charity&rsquo;s external site, and often never return.
                 </PullQuote>
                 <PullQuote>
                   I designed the discovery experience into the app. A unified Charity Spotlight pattern lets users explore any partner organization in a consistent in-app surface (mission, financials, programs, recent campaigns) without leaving the fund-creation flow. A persistent Fund Tray shows their selections accumulating in real time, so the act of building a fund feels tangible rather than abstract.
