@@ -218,7 +218,9 @@ export default function MyTzedakahPage() {
             }
           />
 
-          <ImagePlaceholder label="Hero shot of the consumer app: fund creation or fund overview" />
+          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px auto", maxWidth: "85%" }}>
+            <img src="/mtf-choose-charities.jpg" alt="MyTzedakah: Choose Charities" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
 
           <Divider />
 
@@ -309,37 +311,6 @@ export default function MyTzedakahPage() {
 
           <Divider />
 
-          {/* ── SECTION 3: B2B WHITE-LABEL ──────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionEyebrow>03</SectionEyebrow>
-                <SectionHeading>
-                  The B2B white-label platform:<br />
-                  <span style={{ fontWeight: 800 }}>one engine, many brands.</span>
-                </SectionHeading>
-                <PullQuote>
-                  I designed a white-label system that lets partner organizations deploy their own branded donation experiences on top of MyTzedakah&rsquo;s underlying infrastructure. Organizations get visual customization (brand colors, typography, logo, hero imagery) without forking the underlying flows that handle payments, recurring giving, tax receipts, and reporting.
-                </PullQuote>
-                <PullQuote>
-                  The design problem was scope discipline. Every white-label customer wants more flexibility; every additional flexibility point makes the system harder to maintain and easier to break. I designed the customization surface as a constrained, tokenized system: the things partners can change are clearly bounded, and the things they can&rsquo;t change are the things that protect the integrity of the giving experience.
-                </PullQuote>
-                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
-                  This is shipped product. Multiple partner organizations are running on it.
-                </p>
-              </>
-            }
-            sidebar={
-              <SidebarComment label="System Design">
-                The white-label system is tokenized and constrained by design. Partners can customize brand expression, but not the flows that protect giving integrity. Scope discipline was the hardest part of the work.
-              </SidebarComment>
-            }
-          />
-
-          <ImagePlaceholder label="White-label template examples or partner deployments" />
-
-          <Divider />
-
           {/* ── WHAT I OWNED ────────────────────────────────── */}
           <SectionGrid
             main={
@@ -349,14 +320,13 @@ export default function MyTzedakahPage() {
                 </SectionHeading>
                 <BulletItem label="The full consumer mobile experience:">fund creation, charity discovery, recurring giving, account management.</BulletItem>
                 <BulletItem label="The P2P campaign builder,">campaign pages, and social proof layer.</BulletItem>
-                <BulletItem label="The B2B white-label platform:">customization framework, partner onboarding flows, deployment templates.</BulletItem>
-                <BulletItem label="The design system and component library">underlying all three.</BulletItem>
+                <BulletItem label="The design system and component library">underlying both surfaces.</BulletItem>
                 <BulletItem label="The brand and visual language">as expressed through the product.</BulletItem>
               </>
             }
             sidebar={
               <SidebarComment label="Range">
-                Consumer fintech, P2P social, and B2B platform tooling. Three product surfaces, one system, one designer.
+                Consumer fintech and P2P social. Two product surfaces, one system, one designer.
               </SidebarComment>
             }
           />
