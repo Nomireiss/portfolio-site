@@ -277,7 +277,7 @@ export default function SeeTreePage() {
             }
           />
 
-          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
+          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px auto", maxWidth: "85%" }}>
             <img src="/forestry-mobile-desktop.jpg" alt="Forestry — Mobile and Desktop" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
