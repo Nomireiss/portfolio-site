@@ -68,7 +68,7 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
       margin: "40px 0",
     }}>
       <span style={{ fontFamily: MONO, fontSize: "0.7rem", color: "#B5B5B5" }}>
-        {label ?? "Image — to be provided"}
+        {label ?? "Image: to be provided"}
       </span>
     </div>
   );
@@ -176,7 +176,7 @@ export default function SeeTreePage() {
           <SectionGrid
             main={
               <PullQuote>
-                The challenge: Build a single product that works for citrus growers in California, oil palm operations in Indonesia, coffee plantations in Brazil, and forestry companies across multiple continents — without forking the codebase or fragmenting the brand.
+                The challenge: Build a single product that works for citrus growers in California, oil palm operations in Indonesia, coffee plantations in Brazil, and forestry companies across multiple continents, without forking the codebase or fragmenting the brand.
               </PullQuote>
             }
             sidebar={
@@ -190,7 +190,7 @@ export default function SeeTreePage() {
           <div style={{ marginBottom: "48px", marginTop: "24px" }}>
             <img
               src="/Untitled design - 2026-04-22T155542.913.png"
-              alt="SeeTree Platform — Hero Shot"
+              alt="SeeTree Platform Hero Shot"
               style={{ width: "100%", borderRadius: "16px", display: "block" }}
             />
           </div>
@@ -205,10 +205,10 @@ export default function SeeTreePage() {
                   <span style={{ fontWeight: 800 }}>The problem.</span>
                 </SectionHeading>
                 <PullQuote>
-                  SeeTree gives farmers individual tree-level intelligence — drone imagery, sensor data, ground observations, and ML-driven health analysis, all stitched into a per-tree &ldquo;medical file.&rdquo; The technology was powerful. The product experience was struggling to keep up with the company&rsquo;s growth.
+                  SeeTree gives farmers individual tree-level intelligence: drone imagery, sensor data, ground observations, and ML-driven health analysis, all stitched into a per-tree &ldquo;medical file.&rdquo; The technology was powerful. The product experience was struggling to keep up with the company&rsquo;s growth.
                 </PullQuote>
                 <PullQuote>
-                  By the time I joined, SeeTree&rsquo;s customer base had expanded well beyond its original citrus-grower roots. Each new vertical — nuts, coffee, oil palm, forestry — brought different workflows, different user populations, different reporting requirements, and different field conditions. The product was being asked to serve all of them, but the design wasn&rsquo;t built for that kind of range. Components had drifted, mobile and desktop didn&rsquo;t share a system, and onboarding a new sector meant rebuilding rather than configuring.
+                  By the time I joined, SeeTree&rsquo;s customer base had expanded well beyond its original citrus-grower roots. Each new vertical (nuts, coffee, oil palm, forestry) brought different workflows, different user populations, different reporting requirements, and different field conditions. The product was being asked to serve all of them, but the design wasn&rsquo;t built for that kind of range. Components had drifted, mobile and desktop didn&rsquo;t share a system, and onboarding a new sector meant rebuilding rather than configuring.
                 </PullQuote>
                 <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
                   This is the classic agritech scaling problem: you have one technology platform, but the product needs to feel native in radically different industries.
@@ -258,13 +258,13 @@ export default function SeeTreePage() {
                   The mobile app and the desktop dashboard serve almost opposite jobs.
                 </PullQuote>
                 <PullQuote>
-                  The field app is used by scouts and field workers — often in remote orchards or plantations, often in bright sunlight, often with gloved hands or while moving. They need to capture observations quickly, work offline, and trust that what they record will sync. Design constraints: high contrast, large tap targets, minimal cognitive load, offline-first.
+                  The field app is used by scouts and field workers, often in remote orchards or plantations, often in bright sunlight, often with gloved hands or while moving. They need to capture observations quickly, work offline, and trust that what they record will sync. Design constraints: high contrast, large tap targets, minimal cognitive load, offline-first.
                 </PullQuote>
                 <PullQuote>
                   The manager dashboard is used by agronomists and farm managers from an office, making strategic decisions across thousands of hectares. They need density, GIS visualization, historical trends, and the ability to drill from a regional view down to a single tree. Design constraints: information richness without overwhelm, fast filtering, clear data hierarchy.
                 </PullQuote>
                 <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
-                  I designed both as part of one system — shared design language, shared component primitives, shared brand — but tuned for each environment&rsquo;s reality.
+                  I designed both as part of one system (shared design language, shared component primitives, shared brand) but tuned for each environment&rsquo;s reality.
                 </p>
               </>
             }
@@ -278,7 +278,7 @@ export default function SeeTreePage() {
           />
 
           <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px auto", maxWidth: "85%" }}>
-            <img src="/forestry-mobile-desktop.jpg" alt="Forestry — Mobile and Desktop" style={{ width: "100%", height: "auto", display: "block" }} />
+            <img src="/forestry-mobile-desktop.jpg" alt="Forestry,Mobile and Desktop" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
@@ -293,7 +293,7 @@ export default function SeeTreePage() {
                   <span style={{ fontWeight: 800 }}>process.</span>
                 </SectionHeading>
                 <PullQuote>
-                  Working with the Product team, I synthesized insights from user research sessions conducted with field scouts and agronomists across multiple regions and sectors. Sessions were typically PM-led — SeeTree has long-standing on-the-ground relationships with customers — and I worked from the recordings, transcripts, and synthesis to build empathy maps and define personas.
+                  Working with the Product team, I synthesized insights from user research sessions conducted with field scouts and agronomists across multiple regions and sectors. Sessions were typically PM-led (SeeTree has long-standing on-the-ground relationships with customers) and I worked from the recordings, transcripts, and synthesis to build empathy maps and define personas.
                 </PullQuote>
                 <PullQuote>
                   I defined three core user personas across the management hierarchy and field workforce, each grounded in real user feedback rather than assumption. Those personas anchored every component decision that followed: who&rsquo;s using this, in what context, with what constraints.
@@ -307,7 +307,7 @@ export default function SeeTreePage() {
             }
           />
 
-          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
+          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px auto", maxWidth: "85%" }}>
             <img src="/SeeTree%20Personas.jpg" alt="SeeTree Personas" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
@@ -323,7 +323,7 @@ export default function SeeTreePage() {
                   <span style={{ fontWeight: 800 }}>to eight sectors.</span>
                 </SectionHeading>
                 <PullQuote>
-                  The hardest part of the work was building one component library that could serve eight materially different agricultural industries. A citrus grower thinks in trees and groves. An oil palm operation thinks in blocks and bunches. A forestry company thinks in stands and timber volume. The data, the vocabulary, and the workflows are all different — but the underlying primitives (a map, a list, a tree-level detail view, a mission, a report) can be shared if the system is designed for configurability from the start.
+                  The hardest part of the work was building one component library that could serve eight materially different agricultural industries. A citrus grower thinks in trees and groves. An oil palm operation thinks in blocks and bunches. A forestry company thinks in stands and timber volume. The data, the vocabulary, and the workflows are all different, but the underlying primitives (a map, a list, a tree-level detail view, a mission, a report) can be shared if the system is designed for configurability from the start.
                 </PullQuote>
                 <PullQuote>
                   I built a token-driven design system with components designed to be composed and configured rather than forked. New sectors could be supported by recombining existing primitives and configuring sector-specific vocabulary, without designing from scratch each time.
@@ -344,7 +344,7 @@ export default function SeeTreePage() {
             }
           />
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px", margin: "40px 0" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px", margin: "40px auto", maxWidth: "85%" }}>
             <div style={{ borderRadius: "10px", overflow: "hidden" }}>
               <img src="/Fruit Farms.png" alt="Fruit Farms" style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
@@ -368,7 +368,7 @@ export default function SeeTreePage() {
                   A central design problem at SeeTree was the handoff between field and office. A scout flagging a stressed tree on their phone needs that observation to surface in the manager&rsquo;s dashboard immediately, in context, with the right metadata. A manager assigning a mission to scout a section of grove needs that mission to appear on the right scouts&rsquo; devices, routed correctly, with offline fallbacks.
                 </PullQuote>
                 <PullQuote>
-                  I designed the patterns that close this loop — mission assignment, field capture, sync states, status surfacing in the dashboard — and worked with engineering on the sync logic that makes them feel reliable in practice.
+                  I designed the patterns that close this loop (mission assignment, field capture, sync states, status surfacing in the dashboard) and worked with engineering on the sync logic that makes them feel reliable in practice.
                 </PullQuote>
               </>
             }
@@ -379,12 +379,12 @@ export default function SeeTreePage() {
             }
           />
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px", margin: "40px 0" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px", margin: "40px auto", maxWidth: "85%" }}>
             <div style={{ borderRadius: "10px", overflow: "hidden" }}>
-              <img src="/Forestry 2.png" alt="Tree Medical File — Detail View" style={{ width: "100%", height: "auto", display: "block" }} />
+              <img src="/Forestry 2.png" alt="Tree Medical File Detail View" style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
             <div style={{ borderRadius: "10px", overflow: "hidden" }}>
-              <img src="/Forest 4.jpg" alt="MapConnect — GIS Redesign" style={{ width: "100%", height: "auto", display: "block" }} />
+              <img src="/Forest 4.jpg" alt="MapConnect GIS Redesign" style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
           </div>
 
@@ -417,8 +417,8 @@ export default function SeeTreePage() {
                 </SidebarComment>
               }
             />
-            <div style={{ borderRadius: "10px", overflow: "hidden", marginTop: "48px" }}>
-              <img src="/Widgets.png" alt="Impact — Field-to-Office Data Loop" style={{ width: "100%", height: "auto", display: "block" }} />
+            <div style={{ borderRadius: "10px", overflow: "hidden", marginTop: "48px", maxWidth: "85%", marginLeft: "auto", marginRight: "auto" }}>
+              <img src="/Widgets.png" alt="Impact: Field-to-Office Data Loop" style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
           </section>
 
