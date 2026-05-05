@@ -403,7 +403,7 @@ export default function NylasPage() {
             }
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "16px", marginTop: "40px" }}>
+          <div className="grid grid-cols-1 md:[grid-template-columns:2fr_1fr]" style={{ gap: "16px", marginTop: "40px" }}>
             <div style={{ borderRadius: "10px", overflow: "hidden" }}>
               <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
