@@ -1,99 +1,81 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
-import CommentCard, { Mention } from "@/components/CommentCard";
-import FigmaTooltip from "@/components/FigmaTooltip";
+import SplitText from "@/components/SplitText";
+
+const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
+const INTER = "Inter, sans-serif";
 
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden min-h-[480px] md:min-h-[748px]"
+      className="relative overflow-hidden"
       style={{
         backgroundColor: "#ffffff",
-        backgroundImage:
-          "linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
-        backgroundSize: "10px 10px",
+        padding: "clamp(24px, 3vw, 40px) 0 0",
       }}
     >
-      {/* Grid overlay — 4 cols mobile → 8 cols tablet → 12 cols desktop */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="w-full h-full px-4 sm:px-10 md:px-20 grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 gap-3 md:gap-6">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div
-              key={i}
-              className={`h-full ${i >= 4 ? "hidden sm:block" : ""} ${i >= 8 ? "sm:hidden md:block" : ""}`}
-              style={{ backgroundColor: "rgba(255, 0, 0, 0.08)" }}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="relative w-full max-w-[1280px] mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row items-center gap-10 md:gap-16">
-        {/* Left column — text */}
-        <div className="w-full md:flex-1 flex flex-col gap-6 md:gap-8">
-          <div className="flex flex-col gap-4 md:gap-6">
-            <h1
-              className="text-[#0A0A0A] text-3xl sm:text-4xl md:text-5xl font-bold leading-tight md:leading-[48px]"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Every Great Design is
-              <br />
-              Born from Ambiguity.
-            </h1>
-            <p className="text-base md:text-lg leading-7">
-              <span className="text-[#0A0A0A] font-bold">
-                Great digital experiences aren&rsquo;t found; they are forged.
-              </span>
-              <br />
-              <span className="text-[#2C2C2C] font-normal">
-                I embrace the initial ambiguity of the product lifecycle, using
-                rapid prototyping, empathetic research, and rigorous testing to
-                refine raw concepts into polished, pixel-perfect interactions.
-              </span>
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <FigmaTooltip label="component: primary-btn // hover: transition-all">
-              <a
-                href="#work"
-                className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[6px] hover:bg-[#0B87E0] transition-colors inline-flex items-center"
-              >
-                See my work
-              </a>
-            </FigmaTooltip>
-            <a
-              href="#contact"
-              className="h-11 px-6 py-2.5 text-[#0A0A0A] text-sm font-medium rounded-[6px] hover:bg-black/5 transition-colors inline-flex items-center gap-2"
-            >
-              Get in touch
-              <ArrowUpRight size={16} />
-            </a>
-          </div>
-        </div>
-
-        {/* Right column — hidden on mobile */}
-        <div className="hidden md:block md:flex-1 relative">
-          <img
-            src="/image 1.png"
-            alt="Portfolio preview"
-            className="w-full h-[596px] object-cover"
+      <div className="w-full max-w-[1280px] mx-auto px-6">
+        <div className="flex flex-col">
+          <p
+            style={{
+              fontFamily: INTER,
+              fontSize: "24px",
+              fontWeight: 300,
+              color: "#0A0A0A",
+              margin: "0 0 24px",
+            }}
+          >
+            Nomi Reiss
+          </p>
+          <SplitText
+            tag="h1"
+            text="Senior Product Designer."
+            className=""
+            delay={30}
+            duration={0.8}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+            textAlign="left"
           />
-
-          {/* Figma comment card */}
-          <CommentCard time="2 minutes ago" className="-top-4 -right-16">
-            <p>
-              <Mention>@DesignTeam </Mention>
-              The people landing here are busy.
-              Heads of Product don&rsquo;t have time to hunt for the value.
-              Let&rsquo;s swap this placeholder for the SeeTree Logic Audit.
-              If they&rsquo;re looking for a partner who can handle
-              high-stakes complexity, let&rsquo;s show them the proof
-              immediately.
-            </p>
-          </CommentCard>
+          <SplitText
+            tag="p"
+            text="I've shaped product as the sole designer at three companies, and I excel at end-to-end ownership."
+            className=""
+            delay={20}
+            duration={0.6}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 20 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+            textAlign="left"
+          />
         </div>
       </div>
+      <style jsx global>{`
+        .split-parent h1, h1.split-parent {
+          font-family: ${MONA};
+          font-weight: 800;
+          font-size: clamp(2rem, 4vw, 3.6rem);
+          letter-spacing: -0.03em;
+          line-height: 1.05;
+          color: #0A0A0A;
+          margin: 0 0 10px;
+        }
+        .split-parent p, p.split-parent {
+          font-family: ${INTER};
+          font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+          font-weight: 400;
+          line-height: 1.7;
+          color: #1a1a1a;
+          margin: 0;
+        }
+      `}</style>
     </section>
   );
 }

@@ -57,9 +57,7 @@ export default function CTASection() {
             margin: 0,
           }}
         >
-          Have a vision that needs a system?
-          <br />
-          Let&rsquo;s talk about making it a reality.
+          Always up for a good puzzle.
         </h2>
 
         {/* Button + status */}
@@ -70,23 +68,26 @@ export default function CTASection() {
               display: "inline-flex", alignItems: "center",
               height: "52px", padding: "0 32px",
               border: "1.5px solid rgba(255,255,255,0.8)",
-              borderRadius: "6px",
+              borderRadius: "9999px",
               fontFamily: "Inter, sans-serif",
               fontSize: "0.95rem", fontWeight: 500,
               color: "#fff",
               textDecoration: "none",
-              transition: "background 0.2s ease, color 0.2s ease",
+              transition: "all 0.2s ease",
               backgroundColor: "transparent",
+              transform: "scale(1)",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#0D99FF";
               e.currentTarget.style.borderColor = "#0D99FF";
               e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.transform = "scale(1.05)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "transparent";
               e.currentTarget.style.borderColor = "rgba(255,255,255,0.8)";
               e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             Get in Touch
@@ -94,11 +95,6 @@ export default function CTASection() {
 
           {/* Available indicator */}
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <div style={{
-              width: 10, height: 10, borderRadius: "50%",
-              backgroundColor: "#4ade80",
-              boxShadow: "0 0 8px #4ade80",
-            }} />
             <span style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "0.85rem", fontWeight: 400,
@@ -122,12 +118,6 @@ export default function CTASection() {
           </span>
           <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.4)" }}>
             Toronto / Remote
-          </span>
-        </div>
-
-        <div style={{ textAlign: "center" }}>
-          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.6)" }}>
-            Designed &amp; Built by Nomi Reiss (and Claude)
           </span>
         </div>
 

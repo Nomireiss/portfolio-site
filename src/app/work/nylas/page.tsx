@@ -199,7 +199,7 @@ export default function NylasPage() {
           </header>
 
           {/* ── HERO IMAGE ───────────────────────────────────── */}
-          <div style={{ marginBottom: "72px", borderRadius: "10px", overflow: "hidden" }}>
+          <div style={{ marginBottom: "72px", overflow: "hidden" }}>
             <img src="/Nylas Hero.png" alt="Nylas Platform Hero Shot" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
@@ -238,8 +238,8 @@ export default function NylasPage() {
             }
           />
 
-          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
-            <img src="/new-sandbox-experience.jpg" alt="New Sandbox Experience" style={{ width: "100%", height: "auto", display: "block" }} />
+          <div style={{ overflow: "hidden", margin: "40px 0" }}>
+            <img src="/new-sandbox-experience.png" alt="New Sandbox Experience" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
@@ -302,8 +302,8 @@ export default function NylasPage() {
             }
           />
 
-          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
-            <img src="/organization-settings.jpg" alt="Organization Settings" style={{ width: "100%", height: "auto", display: "block" }} />
+          <div style={{ overflow: "hidden", margin: "40px 0" }}>
+            <img src="/organization-settings.png" alt="Organization Settings" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
@@ -337,8 +337,8 @@ export default function NylasPage() {
             }
           />
 
-          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
-            <img src="/explorers.jpg" alt="Product Explorers" style={{ width: "100%", height: "auto", display: "block" }} />
+          <div style={{ overflow: "hidden", margin: "40px 0" }}>
+            <img src="/explorers.png" alt="Product Explorers" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
@@ -370,8 +370,8 @@ export default function NylasPage() {
             }
           />
 
-          <div style={{ borderRadius: "10px", overflow: "hidden", margin: "40px 0" }}>
-            <img src="/agent-accounts.jpg" alt="Agent Accounts" style={{ width: "100%", height: "auto", display: "block" }} />
+          <div style={{ overflow: "hidden", margin: "40px 0" }}>
+            <img src="/agent-accounts.png" alt="Agent Accounts" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
@@ -404,11 +404,10 @@ export default function NylasPage() {
           />
 
           <div className="grid grid-cols-1 md:[grid-template-columns:2fr_1fr]" style={{ gap: "16px", marginTop: "40px" }}>
-            <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+            <div style={{ overflow: "hidden" }}>
               <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
             <div style={{
-              borderRadius: "10px",
               overflow: "auto",
               backgroundColor: "#1E1E1E",
               padding: "24px",
@@ -624,30 +623,30 @@ export function ApiKeyCard({ apiKey }: Props) {
           <Divider />
 
           {/* ── 05 MARKETING SITE REDESIGN ──────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionEyebrow>05</SectionEyebrow>
-                <SectionHeading>
-                  Marketing site redesign.<br />
-                  <span style={{ fontWeight: 800 }}>In progress; partial soft-launch.</span>
-                </SectionHeading>
-                <PullQuote>
-                  In parallel with the dashboard work, I led the visual redesign of the Nylas marketing site, repositioning the brand from &ldquo;a collection of APIs&rdquo; to &ldquo;the infrastructure that powers communications.&rdquo; The goal was to push past the flat, grim aesthetic that dominates developer infrastructure marketing, using atmospheric dark mode, editorial dark/light pacing, and a restrained accent system to make the brand feel present and intentional.
-                </PullQuote>
-                <PullQuote>
-                  A version of the new homepage is live, with elements of the previous design still in place. The remaining pages are pre-launch.
-                </PullQuote>
-              </>
-            }
-            sidebar={null}
-          />
+          <SectionEyebrow>05</SectionEyebrow>
+          <SectionHeading>
+            Marketing site redesign. <span style={{ fontWeight: 800 }}>In progress; partial soft-launch.</span>
+          </SectionHeading>
+          <PullQuote>
+            In parallel with the dashboard work, I led the visual redesign of the Nylas marketing site, repositioning the brand from &ldquo;a collection of APIs&rdquo; to &ldquo;the infrastructure that powers communications.&rdquo; The goal was to push past the flat, grim aesthetic that dominates developer infrastructure marketing, using atmospheric dark mode, editorial dark/light pacing, and a restrained accent system to make the brand feel present and intentional.
+          </PullQuote>
+          <PullQuote>
+            A version of the new homepage is live, with elements of the previous design still in place. The remaining pages are pre-launch.
+          </PullQuote>
 
-          <div className="grid grid-cols-2 md:grid-cols-2" style={{ gap: "16px", marginTop: "40px" }}>
-            <ImagePlaceholder label="Homepage (light)" />
-            <ImagePlaceholder label="Homepage (dark)" />
-            <ImagePlaceholder label="Solutions page" />
-            <ImagePlaceholder label="Email product page" />
+          <div className="grid grid-cols-2" style={{ gap: "16px", marginTop: "40px" }}>
+            <div style={{ overflow: "hidden" }}>
+              <img src="/marketing-site-homepage-dark.jpg" alt="Nylas Marketing Site — Homepage" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ overflow: "hidden" }}>
+              <img src="/scheduler-product-page.jpg" alt="Nylas Marketing Site — Scheduler page" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ overflow: "hidden" }}>
+              <img src="/marketing-site-email.jpg" alt="Nylas Marketing Site — Email product page" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ overflow: "hidden" }}>
+              <img src="/marketing-site-solutions.jpg" alt="Nylas Marketing Site — Solutions page" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
           </div>
 
           <Divider />

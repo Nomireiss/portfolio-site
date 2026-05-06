@@ -3,32 +3,17 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-function LogoIcon({ colored }: { colored: boolean }) {
+function LogoText() {
   return (
-    <div style={{ display: "grid", height: "64px", alignItems: "center" }}>
-      <img
-        src="/Nomi Logo Rough.png"
-        alt="Nomi"
-        style={{
-          gridArea: "1 / 1",
-          height: "64px",
-          width: "auto",
-          opacity: colored ? 0 : 1,
-          transition: "opacity 0.5s ease",
-        }}
-      />
-      <img
-        src="/Nomi Logo.png"
-        alt="Nomi"
-        style={{
-          gridArea: "1 / 1",
-          height: "64px",
-          width: "auto",
-          opacity: colored ? 1 : 0,
-          transition: "opacity 0.5s ease",
-        }}
-      />
-    </div>
+    <span style={{
+      fontFamily: "Inter, sans-serif",
+      fontSize: "1.35rem",
+      fontWeight: 600,
+      color: "#0A0A0A",
+      letterSpacing: "-0.01em",
+    }}>
+      Nomi Reiss
+    </span>
   );
 }
 
@@ -48,7 +33,7 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
       <div className="w-full px-4 sm:px-10 md:px-20 py-4">
         <div className="flex items-center justify-between">
           <a href="/" aria-label="Home">
-            <LogoIcon colored={isColored} />
+            <LogoText />
           </a>
 
           {/* Desktop nav */}
@@ -61,14 +46,14 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
                 About
               </a>
             </div>
-            <a href="/contact" className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[6px] hover:bg-[#0B87E0] transition-colors inline-flex items-center">
+            <a href="/contact" className="h-11 px-6 py-2.5 bg-[#1a1a1a] text-[#FAFAFA] text-sm font-medium rounded-full hover:bg-[#333333] hover:scale-105 transition-all duration-200 inline-flex items-center">
               Get in touch
             </a>
           </div>
 
           {/* Mobile: CTA + hamburger */}
           <div className="flex md:hidden items-center gap-3">
-            <a href="/contact" className="h-11 px-6 py-2.5 bg-[#0D99FF] text-[#FAFAFA] text-sm font-medium rounded-[6px] hover:bg-[#0B87E0] transition-colors inline-flex items-center">
+            <a href="/contact" className="h-11 px-6 py-2.5 bg-[#1a1a1a] text-[#FAFAFA] text-sm font-medium rounded-full hover:bg-[#333333] hover:scale-105 transition-all duration-200 inline-flex items-center">
               Get in touch
             </a>
             <button
