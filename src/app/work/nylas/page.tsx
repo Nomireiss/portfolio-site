@@ -623,6 +623,35 @@ export function ApiKeyCard({ apiKey }: Props) {
 
           <Divider />
 
+          {/* ── 05 MARKETING SITE REDESIGN ──────────────────── */}
+          <SectionGrid
+            main={
+              <>
+                <SectionEyebrow>05</SectionEyebrow>
+                <SectionHeading>
+                  Marketing site redesign.<br />
+                  <span style={{ fontWeight: 800 }}>In progress; partial soft-launch.</span>
+                </SectionHeading>
+                <PullQuote>
+                  In parallel with the dashboard work, I led the visual redesign of the Nylas marketing site, repositioning the brand from &ldquo;a collection of APIs&rdquo; to &ldquo;the infrastructure that powers communications.&rdquo; The goal was to push past the flat, grim aesthetic that dominates developer infrastructure marketing, using atmospheric dark mode, editorial dark/light pacing, and a restrained accent system to make the brand feel present and intentional.
+                </PullQuote>
+                <PullQuote>
+                  A version of the new homepage is live, with elements of the previous design still in place. The remaining pages are pre-launch.
+                </PullQuote>
+              </>
+            }
+            sidebar={null}
+          />
+
+          <div className="grid grid-cols-2 md:grid-cols-2" style={{ gap: "16px", marginTop: "40px" }}>
+            <ImagePlaceholder label="Homepage (light)" />
+            <ImagePlaceholder label="Homepage (dark)" />
+            <ImagePlaceholder label="Solutions page" />
+            <ImagePlaceholder label="Email product page" />
+          </div>
+
+          <Divider />
+
           {/* ── REFLECTION ───────────────────────────────────── */}
           <section style={{ paddingBottom: "120px" }}>
             <SectionGrid

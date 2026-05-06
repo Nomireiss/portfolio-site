@@ -133,7 +133,7 @@ export default function MyTzedakahPage() {
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
               <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
-                Case Study · FinTech / Philanthropy · 2021–2023
+                Case Study · FinTech / Philanthropy · 2020–2022
               </span>
             </div>
 
@@ -162,7 +162,7 @@ export default function MyTzedakahPage() {
                 { label: "Company", value: "MyTzedakah" },
                 { label: "Role", value: "Sole Product Designer (end-to-end)" },
                 { label: "Scope", value: "Consumer mobile app, P2P fundraising, B2B white-label" },
-                { label: "Year", value: "2021–2023" },
+                { label: "Year", value: "2020–2022" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
                   <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
