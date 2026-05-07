@@ -74,18 +74,6 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
   );
 }
 
-/* ─── 70/30 section grid ──────────────────────────────────────── */
-
-function SectionGrid({ main, sidebar }: { main: React.ReactNode; sidebar: React.ReactNode }) {
-  return (
-    <div className="grid grid-cols-1 md:[grid-template-columns:7fr_3fr] items-start" style={{ gap: "clamp(2rem, 5vw, 72px)" }}>
-      <div>{main}</div>
-      <aside className="md:sticky md:top-[120px]" style={{ alignSelf: "start", display: "flex", flexDirection: "column", gap: "32px" }}>
-        {sidebar}
-      </aside>
-    </div>
-  );
-}
 
 function Divider() {
   return <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />;
@@ -184,35 +172,30 @@ export default function NylasPage() {
           </div>
 
           {/* ── THE PROBLEM ──────────────────────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionHeading>
-                  The problem behind<br />
-                  <span style={{ fontWeight: 800 }}>the dashboard.</span>
-                </SectionHeading>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  Nylas sells developer infrastructure for email, calendar, and contacts. The product is powerful, but the path from sign-up to a production-ready integration was costing the company customers, and we could see it in the funnel.
-                </p>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  When I started, three things were breaking the developer journey:
-                </p>
-                <BulletItem label="Onboarding had no feedback loop.">
-                  New users completed setup steps without understanding why those steps mattered or whether they were working. Success was invisible until the very end.
-                </BulletItem>
-                <BulletItem label="Time-to-value in the Sandbox was long.">
-                  To see the API actually do anything, developers had to leave the dashboard, set up their own terminal environment, and write code against our docs. The &ldquo;aha&rdquo; moment lived outside our product.
-                </BulletItem>
-                <BulletItem label="Sandbox and Production were two different products.">
-                  They looked different, asked for different setup steps, and didn&rsquo;t share configuration. Worse: the moment a developer tried to move to Production, they hit Google&rsquo;s OAuth verification process for the first time: a multi-week gauntlet they had no idea was coming. Launches slipped by weeks. Some never happened.
-                </BulletItem>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#0A0A0A", margin: "28px 0 0", fontWeight: 500 }}>
-                  This wasn&rsquo;t a UI problem. It was a product architecture problem dressed up as a UI problem.
-                </p>
-              </>
-            }
-            sidebar={null}
-          />
+          <section>
+            <SectionHeading>
+              The problem behind<br />
+              <span style={{ fontWeight: 800 }}>the dashboard.</span>
+            </SectionHeading>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              Nylas sells developer infrastructure for email, calendar, and contacts. The product is powerful, but the path from sign-up to a production-ready integration was costing the company customers, and we could see it in the funnel.
+            </p>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              When I started, three things were breaking the developer journey:
+            </p>
+            <BulletItem label="Onboarding had no feedback loop.">
+              New users completed setup steps without understanding why those steps mattered or whether they were working. Success was invisible until the very end.
+            </BulletItem>
+            <BulletItem label="Time-to-value in the Sandbox was long.">
+              To see the API actually do anything, developers had to leave the dashboard, set up their own terminal environment, and write code against our docs. The &ldquo;aha&rdquo; moment lived outside our product.
+            </BulletItem>
+            <BulletItem label="Sandbox and Production were two different products.">
+              They looked different, asked for different setup steps, and didn&rsquo;t share configuration. Worse: the moment a developer tried to move to Production, they hit Google&rsquo;s OAuth verification process for the first time: a multi-week gauntlet they had no idea was coming. Launches slipped by weeks. Some never happened.
+            </BulletItem>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#0A0A0A", margin: "28px 0 0", fontWeight: 500 }}>
+              This wasn&rsquo;t a UI problem. It was a product architecture problem dressed up as a UI problem.
+            </p>
+          </section>
 
           <div style={{ overflow: "hidden", margin: "40px 0" }}>
             <img src="/new-sandbox-experience.png" alt="New Sandbox Experience" style={{ width: "100%", height: "auto", display: "block" }} />
@@ -221,54 +204,44 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── MY ROLE ──────────────────────────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionHeading>
-                  <span style={{ fontWeight: 800 }}>My role.</span>
-                </SectionHeading>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  I was Nylas&rsquo; sole product designer in FY25, owning the end-to-end product experience while also acting as PM for the Dashboard, driving prioritization, cross-functional alignment, and execution across every initiative below. I partnered closely with Engineering, Product, and Marketing to ship work that spanned design, strategy, and roadmap ownership.
-                </p>
-              </>
-            }
-            sidebar={null}
-          />
+          <section>
+            <SectionHeading>
+              <span style={{ fontWeight: 800 }}>My role.</span>
+            </SectionHeading>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              I was Nylas&rsquo; sole product designer in FY25, owning the end-to-end product experience while also acting as PM for the Dashboard, driving prioritization, cross-functional alignment, and execution across every initiative below. I partnered closely with Engineering, Product, and Marketing to ship work that spanned design, strategy, and roadmap ownership.
+            </p>
+          </section>
 
           <Divider />
 
           {/* ── SECTION 1 ────────────────────────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionEyebrow>01</SectionEyebrow>
-                <SectionHeading>
-                  Rebuilding the dashboard<br />
-                  <span style={{ fontWeight: 800 }}>from Sandbox to post-purchase.</span>
-                </SectionHeading>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  I led a full redesign of the dashboard experience, from a developer&rsquo;s first sign-up through purchase and beyond. The work covered:
-                </p>
-                <BulletItem label="Unified UX and visual language">
-                  between Sandbox and Production, so configuration and mental models carry over.
-                </BulletItem>
-                <BulletItem label="Improved navigation and global search">
-                  that moves beyond wayfinding to act as a functional command hub.
-                </BulletItem>
-                <BulletItem label="New notification infrastructure."> </BulletItem>
-                <BulletItem label="Organization-level settings, metrics, and redesigned billing and usage">
-                  that gives customers a clear view into what they&rsquo;re consuming and paying for.
-                </BulletItem>
-                <BulletItem label="Infrastructure to market and launch new products">
-                  within the dashboard, opening new growth pathways.
-                </BulletItem>
-                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", margin: "28px 0 0", fontWeight: 600 }}>
-                  Impact: +104% YoY increase in subscriptions created. 1,104 subscriptions in FY25 vs. FY24.
-                </p>
-              </>
-            }
-            sidebar={null}
-          />
+          <section>
+            <SectionEyebrow>01</SectionEyebrow>
+            <SectionHeading>
+              Rebuilding the dashboard<br />
+              <span style={{ fontWeight: 800 }}>from Sandbox to post-purchase.</span>
+            </SectionHeading>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              I led a full redesign of the dashboard experience, from a developer&rsquo;s first sign-up through purchase and beyond. The work covered:
+            </p>
+            <BulletItem label="Unified UX and visual language">
+              between Sandbox and Production, so configuration and mental models carry over.
+            </BulletItem>
+            <BulletItem label="Improved navigation and global search">
+              that moves beyond wayfinding to act as a functional command hub.
+            </BulletItem>
+            <BulletItem label="New notification infrastructure."> </BulletItem>
+            <BulletItem label="Organization-level settings, metrics, and redesigned billing and usage">
+              that gives customers a clear view into what they&rsquo;re consuming and paying for.
+            </BulletItem>
+            <BulletItem label="Infrastructure to market and launch new products">
+              within the dashboard, opening new growth pathways.
+            </BulletItem>
+            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", margin: "28px 0 0", fontWeight: 600 }}>
+              Impact: +104% YoY increase in subscriptions created. 1,104 subscriptions in FY25 vs. FY24.
+            </p>
+          </section>
 
           <div style={{ overflow: "hidden", margin: "40px 0" }}>
             <img src="/organization-settings.png" alt="Organization Settings" style={{ width: "100%", height: "auto", display: "block" }} />
@@ -277,29 +250,24 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 2 ────────────────────────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionEyebrow>02</SectionEyebrow>
-                <SectionHeading>
-                  Product Explorers<br />
-                  <span style={{ fontWeight: 800 }}>bringing the &ldquo;aha&rdquo; inside.</span>
-                </SectionHeading>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  The single biggest activation problem at Nylas was that the moment of value lived in the developer&rsquo;s terminal, not in our product. So I designed and shipped Product Explorers: interactive surfaces inside the dashboard where users can hit our APIs against real data and see the response immediately, without writing a line of code.
-                </p>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  I partnered with Engineering and Product to define reusable patterns that make complex features easier to explore, configure, and implement, accelerating time-to-value and supporting our PLG motion.
-                </p>
-                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", margin: "0 0 12px", fontWeight: 600 }}>
-                  Impact (since launch on Oct 28):
-                </p>
-                <BulletItem label="Notetaker Explorer:">488 unique users.</BulletItem>
-                <BulletItem label="Scheduler Explorer:">513 unique users.</BulletItem>
-              </>
-            }
-            sidebar={null}
-          />
+          <section>
+            <SectionEyebrow>02</SectionEyebrow>
+            <SectionHeading>
+              Product Explorers<br />
+              <span style={{ fontWeight: 800 }}>bringing the &ldquo;aha&rdquo; inside.</span>
+            </SectionHeading>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              The single biggest activation problem at Nylas was that the moment of value lived in the developer&rsquo;s terminal, not in our product. So I designed and shipped Product Explorers: interactive surfaces inside the dashboard where users can hit our APIs against real data and see the response immediately, without writing a line of code.
+            </p>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              I partnered with Engineering and Product to define reusable patterns that make complex features easier to explore, configure, and implement, accelerating time-to-value and supporting our PLG motion.
+            </p>
+            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", margin: "0 0 12px", fontWeight: 600 }}>
+              Impact (since launch on Oct 28):
+            </p>
+            <BulletItem label="Notetaker Explorer:">488 unique users.</BulletItem>
+            <BulletItem label="Scheduler Explorer:">513 unique users.</BulletItem>
+          </section>
 
           <div style={{ overflow: "hidden", margin: "40px 0" }}>
             <img src="/explorers.png" alt="Product Explorers" style={{ width: "100%", height: "auto", display: "block" }} />
@@ -308,27 +276,22 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 3 ────────────────────────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionEyebrow>03</SectionEyebrow>
-                <SectionHeading>
-                  Setting the stage<br />
-                  <span style={{ fontWeight: 800 }}>for Nylas AI.</span>
-                </SectionHeading>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  I designed the foundation for Nylas&rsquo; 2026 AI product vision, shipping the dashboard experiences for:
-                </p>
-                <BulletItem label="MCP (Model Context Protocol) integration."> </BulletItem>
-                <BulletItem label="Inbound AI capabilities."> </BulletItem>
-                <BulletItem label="Templates and Workflows">for agent-driven product use.</BulletItem>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "28px 0 0" }}>
-                  This work positions the dashboard to support customers building with AI agents on top of our full product line.
-                </p>
-              </>
-            }
-            sidebar={null}
-          />
+          <section>
+            <SectionEyebrow>03</SectionEyebrow>
+            <SectionHeading>
+              Setting the stage<br />
+              <span style={{ fontWeight: 800 }}>for Nylas AI.</span>
+            </SectionHeading>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              I designed the foundation for Nylas&rsquo; 2026 AI product vision, shipping the dashboard experiences for:
+            </p>
+            <BulletItem label="MCP (Model Context Protocol) integration."> </BulletItem>
+            <BulletItem label="Inbound AI capabilities."> </BulletItem>
+            <BulletItem label="Templates and Workflows">for agent-driven product use.</BulletItem>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "28px 0 0" }}>
+              This work positions the dashboard to support customers building with AI agents on top of our full product line.
+            </p>
+          </section>
 
           <div style={{ overflow: "hidden", margin: "40px 0" }}>
             <img src="/agent-accounts.png" alt="Agent Accounts" style={{ width: "100%", height: "auto", display: "block" }} />
@@ -336,28 +299,23 @@ export default function NylasPage() {
 
           <Divider />
 
-          {/* ── SECTION 5 ────────────────────────────────────── */}
-          <SectionGrid
-            main={
-              <>
-                <SectionEyebrow>04</SectionEyebrow>
-                <SectionHeading>
-                  The system underneath<br />
-                  <span style={{ fontWeight: 800 }}>designing for the AI era.</span>
-                </SectionHeading>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  To ship this much surface area as a sole designer, and to set up the team for AI-assisted development, I rebuilt the design system around shadcn and Tailwind, aligning Figma design tokens with the conventions engineers and LLMs already use.
-                </p>
-                <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  The point isn&rsquo;t just consistency. It&rsquo;s that a token-driven, semantically-named system creates a shared layer between design, AI-assisted code generation, and engineering implementation. Prompting an LLM to build a Nylas component now produces something that actually matches our system, because the system speaks the same language the model does.
-                </p>
-                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
-                  Impact: Measurably increased velocity in design and engineering deliverables, with a shared semantic foundation that scales beyond any single contributor.
-                </p>
-              </>
-            }
-            sidebar={null}
-          />
+          {/* ── SECTION 4 ────────────────────────────────────── */}
+          <section>
+            <SectionEyebrow>04</SectionEyebrow>
+            <SectionHeading>
+              The system underneath<br />
+              <span style={{ fontWeight: 800 }}>designing for the AI era.</span>
+            </SectionHeading>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              To ship this much surface area as a sole designer, and to set up the team for AI-assisted development, I rebuilt the design system around shadcn and Tailwind, aligning Figma design tokens with the conventions engineers and LLMs already use.
+            </p>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              The point isn&rsquo;t just consistency. It&rsquo;s that a token-driven, semantically-named system creates a shared layer between design, AI-assisted code generation, and engineering implementation. Prompting an LLM to build a Nylas component now produces something that actually matches our system, because the system speaks the same language the model does.
+            </p>
+            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+              Impact: Measurably increased velocity in design and engineering deliverables, with a shared semantic foundation that scales beyond any single contributor.
+            </p>
+          </section>
 
           <div style={{ overflow: "hidden", marginTop: "40px" }}>
             <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
@@ -399,25 +357,18 @@ export default function NylasPage() {
 
           {/* ── REFLECTION ───────────────────────────────────── */}
           <section style={{ paddingBottom: "120px" }}>
-            <SectionGrid
-              main={
-                <>
-                  <SectionHeading>
-                    <span style={{ fontWeight: 800 }}>Reflection.</span>
-                  </SectionHeading>
-                  <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                    The original dashboard treated each screen as a feature. The redesign treats the dashboard as a developer journey, from first sign-up to production launch to ongoing operations to AI-extended use.
-                  </p>
-                  <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                    The shadcn/Tailwind migration gets attention internally, but it&rsquo;s the enabler, not the headline. The headline is that more developers are reaching production, faster, and Nylas saw subscription growth more than double year over year.
-                  </p>
-                  <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: 0 }}>
-                    Doing this as a sole designer required treating design as product strategy, not just execution, which is the work I want to keep doing.
-                  </p>
-                </>
-              }
-              sidebar={null}
-            />
+            <SectionHeading>
+              <span style={{ fontWeight: 800 }}>Reflection.</span>
+            </SectionHeading>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              The original dashboard treated each screen as a feature. The redesign treats the dashboard as a developer journey, from first sign-up to production launch to ongoing operations to AI-extended use.
+            </p>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+              The shadcn/Tailwind migration gets attention internally, but it&rsquo;s the enabler, not the headline. The headline is that more developers are reaching production, faster, and Nylas saw subscription growth more than double year over year.
+            </p>
+            <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: 0 }}>
+              Doing this as a sole designer required treating design as product strategy, not just execution, which is the work I want to keep doing.
+            </p>
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}
