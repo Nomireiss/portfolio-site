@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 const MONO = "'JetBrains Mono', 'Courier New', monospace";
-const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
+const MONA = '"Manrope", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
 
 /* ─── Typography primitives ───────────────────────────────────── */
@@ -42,7 +42,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
       fontFamily: MONA,
       fontWeight: 300,
       fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-      lineHeight: 0.96,
+      lineHeight: 1.15,
       letterSpacing: "-0.025em",
       color: "#0A0A0A",
       margin: "0 0 32px",
@@ -70,26 +70,6 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
       <span style={{ fontFamily: MONO, fontSize: "0.7rem", color: "#B5B5B5" }}>
         {label ?? "Image to be provided"}
       </span>
-    </div>
-  );
-}
-
-/* ─── Sidebar comment card ────────────────────────────────────── */
-
-function SidebarComment({ label, mention, children }: { label: string; mention?: string; children: React.ReactNode }) {
-  return (
-    <div style={{ borderLeft: "2px solid #EFF0F6", paddingLeft: "16px" }}>
-      <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
-        {label}
-      </p>
-      {mention && (
-        <p style={{ fontFamily: INTER, fontSize: "1rem", color: "#4497F7", fontWeight: 600, marginBottom: "10px" }}>
-          {mention}
-        </p>
-      )}
-      <div style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#1A1A1A" }}>
-        {children}
-      </div>
     </div>
   );
 }
@@ -164,7 +144,7 @@ export default function NylasPage() {
               fontFamily: MONA,
               fontWeight: 300,
               fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
-              lineHeight: 0.95,
+              lineHeight: 1.1,
               letterSpacing: "-0.03em",
               color: "#0A0A0A",
               margin: "0 0 48px",
@@ -231,11 +211,7 @@ export default function NylasPage() {
                 </p>
               </>
             }
-            sidebar={
-              <SidebarComment label="The Diagnosis">
-                Most designers would have started with the UI. I started with the funnel. The &ldquo;fragmentation tax&rdquo; wasn't a visual problem. It was a structural one, and fixing it required thinking like a PM as much as a designer.
-              </SidebarComment>
-            }
+            sidebar={null}
           />
 
           <div style={{ overflow: "hidden", margin: "40px 0" }}>
@@ -256,11 +232,7 @@ export default function NylasPage() {
                 </p>
               </>
             }
-            sidebar={
-              <SidebarComment label="Scope">
-                Sole designer. Also PM for the Dashboard. Every initiative below was owned end-to-end: strategy, design, and execution.
-              </SidebarComment>
-            }
+            sidebar={null}
           />
 
           <Divider />
@@ -295,11 +267,7 @@ export default function NylasPage() {
                 </p>
               </>
             }
-            sidebar={
-              <SidebarComment label="The Architecture Bet">
-                The Sandbox/Production split wasn&rsquo;t just a UX inconvenience. It was a revenue leak. Unifying them meant developers could build confidence in Sandbox and carry that directly into production, with no mental reset.
-              </SidebarComment>
-            }
+            sidebar={null}
           />
 
           <div style={{ overflow: "hidden", margin: "40px 0" }}>
@@ -330,11 +298,7 @@ export default function NylasPage() {
                 <BulletItem label="Scheduler Explorer:">513 unique users.</BulletItem>
               </>
             }
-            sidebar={
-              <SidebarComment label="The PLG Lever">
-                Moving the &ldquo;aha moment&rdquo; inside the dashboard wasn&rsquo;t just a UX improvement. It was a growth strategy. Every developer who can see value without leaving the product is a developer closer to converting.
-              </SidebarComment>
-            }
+            sidebar={null}
           />
 
           <div style={{ overflow: "hidden", margin: "40px 0" }}>
@@ -363,11 +327,7 @@ export default function NylasPage() {
                 </p>
               </>
             }
-            sidebar={
-              <SidebarComment label="The Agentic Era">
-                Designing for AI isn&rsquo;t about adding a chat interface. It&rsquo;s about building surfaces that can be operated by agents and humans alike, with the same clarity and the same trust signals.
-              </SidebarComment>
-            }
+            sidebar={null}
           />
 
           <div style={{ overflow: "hidden", margin: "40px 0" }}>
@@ -396,228 +356,11 @@ export default function NylasPage() {
                 </p>
               </>
             }
-            sidebar={
-              <SidebarComment label="Technical Logic">
-                If an LLM can generate a component that passes design review on the first try, that&rsquo;s not a design system. That's a multiplier. The Shadcn/Tailwind migration was about building infrastructure that scales beyond any single contributor.
-              </SidebarComment>
-            }
+            sidebar={null}
           />
 
-          <div className="grid grid-cols-1 md:[grid-template-columns:2fr_1fr]" style={{ gap: "16px", marginTop: "40px" }}>
-            <div style={{ overflow: "hidden" }}>
-              <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
-            </div>
-            <div style={{
-              overflow: "auto",
-              backgroundColor: "#1E1E1E",
-              padding: "24px",
-              maxHeight: "600px",
-            }}>
-              <pre style={{
-                fontFamily: MONO,
-                fontSize: "0.65rem",
-                lineHeight: 1.6,
-                color: "#D4D4D4",
-                margin: 0,
-                whiteSpace: "pre",
-                tabSize: 2,
-              }}><code>{`// nds/tokens.ts
-// ─────────────────────────────────────────────────────
-// Nylas Design System — Token definitions
-// Built on shadcn/ui conventions + Tailwind CSS
-// ─────────────────────────────────────────────────────
-
-export const colors = {
-  // Semantic aliases → map to Tailwind config
-  background:    "hsl(var(--background))",
-  foreground:    "hsl(var(--foreground))",
-  card:          "hsl(var(--card))",
-  "card-foreground": "hsl(var(--card-foreground))",
-  primary:       "hsl(var(--primary))",
-  "primary-foreground": "hsl(var(--primary-fg))",
-  secondary:     "hsl(var(--secondary))",
-  muted:         "hsl(var(--muted))",
-  "muted-foreground": "hsl(var(--muted-fg))",
-  accent:        "hsl(var(--accent))",
-  destructive:   "hsl(var(--destructive))",
-  border:        "hsl(var(--border))",
-  input:         "hsl(var(--input))",
-  ring:          "hsl(var(--ring))",
-
-  // Nylas brand extensions
-  nylas: {
-    blue:    { 50: "#EBF5FF", 500: "#0D99FF",
-               700: "#0066CC", 900: "#003D7A" },
-    slate:   { 50: "#F8FAFC", 100: "#F1F5F9",
-               200: "#E2E8F0", 800: "#1E293B",
-               900: "#0F172A" },
-  },
-} as const;
-
-export const radius = {
-  sm:   "4px",   // inputs, badges
-  md:   "6px",   // cards, buttons
-  lg:   "8px",   // modals, panels
-  full: "9999px" // avatars, pills
-} as const;
-
-export const spacing = {
-  xs: "4px",  sm: "8px",  md: "16px",
-  lg: "24px", xl: "32px", "2xl": "48px",
-} as const;
-
-// ─────────────────────────────────────────────────────
-// nds/components/button.tsx
-// shadcn-style variant API using cva()
-// ─────────────────────────────────────────────────────
-
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
-
-const buttonVariants = cva(
-  // Base classes — shared across all variants
-  \`inline-flex items-center justify-center
-   whitespace-nowrap rounded-md text-sm font-medium
-   ring-offset-background transition-colors
-   focus-visible:outline-none focus-visible:ring-2
-   focus-visible:ring-ring focus-visible:ring-offset-2
-   disabled:pointer-events-none disabled:opacity-50\`,
-  {
-    variants: {
-      variant: {
-        default:
-          "bg-primary text-primary-foreground " +
-          "hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground " +
-          "hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background " +
-          "hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground " +
-          "hover:bg-secondary/80",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground",
-        link:
-          "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-10 px-4 py-2",
-        sm:      "h-9 rounded-md px-3",
-        lg:      "h-11 rounded-md px-8",
-        icon:    "h-10 w-10",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-);
-
-interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
-
-const Button = React.forwardRef<
-  HTMLButtonElement, ButtonProps
->(({ className, variant, size, ...props }, ref) => (
-  <button
-    className={cn(buttonVariants({ variant, size, className }))}
-    ref={ref}
-    {...props}
-  />
-));
-
-// ─────────────────────────────────────────────────────
-// nds/components/card.tsx
-// ─────────────────────────────────────────────────────
-
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-lg border bg-card text-card-foreground",
-      "shadow-sm",
-      className,
-    )}
-    {...props}
-  />
-));
-
-const CardHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
-    {...props}
-  />
-));
-
-const CardTitle = React.forwardRef<
-  HTMLHeadingElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-));
-
-// ─────────────────────────────────────────────────────
-// Usage in dashboard — consuming NDS components
-// with Tailwind utilities + NDS tokens
-// ─────────────────────────────────────────────────────
-
-import { Button } from "@nylas/nds";
-import { Card, CardHeader, CardTitle } from "@nylas/nds";
-import { Badge } from "@nylas/nds";
-import { Input } from "@nylas/nds";
-
-export function ApiKeyCard({ apiKey }: Props) {
-  return (
-    <Card className="border-nylas-slate-200">
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-base">
-            {apiKey.label}
-          </CardTitle>
-          <Badge variant={apiKey.active ? "default" : "muted"}>
-            {apiKey.active ? "Active" : "Revoked"}
-          </Badge>
-        </div>
-      </CardHeader>
-      <div className="px-6 pb-6 space-y-4">
-        <Input
-          value={apiKey.maskedValue}
-          readOnly
-          className="font-mono text-sm bg-nylas-slate-50"
-        />
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            Copy
-          </Button>
-          <Button variant="destructive" size="sm">
-            Revoke
-          </Button>
-        </div>
-      </div>
-    </Card>
-  );
-}`}</code></pre>
-            </div>
+          <div style={{ overflow: "hidden", marginTop: "40px" }}>
+            <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
@@ -625,8 +368,11 @@ export function ApiKeyCard({ apiKey }: Props) {
           {/* ── 05 MARKETING SITE REDESIGN ──────────────────── */}
           <SectionEyebrow>05</SectionEyebrow>
           <SectionHeading>
-            Marketing site redesign. <span style={{ fontWeight: 800 }}>In progress; partial soft-launch.</span>
+            Marketing site <span style={{ fontWeight: 800 }}>redesign.</span>
           </SectionHeading>
+          <p style={{ fontFamily: "Inter, sans-serif", fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.04em", color: "#999999", textTransform: "uppercase", margin: "-24px 0 32px" }}>
+            In progress; partial soft-launch.
+          </p>
           <PullQuote>
             In parallel with the dashboard work, I led the visual redesign of the Nylas marketing site, repositioning the brand from &ldquo;a collection of APIs&rdquo; to &ldquo;the infrastructure that powers communications.&rdquo; The goal was to push past the flat, grim aesthetic that dominates developer infrastructure marketing, using atmospheric dark mode, editorial dark/light pacing, and a restrained accent system to make the brand feel present and intentional.
           </PullQuote>
@@ -670,11 +416,7 @@ export function ApiKeyCard({ apiKey }: Props) {
                   </p>
                 </>
               }
-              sidebar={
-                <SidebarComment label="Final Take">
-                  The metric that matters isn&rsquo;t pixel-perfect components. It&rsquo;s +104% subscription growth. The system is how we got there, but the result is why it matters.
-                </SidebarComment>
-              }
+              sidebar={null}
             />
           </section>
 
