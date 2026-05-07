@@ -76,7 +76,7 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
 
 
 function Divider() {
-  return <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />;
+  return <div style={{ margin: "72px 0" }} />;
 }
 
 /* ─── Impact callout ──────────────────────────────────────────── */

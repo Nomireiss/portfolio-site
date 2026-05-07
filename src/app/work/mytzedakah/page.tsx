@@ -103,7 +103,7 @@ function SectionGrid({ main, sidebar }: { main: React.ReactNode; sidebar: React.
 }
 
 function Divider() {
-  return <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />;
+  return <div style={{ margin: "72px 0" }} />;
 }
 
 /* ─── Page ────────────────────────────────────────────────────── */
