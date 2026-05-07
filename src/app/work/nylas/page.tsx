@@ -163,7 +163,7 @@ export default function NylasPage() {
               {[
                 { label: "Company", value: "Nylas" },
                 { label: "Role", value: "Principal Product Designer (sole designer + Dashboard PM)" },
-                { label: "Stack", value: "Shadcn / Tailwind / React" },
+                { label: "Stack", value: "shadcn / Tailwind / React" },
                 { label: "Year", value: "2024–present" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
@@ -346,7 +346,7 @@ export default function NylasPage() {
                   <span style={{ fontWeight: 800 }}>designing for the AI era.</span>
                 </SectionHeading>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                  To ship this much surface area as a sole designer, and to set up the team for AI-assisted development, I rebuilt the design system around Shadcn and Tailwind, aligning Figma design tokens with the conventions engineers and LLMs already use.
+                  To ship this much surface area as a sole designer, and to set up the team for AI-assisted development, I rebuilt the design system around shadcn and Tailwind, aligning Figma design tokens with the conventions engineers and LLMs already use.
                 </p>
                 <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
                   The point isn&rsquo;t just consistency. It&rsquo;s that a token-driven, semantically-named system creates a shared layer between design, AI-assisted code generation, and engineering implementation. Prompting an LLM to build a Nylas component now produces something that actually matches our system, because the system speaks the same language the model does.
@@ -409,7 +409,7 @@ export default function NylasPage() {
                     The original dashboard treated each screen as a feature. The redesign treats the dashboard as a developer journey, from first sign-up to production launch to ongoing operations to AI-extended use.
                   </p>
                   <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
-                    The Shadcn/Tailwind migration gets attention internally, but it&rsquo;s the enabler, not the headline. The headline is that more developers are reaching production, faster, and Nylas saw subscription growth more than double year over year.
+                    The shadcn/Tailwind migration gets attention internally, but it&rsquo;s the enabler, not the headline. The headline is that more developers are reaching production, faster, and Nylas saw subscription growth more than double year over year.
                   </p>
                   <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: 0 }}>
                     Doing this as a sole designer required treating design as product strategy, not just execution, which is the work I want to keep doing.
