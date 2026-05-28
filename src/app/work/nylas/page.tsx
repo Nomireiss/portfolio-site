@@ -30,7 +30,7 @@ function BulletItem({ label, children }: { label: string; children: React.ReactN
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "16px" }}>
+    <p style={{ fontFamily: MONA, fontSize: "clamp(1rem, 1.4vw, 1.25rem)", fontWeight: 300, letterSpacing: "0.06em", color: "#B0B0B0", marginBottom: "12px" }}>
       {children}
     </p>
   );
@@ -145,9 +145,9 @@ export default function NylasPage() {
             <div style={{
               borderTop: "1px solid #E5E5E5",
               borderBottom: "1px solid #E5E5E5",
-              paddingTop: "20px",
-              paddingBottom: "20px",
-            }} className="grid grid-cols-2 md:grid-cols-4">
+              paddingTop: "28px",
+              paddingBottom: "28px",
+            }} className="grid grid-cols-2 md:grid-cols-4 gap-y-5">
               {[
                 { label: "Company", value: "Nylas" },
                 { label: "Role", value: "Principal Product Designer (sole designer + Dashboard PM)" },
@@ -155,8 +155,8 @@ export default function NylasPage() {
                 { label: "Year", value: "2024–present" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
-                  <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
-                  <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#0A0A0A", margin: 0 }}>{value}</p>
+                  <p style={{ fontFamily: MONA, fontSize: "0.82rem", fontWeight: 400, letterSpacing: "0.1em", color: "#737373", textTransform: "uppercase", margin: "0 0 8px" }}>{label}</p>
+                  <p style={{ fontFamily: INTER, fontSize: "1rem", fontWeight: 500, lineHeight: 1.5, color: "#0A0A0A", margin: 0 }}>{value}</p>
                 </div>
               ))}
             </div>
@@ -338,19 +338,17 @@ export default function NylasPage() {
             A version of the new homepage is live, with elements of the previous design still in place. The remaining pages are pre-launch.
           </PullQuote>
 
-          <div className="grid grid-cols-2" style={{ gap: "16px", marginTop: "40px" }}>
-            <div style={{ overflow: "hidden" }}>
-              <img src="/marketing-site-homepage-dark.jpg" alt="Nylas Marketing Site — Homepage" style={{ width: "100%", height: "auto", display: "block" }} />
-            </div>
-            <div style={{ overflow: "hidden" }}>
-              <img src="/scheduler-product-page.jpg" alt="Nylas Marketing Site — Scheduler page" style={{ width: "100%", height: "auto", display: "block" }} />
-            </div>
-            <div style={{ overflow: "hidden" }}>
-              <img src="/marketing-site-email.jpg" alt="Nylas Marketing Site — Email product page" style={{ width: "100%", height: "auto", display: "block" }} />
-            </div>
-            <div style={{ overflow: "hidden" }}>
-              <img src="/marketing-site-solutions.jpg" alt="Nylas Marketing Site — Solutions page" style={{ width: "100%", height: "auto", display: "block" }} />
-            </div>
+          <div className="grid grid-cols-2" style={{ gap: "12px", marginTop: "40px" }}>
+            {[
+              { src: "/marketing-site-homepage-dark.jpg", alt: "Nylas Marketing Site — Homepage" },
+              { src: "/scheduler-product-page.jpg", alt: "Nylas Marketing Site — Scheduler page" },
+              { src: "/marketing-site-email.jpg", alt: "Nylas Marketing Site — Email product page" },
+              { src: "/marketing-site-solutions.jpg", alt: "Nylas Marketing Site — Solutions page" },
+            ].map(({ src, alt }) => (
+              <div key={src} style={{ overflow: "hidden", aspectRatio: "4/3" }}>
+                <img src={src} alt={alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
+              </div>
+            ))}
           </div>
 
           <Divider />
@@ -372,29 +370,33 @@ export default function NylasPage() {
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}
-          <section style={{ borderTop: "1px solid #E5E5E5", paddingTop: "64px", paddingBottom: "120px" }}>
-            <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "32px" }}>
-              More Work
+          <section style={{ paddingTop: "80px", paddingBottom: "120px" }}>
+            <p style={{ fontFamily: MONA, fontSize: "1.1rem", fontWeight: 600, letterSpacing: "-0.01em", color: "#0A0A0A", marginBottom: "40px" }}>
+              More work
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "32px" }}>
               {[
-                { title: "SeeTree", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
-                { title: "MyTzedakah", image: "/MTF Card.png", href: "/work/mytzedakah" },
+                { title: "SeeTree", subtitle: "AgriTech / GIS · 2022–2024", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
+                { title: "MyTzedakah", subtitle: "FinTech / Philanthropy · 2020–2022", image: "/MTF Card.png", href: "/work/mytzedakah" },
               ].map((project) => (
                 <a
                   key={project.title}
                   href={project.href}
+                  className="group"
                   style={{ display: "block", textDecoration: "none", cursor: "pointer" }}
                 >
-                  <div style={{ width: "100%", aspectRatio: "16/10", borderRadius: "0", overflow: "hidden", marginBottom: "14px" }}>
+                  <div className="transition-transform duration-300 group-hover:-translate-y-1" style={{ width: "100%", aspectRatio: "16/10", borderRadius: "8px", overflow: "hidden", marginBottom: "16px" }}>
                     <img
                       src={project.image}
                       alt={project.title}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   </div>
-                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 400, color: "#0A0A0A", margin: 0, letterSpacing: "-0.02em" }}>
+                  <p style={{ fontFamily: MONA, fontSize: "1.15rem", fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px", letterSpacing: "-0.02em" }}>
                     {project.title}
+                  </p>
+                  <p style={{ fontFamily: INTER, fontSize: "0.85rem", fontWeight: 400, color: "#737373", margin: 0 }}>
+                    {project.subtitle}
                   </p>
                 </a>
               ))}
