@@ -30,7 +30,7 @@ function BulletItem({ label, children }: { label: string; children: React.ReactN
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "16px" }}>
+    <p style={{ fontFamily: MONA, fontSize: "clamp(1.5rem, 2.2vw, 2rem)", fontWeight: 300, letterSpacing: "0.04em", color: "#A0A0A0", marginBottom: "16px" }}>
       {children}
     </p>
   );
@@ -189,7 +189,7 @@ export default function SeeTreePage() {
           <Divider />
 
           {/* ── THE PROBLEM ─────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "960px" }}>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>The problem.</span>
             </SectionHeading>
@@ -228,7 +228,7 @@ export default function SeeTreePage() {
           <Divider />
 
           {/* ── SECTION 1: TWO DIFFERENT USERS ──────────────── */}
-          <section>
+          <section style={{ maxWidth: "960px" }}>
             <SectionEyebrow>01</SectionEyebrow>
             <SectionHeading>
               Designing for two<br />
@@ -255,7 +255,7 @@ export default function SeeTreePage() {
           <Divider />
 
           {/* ── SECTION 2: THE RESEARCH PROCESS ─────────────── */}
-          <section>
+          <section style={{ maxWidth: "960px" }}>
             <SectionEyebrow>02</SectionEyebrow>
             <SectionHeading>
               The research<br />
@@ -318,7 +318,7 @@ export default function SeeTreePage() {
           <Divider />
 
           {/* ── SECTION 4: FIELD-TO-OFFICE DATA LOOP ────────── */}
-          <section>
+          <section style={{ maxWidth: "960px" }}>
             <SectionEyebrow>04</SectionEyebrow>
             <SectionHeading>
               The field-to-office<br />
@@ -344,7 +344,7 @@ export default function SeeTreePage() {
           <Divider />
 
           {/* ── REFLECTION ──────────────────────────────────── */}
-          <section style={{ paddingBottom: "120px" }}>
+          <section style={{ maxWidth: "960px", paddingBottom: "120px" }}>
             <SectionEyebrow>Reflection</SectionEyebrow>
             <SectionHeading>
               Designing<br />

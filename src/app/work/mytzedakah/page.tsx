@@ -30,7 +30,7 @@ function BulletItem({ label, children }: { label: string; children: React.ReactN
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "16px" }}>
+    <p style={{ fontFamily: MONA, fontSize: "clamp(1.5rem, 2.2vw, 2rem)", fontWeight: 300, letterSpacing: "0.04em", color: "#A0A0A0", marginBottom: "16px" }}>
       {children}
     </p>
   );
@@ -185,7 +185,8 @@ export default function MyTzedakahPage() {
           <Divider />
 
           {/* ── THE PRODUCT ─────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "960px" }}>
+            <SectionEyebrow>01</SectionEyebrow>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>The product.</span>
             </SectionHeading>
@@ -207,7 +208,7 @@ export default function MyTzedakahPage() {
           <Divider />
 
           {/* ── MY ROLE ─────────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "960px" }}>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>My role.</span>
             </SectionHeading>
@@ -219,8 +220,8 @@ export default function MyTzedakahPage() {
           <Divider />
 
           {/* ── SECTION 1: CONSUMER EXPERIENCE ──────────────── */}
-          <section>
-            <SectionEyebrow>01</SectionEyebrow>
+          <section style={{ maxWidth: "960px" }}>
+            <SectionEyebrow>02</SectionEyebrow>
             <SectionHeading>
               The consumer experience:<br />
               <span style={{ fontWeight: 800 }}>making giving a habit, not an event.</span>
@@ -243,8 +244,8 @@ export default function MyTzedakahPage() {
           <Divider />
 
           {/* ── SECTION 2: P2P FUNDRAISING ──────────────────── */}
-          <section>
-            <SectionEyebrow>02</SectionEyebrow>
+          <section style={{ maxWidth: "960px" }}>
+            <SectionEyebrow>03</SectionEyebrow>
             <SectionHeading>
               Peer-to-peer fundraising:<br />
               <span style={{ fontWeight: 800 }}>turning donors into campaigners.</span>
@@ -267,8 +268,8 @@ export default function MyTzedakahPage() {
           <Divider />
 
           {/* ── SECTION 3: B2B WHITE-LABEL ─────────────────── */}
-          <section>
-            <SectionEyebrow>03</SectionEyebrow>
+          <section style={{ maxWidth: "960px" }}>
+            <SectionEyebrow>04</SectionEyebrow>
             <SectionHeading>
               The B2B white-label platform:<br />
               <span style={{ fontWeight: 800 }}>one engine, many brands.</span>
@@ -287,7 +288,8 @@ export default function MyTzedakahPage() {
           <Divider />
 
           {/* ── WHAT I OWNED ────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "960px" }}>
+            <SectionEyebrow>05</SectionEyebrow>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>What I owned.</span>
             </SectionHeading>
@@ -301,7 +303,7 @@ export default function MyTzedakahPage() {
           <Divider />
 
           {/* ── REFLECTION ──────────────────────────────────── */}
-          <section style={{ paddingBottom: "120px" }}>
+          <section style={{ maxWidth: "960px", paddingBottom: "120px" }}>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>Reflection.</span>
             </SectionHeading>
