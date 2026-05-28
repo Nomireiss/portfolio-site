@@ -30,7 +30,7 @@ function BulletItem({ label, children }: { label: string; children: React.ReactN
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONA, fontSize: "clamp(1rem, 1.4vw, 1.25rem)", fontWeight: 300, letterSpacing: "0.06em", color: "#B0B0B0", marginBottom: "12px" }}>
+    <p style={{ fontFamily: MONA, fontSize: "clamp(1.5rem, 2.2vw, 2rem)", fontWeight: 300, letterSpacing: "0.04em", color: "#C8C8C8", marginBottom: "16px" }}>
       {children}
     </p>
   );
