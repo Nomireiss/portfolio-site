@@ -10,7 +10,7 @@ const INTER = "Inter, sans-serif";
 
 function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px", textWrap: "pretty" } as React.CSSProperties}>
       {children}
     </p>
   );
@@ -172,7 +172,7 @@ export default function NylasPage() {
           </div>
 
           {/* ── THE PROBLEM ──────────────────────────────────── */}
-          <section style={{ maxWidth: "900px" }}>
+          <section style={{ maxWidth: "960px" }}>
             <SectionHeading>
               The problem behind<br />
               <span style={{ fontWeight: 800 }}>the dashboard.</span>
@@ -204,7 +204,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── MY ROLE ──────────────────────────────────────── */}
-          <section style={{ maxWidth: "900px" }}>
+          <section style={{ maxWidth: "960px" }}>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>My role.</span>
             </SectionHeading>
@@ -216,7 +216,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 1 ────────────────────────────────────── */}
-          <section style={{ maxWidth: "900px" }}>
+          <section style={{ maxWidth: "960px" }}>
             <SectionEyebrow>01</SectionEyebrow>
             <SectionHeading>
               Rebuilding the dashboard<br />
@@ -250,7 +250,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 2 ────────────────────────────────────── */}
-          <section style={{ maxWidth: "900px" }}>
+          <section style={{ maxWidth: "960px" }}>
             <SectionEyebrow>02</SectionEyebrow>
             <SectionHeading>
               Product Explorers<br />
@@ -276,7 +276,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 3 ────────────────────────────────────── */}
-          <section style={{ maxWidth: "900px" }}>
+          <section style={{ maxWidth: "960px" }}>
             <SectionEyebrow>03</SectionEyebrow>
             <SectionHeading>
               Setting the stage<br />
@@ -300,7 +300,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 4 ────────────────────────────────────── */}
-          <section style={{ maxWidth: "900px" }}>
+          <section style={{ maxWidth: "960px" }}>
             <SectionEyebrow>04</SectionEyebrow>
             <SectionHeading>
               The system underneath<br />
@@ -324,7 +324,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── 05 MARKETING SITE REDESIGN ──────────────────── */}
-          <div style={{ maxWidth: "900px" }}>
+          <div style={{ maxWidth: "960px" }}>
             <SectionEyebrow>05</SectionEyebrow>
             <SectionHeading>
               Marketing site <span style={{ fontWeight: 800 }}>redesign.</span>
@@ -356,7 +356,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── REFLECTION ───────────────────────────────────── */}
-          <section style={{ maxWidth: "900px", paddingBottom: "120px" }}>
+          <section style={{ maxWidth: "960px", paddingBottom: "120px" }}>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>Reflection.</span>
             </SectionHeading>
