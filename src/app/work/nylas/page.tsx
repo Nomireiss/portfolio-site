@@ -172,7 +172,7 @@ export default function NylasPage() {
           </div>
 
           {/* ── THE PROBLEM ──────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "900px" }}>
             <SectionHeading>
               The problem behind<br />
               <span style={{ fontWeight: 800 }}>the dashboard.</span>
@@ -204,7 +204,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── MY ROLE ──────────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "900px" }}>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>My role.</span>
             </SectionHeading>
@@ -216,7 +216,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 1 ────────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "900px" }}>
             <SectionEyebrow>01</SectionEyebrow>
             <SectionHeading>
               Rebuilding the dashboard<br />
@@ -250,7 +250,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 2 ────────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "900px" }}>
             <SectionEyebrow>02</SectionEyebrow>
             <SectionHeading>
               Product Explorers<br />
@@ -276,7 +276,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 3 ────────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "900px" }}>
             <SectionEyebrow>03</SectionEyebrow>
             <SectionHeading>
               Setting the stage<br />
@@ -300,7 +300,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── SECTION 4 ────────────────────────────────────── */}
-          <section>
+          <section style={{ maxWidth: "900px" }}>
             <SectionEyebrow>04</SectionEyebrow>
             <SectionHeading>
               The system underneath<br />
@@ -324,19 +324,21 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── 05 MARKETING SITE REDESIGN ──────────────────── */}
-          <SectionEyebrow>05</SectionEyebrow>
-          <SectionHeading>
-            Marketing site <span style={{ fontWeight: 800 }}>redesign.</span>
-          </SectionHeading>
-          <p style={{ fontFamily: "Inter, sans-serif", fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.04em", color: "#999999", textTransform: "uppercase", margin: "-24px 0 32px" }}>
-            In progress; partial soft-launch.
-          </p>
-          <PullQuote>
-            In parallel with the dashboard work, I led the visual redesign of the Nylas marketing site, repositioning the brand from &ldquo;a collection of APIs&rdquo; to &ldquo;the infrastructure that powers communications.&rdquo; The goal was to push past the flat, grim aesthetic that dominates developer infrastructure marketing, using atmospheric dark mode, editorial dark/light pacing, and a restrained accent system to make the brand feel present and intentional.
-          </PullQuote>
-          <PullQuote>
-            A version of the new homepage is live, with elements of the previous design still in place. The remaining pages are pre-launch.
-          </PullQuote>
+          <div style={{ maxWidth: "900px" }}>
+            <SectionEyebrow>05</SectionEyebrow>
+            <SectionHeading>
+              Marketing site <span style={{ fontWeight: 800 }}>redesign.</span>
+            </SectionHeading>
+            <p style={{ fontFamily: "Inter, sans-serif", fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.04em", color: "#999999", textTransform: "uppercase", margin: "-24px 0 32px" }}>
+              In progress; partial soft-launch.
+            </p>
+            <PullQuote>
+              In parallel with the dashboard work, I led the visual redesign of the Nylas marketing site, repositioning the brand from &ldquo;a collection of APIs&rdquo; to &ldquo;the infrastructure that powers communications.&rdquo; The goal was to push past the flat, grim aesthetic that dominates developer infrastructure marketing, using atmospheric dark mode, editorial dark/light pacing, and a restrained accent system to make the brand feel present and intentional.
+            </PullQuote>
+            <PullQuote>
+              A version of the new homepage is live, with elements of the previous design still in place. The remaining pages are pre-launch.
+            </PullQuote>
+          </div>
 
           <div className="grid grid-cols-2" style={{ gap: "12px", marginTop: "40px" }}>
             {[
@@ -354,7 +356,7 @@ export default function NylasPage() {
           <Divider />
 
           {/* ── REFLECTION ───────────────────────────────────── */}
-          <section style={{ paddingBottom: "120px" }}>
+          <section style={{ maxWidth: "900px", paddingBottom: "120px" }}>
             <SectionHeading>
               <span style={{ fontWeight: 800 }}>Reflection.</span>
             </SectionHeading>
