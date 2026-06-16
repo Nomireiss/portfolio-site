@@ -2,7 +2,7 @@
 
 import SplitText from "@/components/SplitText";
 
-const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
+const MONA = '"Manrope", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
 
 export default function Hero() {
@@ -42,8 +42,22 @@ export default function Hero() {
             textAlign="left"
           />
           <SplitText
+            tag="h1"
+            text="Former pastry chef."
+            className=""
+            delay={30}
+            duration={0.8}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+            textAlign="left"
+          />
+          <SplitText
             tag="p"
-            text="I've shaped product as the sole designer at three companies, and I excel at end-to-end ownership."
+            text="Sole designer at three companies, taking projects from messy start to shipped product."
             className=""
             delay={20}
             duration={0.6}

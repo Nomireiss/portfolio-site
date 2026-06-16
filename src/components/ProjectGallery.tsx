@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 const INTER = "Inter, sans-serif";
 
 const projects = [
-  { title: "Nylas", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
-  { title: "SeeTree", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
-  { title: "MyTzedakah", image: "/MTF Card.png", href: "/work/mytzedakah" },
+  { title: "Nylas", descriptor: "Developer infrastructure, scaled", image: "/MacBook Pro 16-inch Space Black on the Dark.png", href: "/work/nylas" },
+  { title: "SeeTree", descriptor: "Agricultural IoT across eight industries", image: "/Untitled design - 2026-04-20T001356.456.png", href: "/work/seetree" },
+  { title: "MyTzedakah", descriptor: "Consumer fintech, end-to-end", image: "/MTF Card.png", href: "/work/mytzedakah" },
 ];
 
 export default function ProjectGallery() {
@@ -58,6 +58,15 @@ export default function ProjectGallery() {
               margin: "16px 0 0",
             }}>
               {project.title}
+            </p>
+            <p style={{
+              fontFamily: INTER,
+              fontSize: "0.95rem",
+              fontWeight: 400,
+              color: "#737373",
+              margin: "4px 0 0",
+            }}>
+              {project.descriptor}
             </p>
           </div>
         ))}

@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
+const MONA = '"Manrope", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
 
 /* ─── Typography primitives ───────────────────────────────────── */

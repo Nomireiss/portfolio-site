@@ -48,7 +48,7 @@ export default function CTASection() {
         {/* Heading with word-fade */}
         <h2
           style={{
-            fontFamily: '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif',
+            fontFamily: '"Manrope", Inter, sans-serif',
             fontWeight: 800,
             fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)",
             lineHeight: 0.95,

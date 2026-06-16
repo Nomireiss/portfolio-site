@@ -16,7 +16,7 @@ function LinkedinIcon() {
 }
 import { sendContactEmail } from "./actions";
 
-const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
+const MONA = '"Manrope", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
 
 const inputStyle = {

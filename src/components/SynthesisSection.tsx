@@ -1,6 +1,6 @@
 "use client";
 
-const MONA = '"Mona Sans", "Plus Jakarta Sans", Inter, sans-serif';
+const MONA = '"Manrope", Inter, sans-serif';
 const INTER = "Inter, sans-serif";
 
 export default function SynthesisSection() {
