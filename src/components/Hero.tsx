@@ -43,20 +43,6 @@ export default function Hero() {
           />
           <SplitText
             tag="p"
-            text="Former pastry chef."
-            className="hero-subheadline"
-            delay={30}
-            duration={0.8}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-50px"
-            textAlign="left"
-          />
-          <SplitText
-            tag="p"
             text="Sole designer at three companies, taking projects from messy start to shipped product."
             className=""
             delay={20}
@@ -89,15 +75,7 @@ export default function Hero() {
           color: #1a1a1a;
           margin: 0;
         }
-        p.hero-subheadline, .split-parent.hero-subheadline {
-          font-family: ${MONA};
-          font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-          font-weight: 400;
-          letter-spacing: -0.01em;
-          line-height: 1.3;
-          color: #4a4a4a;
-          margin: 4px 0 12px;
-        }
+
       `}</style>
     </section>
   );
