@@ -42,9 +42,9 @@ export default function Hero() {
             textAlign="left"
           />
           <SplitText
-            tag="h1"
+            tag="p"
             text="Former pastry chef."
-            className=""
+            className="hero-subheadline"
             delay={30}
             duration={0.8}
             ease="power3.out"
@@ -88,6 +88,15 @@ export default function Hero() {
           line-height: 1.7;
           color: #1a1a1a;
           margin: 0;
+        }
+        p.hero-subheadline, .split-parent.hero-subheadline {
+          font-family: ${MONA};
+          font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+          font-weight: 400;
+          letter-spacing: -0.01em;
+          line-height: 1.3;
+          color: #4a4a4a;
+          margin: 4px 0 12px;
         }
       `}</style>
     </section>
