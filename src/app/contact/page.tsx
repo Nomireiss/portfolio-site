@@ -101,8 +101,7 @@ export default function ContactPage() {
               color: "#0A0A0A",
               margin: 0,
             }}>
-              Let&rsquo;s build something<br />
-              <span style={{ fontWeight: 800 }}>worth finding.</span>
+              Get in touch.
             </h1>
           </header>
 
@@ -240,7 +239,7 @@ export default function ContactPage() {
 
                 <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px" }}>
                   <p style={{ fontFamily: INTER, fontSize: "0.82rem", color: "#555555", margin: "0 0 6px" }}>
-                    <span style={{ fontWeight: 600, color: "#0A0A0A" }}>Status:</span> Open to a strategic partnership.
+                    <span style={{ fontWeight: 600, color: "#0A0A0A" }}>Status:</span> Open to new opportunities.
                   </p>
                   <p style={{ fontFamily: INTER, fontSize: "0.82rem", color: "#555555", margin: 0 }}>
                     <span style={{ fontWeight: 600, color: "#0A0A0A" }}>Location:</span> Toronto / Remote.
