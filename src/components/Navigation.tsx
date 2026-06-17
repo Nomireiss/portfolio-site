@@ -17,7 +17,7 @@ function LogoText() {
   );
 }
 
-export default function Navigation({ forceColored = false }: { forceColored?: boolean }) {
+export default function Navigation({ forceColored = false, hideWorkLink = false }: { forceColored?: boolean; hideWorkLink?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const isColored = forceColored;
@@ -39,9 +39,11 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-5">
             <div className="flex items-center gap-1">
-              <a href="/#work" className="h-9 px-4 py-2 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors inline-flex items-center">
-                Work
-              </a>
+              {!hideWorkLink && (
+                <a href="/#work" className="h-9 px-4 py-2 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors inline-flex items-center">
+                  Work
+                </a>
+              )}
               <a href="/about" className="h-9 px-4 py-2 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors inline-flex items-center">
                 About
               </a>
@@ -69,9 +71,11 @@ export default function Navigation({ forceColored = false }: { forceColored?: bo
         {/* Mobile dropdown */}
         {mobileOpen && (
           <nav className="md:hidden pt-3 pb-2 flex flex-col gap-1 border-t border-[#E5E5E5] mt-3">
-            <a href="/#work" onClick={() => setMobileOpen(false)} className="h-10 px-3 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors flex items-center">
-              Work
-            </a>
+            {!hideWorkLink && (
+              <a href="/#work" onClick={() => setMobileOpen(false)} className="h-10 px-3 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors flex items-center">
+                Work
+              </a>
+            )}
             <a href="/about" onClick={() => setMobileOpen(false)} className="h-10 px-3 text-sm font-medium text-[#0A0A0A] hover:bg-black/5 rounded-lg transition-colors flex items-center">
               About
             </a>

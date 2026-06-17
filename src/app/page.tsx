@@ -6,7 +6,7 @@ import CTASection from "@/components/CTASection";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
-      <Navigation />
+      <Navigation hideWorkLink />
       <Hero />
       <ProjectGallery />
       <CTASection />
