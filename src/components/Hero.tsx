@@ -43,7 +43,7 @@ export default function Hero() {
           />
           <SplitText
             tag="p"
-            text="Sole designer at three companies, taking projects from messy start to shipped product."
+            text="Three times a solo designer, forever partial to the messy puzzles that come before the polished briefs."
             className=""
             delay={20}
             duration={0.6}
