@@ -16,17 +16,6 @@ export default function Hero() {
     >
       <div className="w-full max-w-[1280px] mx-auto px-6">
         <div className="flex flex-col">
-          <p
-            style={{
-              fontFamily: INTER,
-              fontSize: "24px",
-              fontWeight: 300,
-              color: "#0A0A0A",
-              margin: "0 0 24px",
-            }}
-          >
-            Nomi Reiss
-          </p>
           <SplitText
             tag="h1"
             text="Senior Product Designer."
