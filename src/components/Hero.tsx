@@ -32,7 +32,7 @@ export default function Hero() {
           />
           <SplitText
             tag="p"
-            text="Three times a solo designer, forever partial to the messy puzzles that come before the polished briefs."
+            text="Forever partial to the messy puzzles that come before the polished briefs."
             className=""
             delay={20}
             duration={0.6}
