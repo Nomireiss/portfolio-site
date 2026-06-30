@@ -10,7 +10,7 @@ const INTER = "Inter, sans-serif";
 
 function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#2A2326", margin: "0 0 28px" }}>
       {children}
     </p>
   );
@@ -19,9 +19,9 @@ function PullQuote({ children }: { children: React.ReactNode }) {
 function BulletItem({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", gap: "12px", marginBottom: "14px" }}>
-      <span style={{ color: "#A3A3A3", flexShrink: 0, marginTop: "3px" }}>→</span>
-      <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#3A3A3A", margin: 0 }}>
-        <strong style={{ color: "#0A0A0A", fontWeight: 600 }}>{label} </strong>
+      <span style={{ color: "#A6907E", flexShrink: 0, marginTop: "3px" }}>→</span>
+      <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#2A2326", margin: 0 }}>
+        <strong style={{ color: "#2A2326", fontWeight: 600 }}>{label} </strong>
         {children}
       </p>
     </div>
@@ -30,7 +30,7 @@ function BulletItem({ label, children }: { label: string; children: React.ReactN
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONA, fontSize: "clamp(1.5rem, 2.2vw, 2rem)", fontWeight: 300, letterSpacing: "0.04em", color: "#A0A0A0", marginBottom: "16px" }}>
+    <p style={{ fontFamily: MONA, fontSize: "clamp(1.5rem, 2.2vw, 2rem)", fontWeight: 300, letterSpacing: "0.04em", color: "#A6907E", marginBottom: "16px" }}>
       {children}
     </p>
   );
@@ -44,7 +44,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
       fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
       lineHeight: 1.15,
       letterSpacing: "-0.025em",
-      color: "#0A0A0A",
+      color: "#2A2326",
       margin: "0 0 32px",
     }}>
       {children}
@@ -59,15 +59,15 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
     <div style={{
       width: "100%",
       aspectRatio,
-      background: "#F2F2F2",
+      background: "#F1E8D8",
       borderRadius: "10px",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      border: "1px solid #E8E8E8",
+      border: "1px solid #E5D9C5",
       margin: "40px 0",
     }}>
-      <span style={{ fontFamily: MONO, fontSize: "0.7rem", color: "#B5B5B5" }}>
+      <span style={{ fontFamily: MONO, fontSize: "0.7rem", color: "#A6907E" }}>
         {label ?? "Image: to be provided"}
       </span>
     </div>
@@ -78,11 +78,11 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
 
 function SidebarComment({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div style={{ borderLeft: "2px solid #EFF0F6", paddingLeft: "16px" }}>
-      <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
+    <div style={{ borderLeft: "2px solid #E5D9C5", paddingLeft: "16px" }}>
+      <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase", marginBottom: "10px" }}>
         {label}
       </p>
-      <div style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#1A1A1A" }}>
+      <div style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#2A2326" }}>
         {children}
       </div>
     </div>
@@ -115,14 +115,14 @@ export default function SeeTreePage() {
     <>
       <Navigation forceColored />
 
-      <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
+      <main style={{ backgroundColor: "#FBF8F3", minHeight: "100vh" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto", paddingLeft: pad, paddingRight: pad }}>
 
           {/* Back */}
           <div style={{ paddingTop: "40px", paddingBottom: "56px" }}>
             <Link href="/#work"
-              style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: INTER, fontSize: "0.85rem", fontWeight: 500, color: "#737373", textDecoration: "none" }}
-              className="hover:text-[#0A0A0A] transition-colors"
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: INTER, fontSize: "0.85rem", fontWeight: 500, color: "#8A7E72", textDecoration: "none" }}
+              className="hover:text-[#2A2326] transition-colors"
             >
               <ArrowLeft size={15} /> All Work
             </Link>
@@ -131,8 +131,8 @@ export default function SeeTreePage() {
           {/* ── PROJECT HEADER ──────────────────────────────── */}
           <header style={{ paddingBottom: "48px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
-              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
-              <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
+              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A6907E" }} />
+              <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase" }}>
                 Case Study · AgriTech / GIS · 2022–2024
               </span>
             </div>
@@ -143,7 +143,7 @@ export default function SeeTreePage() {
               fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
               lineHeight: 1.1,
               letterSpacing: "-0.03em",
-              color: "#0A0A0A",
+              color: "#2A2326",
               margin: "0 0 48px",
             }}>
               <span style={{ fontWeight: 800 }}>One system, eight industries:</span>
@@ -153,8 +153,8 @@ export default function SeeTreePage() {
 
             {/* Metadata row */}
             <div style={{
-              borderTop: "1px solid #E5E5E5",
-              borderBottom: "1px solid #E5E5E5",
+              borderTop: "1px solid #ECE3D6",
+              borderBottom: "1px solid #ECE3D6",
               paddingTop: "20px",
               paddingBottom: "20px",
             }} className="grid grid-cols-2 md:grid-cols-4">
@@ -165,8 +165,8 @@ export default function SeeTreePage() {
                 { label: "Year", value: "2022–2024" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
-                  <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
-                  <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 700, color: "#0A0A0A", margin: 0 }}>{value}</p>
+                  <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
+                  <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 700, color: "#2A2326", margin: 0 }}>{value}</p>
                 </div>
               ))}
             </div>
@@ -199,7 +199,7 @@ export default function SeeTreePage() {
             <PullQuote>
               By the time I joined, SeeTree&rsquo;s customer base had expanded well beyond its original citrus-grower roots. Each new vertical (nuts, coffee, oil palm, forestry) brought different workflows, different user populations, different reporting requirements, and different field conditions. The product was being asked to serve all of them, but the design wasn&rsquo;t built for that kind of range. Components had drifted, mobile and desktop didn&rsquo;t share a system, and onboarding a new sector meant rebuilding rather than configuring.
             </PullQuote>
-            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#2A2326", fontWeight: 600, margin: 0 }}>
               This is the classic agritech scaling problem: you have one technology platform, but the product needs to feel native in radically different industries.
             </p>
           </section>
@@ -243,7 +243,7 @@ export default function SeeTreePage() {
             <PullQuote>
               The manager dashboard is used by agronomists and farm managers from an office, making strategic decisions across thousands of hectares. They need density, GIS visualization, historical trends, and the ability to drill from a regional view down to a single tree. Design constraints: information richness without overwhelm, fast filtering, clear data hierarchy.
             </PullQuote>
-            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#2A2326", fontWeight: 600, margin: 0 }}>
               I designed both as part of one system (shared design language, shared component primitives, shared brand) but tuned for each environment&rsquo;s reality.
             </p>
           </section>
@@ -290,7 +290,7 @@ export default function SeeTreePage() {
                 <PullQuote>
                   I built a token-driven design system with components designed to be composed and configured rather than forked. New sectors could be supported by recombining existing primitives and configuring sector-specific vocabulary, without designing from scratch each time.
                 </PullQuote>
-                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+                <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#2A2326", fontWeight: 600, margin: 0 }}>
                   This is the work I&rsquo;m most proud of from SeeTree: a system that absorbed the company&rsquo;s expansion without fragmenting.
                 </p>
               </>
@@ -356,7 +356,7 @@ export default function SeeTreePage() {
             <PullQuote>
               What I took from it: the difference between &ldquo;designing a feature&rdquo; and &ldquo;designing a system&rdquo; becomes existential when you can&rsquo;t fork. Every component had to earn its place not just in one workflow but in five. Every naming decision had to survive translation across industries. Every screen had to be built for configurability from day one.
             </PullQuote>
-            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#0A0A0A", fontWeight: 600, margin: 0 }}>
+            <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#2A2326", fontWeight: 600, margin: 0 }}>
               It&rsquo;s the project that taught me to design for range.
             </p>
             <div style={{ borderRadius: "10px", overflow: "hidden", marginTop: "48px", maxWidth: "85%", marginLeft: "auto", marginRight: "auto" }}>
@@ -365,8 +365,8 @@ export default function SeeTreePage() {
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}
-          <section style={{ borderTop: "1px solid #E5E5E5", paddingTop: "64px", paddingBottom: "120px" }}>
-            <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "32px" }}>
+          <section style={{ borderTop: "1px solid #ECE3D6", paddingTop: "64px", paddingBottom: "120px" }}>
+            <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase", marginBottom: "32px" }}>
               More Work
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -386,7 +386,7 @@ export default function SeeTreePage() {
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   </div>
-                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 400, color: "#0A0A0A", margin: 0, letterSpacing: "-0.02em" }}>
+                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 400, color: "#2A2326", margin: 0, letterSpacing: "-0.02em" }}>
                     {project.title}
                   </p>
                 </a>

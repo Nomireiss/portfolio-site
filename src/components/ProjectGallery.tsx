@@ -14,7 +14,7 @@ export default function ProjectGallery() {
   const router = useRouter();
 
   return (
-    <section id="work" style={{ backgroundColor: "#ffffff", padding: "64px 0 80px" }}>
+    <section id="work" style={{ backgroundColor: "#FBF8F3", padding: "64px 0 80px" }}>
       <div className="w-full max-w-[1280px] mx-auto px-6">
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-[15px]">
@@ -28,12 +28,12 @@ export default function ProjectGallery() {
                 aspectRatio: "3 / 4",
                 position: "relative",
                 overflow: "hidden",
-                backgroundColor: "#1a1a1a",
+                backgroundColor: "#2A2326",
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.12)";
+                e.currentTarget.style.boxShadow = "0 12px 32px rgba(42,35,38,0.12)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
@@ -54,7 +54,7 @@ export default function ProjectGallery() {
               fontFamily: INTER,
               fontSize: "24px",
               fontWeight: 600,
-              color: "#000000",
+              color: "#2A2326",
               margin: "16px 0 0",
             }}>
               {project.title}
@@ -63,7 +63,7 @@ export default function ProjectGallery() {
               fontFamily: INTER,
               fontSize: "0.95rem",
               fontWeight: 400,
-              color: "#737373",
+              color: "#8A7E72",
               margin: "4px 0 0",
             }}>
               {project.descriptor}

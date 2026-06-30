@@ -8,9 +8,9 @@ import { ArrowLeft, Mail, CheckCircle } from "lucide-react";
 function LinkedinIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="#A3A3A3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <rect x="2" y="9" width="4" height="12" stroke="#A3A3A3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <circle cx="4" cy="4" r="2" stroke="#A3A3A3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="#A6907E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="2" y="9" width="4" height="12" stroke="#A6907E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="4" cy="4" r="2" stroke="#A6907E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
 }
@@ -24,22 +24,22 @@ const inputStyle = {
   fontFamily: INTER,
   fontSize: "1rem",
   fontWeight: 400,
-  color: "#0A0A0A",
-  backgroundColor: "#F9F9F9",
-  border: "1px solid #E5E5E5",
+  color: "#2A2326",
+  backgroundColor: "#FFFFFF",
+  border: "1px solid #E5D9C5",
   borderRadius: "6px",
   padding: "14px 16px",
   outline: "none",
   display: "block",
   boxSizing: "border-box" as const,
-  transition: "border-color 0.15s ease",
+  transition: "border-color 0.15s ease, box-shadow 0.15s ease",
 };
 
 const labelStyle = {
   fontFamily: INTER,
   fontSize: "0.82rem",
   fontWeight: 500,
-  color: "#555555",
+  color: "#A6907E",
   letterSpacing: "0.06em",
   textTransform: "uppercase" as const,
   display: "block",
@@ -70,15 +70,16 @@ export default function ContactPage() {
     <>
       <Navigation forceColored />
 
-      <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
+      <main style={{ backgroundColor: "#FBF8F3", minHeight: "100vh" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", paddingLeft: pad, paddingRight: pad }}>
 
           {/* Back */}
           <div className="pt-8 pb-8 md:pt-10 md:pb-14">
             <Link
               href="/"
-              style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: INTER, fontSize: "0.85rem", fontWeight: 500, color: "#737373", textDecoration: "none" }}
-              className="hover:text-[#0A0A0A] transition-colors"
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: INTER, fontSize: "0.85rem", fontWeight: 500, color: "#8A7E72", textDecoration: "none" }}
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = "#2A2326")}
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = "#8A7E72")}
             >
               <ArrowLeft size={15} /> Home
             </Link>
@@ -87,8 +88,8 @@ export default function ContactPage() {
           {/* Header */}
           <header className="pb-8 md:pb-16">
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
-              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
-              <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
+              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A6907E" }} />
+              <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase" }}>
                 Contact
               </span>
             </div>
@@ -98,10 +99,10 @@ export default function ContactPage() {
               fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
-              color: "#0A0A0A",
+              color: "#2A2326",
               margin: 0,
             }}>
-              Get in touch.
+              Get in touch<span style={{ color: "#4F6092" }}>.</span>
             </h1>
           </header>
 
@@ -112,17 +113,17 @@ export default function ContactPage() {
               {/* Form */}
               <div>
                 {status === "success" ? (
-                  <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "16px", padding: "40px", backgroundColor: "#F9F9F9", borderRadius: "10px", border: "1px solid #E5E5E5" }}>
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "16px", padding: "40px", backgroundColor: "#FFFFFF", borderRadius: "10px", border: "1px solid #E5D9C5" }}>
                     <CheckCircle size={32} color="#3DB96B" />
-                    <h2 style={{ fontFamily: MONA, fontWeight: 800, fontSize: "1.5rem", color: "#0A0A0A", margin: 0 }}>
+                    <h2 style={{ fontFamily: MONA, fontWeight: 800, fontSize: "1.5rem", color: "#2A2326", margin: 0 }}>
                       Message sent.
                     </h2>
-                    <p style={{ fontFamily: INTER, fontSize: "1rem", color: "#3A3A3A", lineHeight: 1.7, margin: 0 }}>
+                    <p style={{ fontFamily: INTER, fontSize: "1rem", color: "#2A2326", lineHeight: 1.7, margin: 0 }}>
                       Thanks for reaching out — I&rsquo;ll get back to you shortly.
                     </p>
                     <button
                       onClick={() => setStatus("idle")}
-                      style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#0D99FF", background: "none", border: "none", padding: 0, cursor: "pointer" }}
+                      style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#4F6092", background: "none", border: "none", padding: 0, cursor: "pointer" }}
                     >
                       Send another message
                     </button>
@@ -139,8 +140,8 @@ export default function ContactPage() {
                           required
                           placeholder="Your name"
                           style={inputStyle}
-                          onFocus={e => (e.target.style.borderColor = "#0D99FF")}
-                          onBlur={e => (e.target.style.borderColor = "#E5E5E5")}
+                          onFocus={e => { e.target.style.borderColor = "#4F6092"; e.target.style.boxShadow = "0 0 0 3px rgba(79,96,146,0.18)"; }}
+                          onBlur={e => { e.target.style.borderColor = "#E5D9C5"; e.target.style.boxShadow = "none"; }}
                         />
                       </div>
                       <div>
@@ -152,8 +153,8 @@ export default function ContactPage() {
                           required
                           placeholder="your@email.com"
                           style={inputStyle}
-                          onFocus={e => (e.target.style.borderColor = "#0D99FF")}
-                          onBlur={e => (e.target.style.borderColor = "#E5E5E5")}
+                          onFocus={e => { e.target.style.borderColor = "#4F6092"; e.target.style.boxShadow = "0 0 0 3px rgba(79,96,146,0.18)"; }}
+                          onBlur={e => { e.target.style.borderColor = "#E5D9C5"; e.target.style.boxShadow = "none"; }}
                         />
                       </div>
                     </div>
@@ -167,8 +168,8 @@ export default function ContactPage() {
                         rows={7}
                         placeholder="Tell me about your project..."
                         style={{ ...inputStyle, resize: "vertical", lineHeight: 1.7 }}
-                        onFocus={e => (e.target.style.borderColor = "#0D99FF")}
-                        onBlur={e => (e.target.style.borderColor = "#E5E5E5")}
+                        onFocus={e => { e.target.style.borderColor = "#4F6092"; e.target.style.boxShadow = "0 0 0 3px rgba(79,96,146,0.18)"; }}
+                        onBlur={e => { e.target.style.borderColor = "#E5D9C5"; e.target.style.boxShadow = "none"; }}
                       />
                     </div>
 
@@ -182,21 +183,23 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={status === "sending"}
-                        className="hover:bg-[#0B87E0] transition-colors"
                         style={{
                           display: "inline-flex",
                           alignItems: "center",
                           height: "52px",
                           padding: "0 32px",
-                          backgroundColor: status === "sending" ? "#7CC4F9" : "#0D99FF",
+                          backgroundColor: status === "sending" ? "#8A9BBF" : "#4F6092",
                           borderRadius: "6px",
                           fontFamily: INTER,
                           fontSize: "0.95rem",
                           fontWeight: 500,
-                          color: "#fff",
+                          color: "#FBF8F3",
                           border: "none",
                           cursor: status === "sending" ? "not-allowed" : "pointer",
+                          transition: "background-color 0.2s ease",
                         }}
+                        onMouseEnter={e => { if (status !== "sending") e.currentTarget.style.backgroundColor = "#3C4D7A"; }}
+                        onMouseLeave={e => { if (status !== "sending") e.currentTarget.style.backgroundColor = "#4F6092"; }}
                       >
                         {status === "sending" ? "Sending…" : "Send message"}
                       </button>
@@ -207,17 +210,18 @@ export default function ContactPage() {
 
               {/* Sidebar */}
               <aside className="md:sticky md:top-[120px] pb-16 md:pb-0" style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
-                <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px", display: "flex", flexDirection: "column", gap: "20px" }}>
-                  <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", margin: 0 }}>
+                <div style={{ borderLeft: "2px solid #E5D9C5", paddingLeft: "16px", display: "flex", flexDirection: "column", gap: "20px" }}>
+                  <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase", margin: 0 }}>
                     Get in touch
                   </p>
 
                   <a
                     href="mailto:nomi.reiss@gmail.com"
-                    style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", color: "#0A0A0A" }}
-                    className="hover:text-[#0D99FF] transition-colors group"
+                    style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", color: "#2A2326", transition: "color 0.2s ease" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#4F6092")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "#2A2326")}
                   >
-                    <Mail size={16} style={{ flexShrink: 0, color: "#A3A3A3" }} />
+                    <Mail size={16} style={{ flexShrink: 0, color: "#A6907E" }} />
                     <span style={{ fontFamily: INTER, fontSize: "0.95rem", fontWeight: 500 }}>
                       nomi.reiss@gmail.com
                     </span>
@@ -227,8 +231,9 @@ export default function ContactPage() {
                     href="https://www.linkedin.com/in/nomi-reiss-8a7a69b7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", color: "#0A0A0A" }}
-                    className="hover:text-[#0D99FF] transition-colors"
+                    style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", color: "#2A2326", transition: "color 0.2s ease" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#4F6092")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "#2A2326")}
                   >
                     <LinkedinIcon />
                     <span style={{ fontFamily: INTER, fontSize: "0.95rem", fontWeight: 500 }}>
@@ -237,12 +242,12 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                <div style={{ borderLeft: "2px solid #E5E5E5", paddingLeft: "16px" }}>
-                  <p style={{ fontFamily: INTER, fontSize: "0.82rem", color: "#555555", margin: "0 0 6px" }}>
-                    <span style={{ fontWeight: 600, color: "#0A0A0A" }}>Status:</span> Open to new opportunities.
+                <div style={{ borderLeft: "2px solid #E5D9C5", paddingLeft: "16px" }}>
+                  <p style={{ fontFamily: INTER, fontSize: "0.82rem", color: "#8A7E72", margin: "0 0 6px" }}>
+                    <span style={{ fontWeight: 600, color: "#2A2326" }}>Status:</span> Open to new opportunities.
                   </p>
-                  <p style={{ fontFamily: INTER, fontSize: "0.82rem", color: "#555555", margin: 0 }}>
-                    <span style={{ fontWeight: 600, color: "#0A0A0A" }}>Location:</span> Toronto / Remote.
+                  <p style={{ fontFamily: INTER, fontSize: "0.82rem", color: "#8A7E72", margin: 0 }}>
+                    <span style={{ fontWeight: 600, color: "#2A2326" }}>Location:</span> Toronto / Remote.
                   </p>
                 </div>
               </aside>

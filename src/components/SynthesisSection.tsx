@@ -7,9 +7,9 @@ export default function SynthesisSection() {
   return (
     <div
       style={{
-        backgroundColor: "#ffffff",
+        backgroundColor: "#FBF8F3",
         backgroundImage:
-          "linear-gradient(to bottom, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 65%), linear-gradient(to right, rgba(0,0,0,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.015) 1px, transparent 1px)",
+          "linear-gradient(to bottom, rgba(251,248,243,0) 35%, rgba(251,248,243,1) 65%), linear-gradient(to right, rgba(42,35,38,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(42,35,38,0.015) 1px, transparent 1px)",
         backgroundSize: "100% 100%, 10px 10px, 10px 10px",
         padding: "100px 0",
       }}
@@ -31,11 +31,11 @@ export default function SynthesisSection() {
               fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)",
               letterSpacing: "-0.03em",
               lineHeight: 0.95,
-              color: "#0A0A0A",
+              color: "#2A2326",
               margin: "0 0 24px",
             }}
           >
-            Finding Our Alignment.
+            Finding Our Alignment<span style={{ color: "#4F6092" }}>.</span>
           </h2>
           <p
             style={{
@@ -43,7 +43,7 @@ export default function SynthesisSection() {
               fontSize: "1.05rem",
               fontWeight: 400,
               lineHeight: 1.75,
-              color: "#3A3A3A",
+              color: "#2A2326",
               margin: 0,
             }}
           >

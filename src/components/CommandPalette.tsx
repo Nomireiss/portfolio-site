@@ -119,7 +119,6 @@ function fuzzyMatch(query: string, item: ResultItem): boolean {
   const q = query.toLowerCase().trim();
   if (item.label.toLowerCase().includes(q)) return true;
   if (item.keywords.some(k => k.includes(q))) return true;
-  // Character-by-character fuzzy on label
   const label = item.label.toLowerCase();
   let qi = 0;
   for (let i = 0; i < label.length && qi < q.length; i++) {
@@ -150,7 +149,6 @@ export default function CommandPalette() {
     setActiveIndex(0);
   }, []);
 
-  // Keyboard shortcut to open
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -163,17 +161,14 @@ export default function CommandPalette() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [close]);
 
-  // Focus input when opened
   useEffect(() => {
     if (open) setTimeout(() => inputRef.current?.focus(), 50);
   }, [open]);
 
   const filtered = ALL_RESULTS.filter(r => fuzzyMatch(query, r));
 
-  // Reset active index when results change
   useEffect(() => { setActiveIndex(0); }, [query]);
 
-  // Arrow key navigation
   useEffect(() => {
     if (!open) return;
     function onKey(e: KeyboardEvent) {
@@ -203,7 +198,7 @@ export default function CommandPalette() {
       onClick={close}
       style={{
         position: "fixed", inset: 0, zIndex: 500,
-        backgroundColor: "rgba(0,0,0,0.45)",
+        backgroundColor: "rgba(42,35,38,0.45)",
         backdropFilter: "blur(4px)",
         WebkitBackdropFilter: "blur(4px)",
         display: "flex", alignItems: "flex-start", justifyContent: "center",
@@ -215,9 +210,9 @@ export default function CommandPalette() {
         style={{
           width: "100%", maxWidth: "560px", margin: "0 16px",
           backgroundColor: "#FFFFFF",
-          border: "1px solid #E5E5E5",
+          border: "1px solid #E5D9C5",
           borderRadius: "12px",
-          boxShadow: "0 24px 64px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08)",
+          boxShadow: "0 24px 64px rgba(42,35,38,0.18), 0 4px 16px rgba(42,35,38,0.08)",
           overflow: "hidden",
         }}
       >
@@ -225,9 +220,9 @@ export default function CommandPalette() {
         <div style={{
           display: "flex", alignItems: "center", gap: "12px",
           padding: "16px 20px",
-          borderBottom: filtered.length > 0 ? "1px solid #F0F0F0" : "none",
+          borderBottom: filtered.length > 0 ? "1px solid #ECE3D6" : "none",
         }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A3A3A3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A6907E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
             <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
           </svg>
           <input
@@ -238,12 +233,12 @@ export default function CommandPalette() {
             style={{
               flex: 1, border: "none", outline: "none", background: "transparent",
               fontFamily: MONA, fontSize: "1rem", fontWeight: 400,
-              color: "#0A0A0A", caretColor: "#0D99FF",
+              color: "#2A2326", caretColor: "#4F6092",
             }}
           />
           <kbd style={{
-            fontFamily: MONO, fontSize: "10px", color: "#A3A3A3",
-            border: "1px solid #E5E5E5", borderRadius: "4px",
+            fontFamily: MONO, fontSize: "10px", color: "#A6907E",
+            border: "1px solid #E5D9C5", borderRadius: "4px",
             padding: "2px 6px", flexShrink: 0,
           }}>
             ESC
@@ -255,11 +250,10 @@ export default function CommandPalette() {
           <div style={{ maxHeight: "340px", overflowY: "auto", padding: "8px 0" }}>
             {Object.entries(groups).map(([category, items]) => (
               <div key={category}>
-                {/* Category label */}
                 <div style={{
                   fontFamily: INTER, fontSize: "10px", fontWeight: 600,
                   letterSpacing: "0.1em", textTransform: "uppercase",
-                  color: "#A3A3A3", padding: "8px 20px 4px",
+                  color: "#A6907E", padding: "8px 20px 4px",
                 }}>
                   {category}
                 </div>
@@ -275,21 +269,21 @@ export default function CommandPalette() {
                       style={{
                         display: "flex", alignItems: "center", justifyContent: "space-between",
                         padding: "9px 20px",
-                        backgroundColor: isActive ? (item.isEasterEgg ? "#0A0A0A" : "#F5F5F5") : "transparent",
+                        backgroundColor: isActive ? (item.isEasterEgg ? "#2A2326" : "#F1E8D8") : "transparent",
                         cursor: item.isEasterEgg ? "default" : "pointer",
                         transition: "background-color 0.1s ease",
                       }}
                     >
                       <span style={{
                         fontFamily: MONO, fontSize: "13px",
-                        color: item.isEasterEgg ? (isActive ? "#0D99FF" : "#737373") : (isActive ? "#0A0A0A" : "#3A3A3A"),
+                        color: item.isEasterEgg ? (isActive ? "#4F6092" : "#8A7E72") : (isActive ? "#2A2326" : "#2A2326"),
                         fontStyle: item.isEasterEgg ? "italic" : "normal",
                       }}>
                         {item.label}
                       </span>
                       <span style={{
                         fontFamily: MONO, fontSize: "11px",
-                        color: item.isEasterEgg ? (isActive ? "#555" : "#A3A3A3") : (isActive ? "#737373" : "#B5B5B5"),
+                        color: item.isEasterEgg ? (isActive ? "#8A7E72" : "#A6907E") : (isActive ? "#8A7E72" : "#A6907E"),
                         flexShrink: 0, marginLeft: "16px",
                       }}>
                         {item.hint}
@@ -306,7 +300,7 @@ export default function CommandPalette() {
         {filtered.length === 0 && query.trim() && (
           <div style={{
             padding: "32px 20px", textAlign: "center",
-            fontFamily: MONO, fontSize: "12px", color: "#B5B5B5",
+            fontFamily: MONO, fontSize: "12px", color: "#A6907E",
           }}>
             No results for &ldquo;{query}&rdquo;
           </div>
@@ -314,7 +308,7 @@ export default function CommandPalette() {
 
         {/* Footer hint */}
         <div style={{
-          borderTop: "1px solid #F0F0F0",
+          borderTop: "1px solid #ECE3D6",
           padding: "10px 20px",
           display: "flex", gap: "16px", alignItems: "center",
         }}>
@@ -326,14 +320,14 @@ export default function CommandPalette() {
             <div key={label} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
               {keys.map(k => (
                 <kbd key={k} style={{
-                  fontFamily: MONO, fontSize: "10px", color: "#A3A3A3",
-                  border: "1px solid #E5E5E5", borderRadius: "3px",
+                  fontFamily: MONO, fontSize: "10px", color: "#A6907E",
+                  border: "1px solid #E5D9C5", borderRadius: "3px",
                   padding: "1px 5px",
                 }}>
                   {k}
                 </kbd>
               ))}
-              <span style={{ fontFamily: INTER, fontSize: "11px", color: "#B5B5B5" }}>
+              <span style={{ fontFamily: INTER, fontSize: "11px", color: "#A6907E" }}>
                 {label}
               </span>
             </div>

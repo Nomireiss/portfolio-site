@@ -12,7 +12,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#E5E5E5] py-12 md:py-24" style={{ backgroundColor: "#EFF0F6" }}>
+    <footer className="py-12 md:py-24" style={{ background: "linear-gradient(90deg, #DAD3E3 0%, #C2C8DF 52%, #A9B6D6 100%)", borderTop: "1px solid #ECE3D6" }}>
       <div className="w-full max-w-[1280px] mx-auto px-6 flex flex-col gap-8 md:gap-12">
 
         {/* Top row */}
@@ -22,7 +22,10 @@ export default function Footer() {
           </a>
           <div className="flex flex-wrap gap-x-8 gap-y-3">
             {navLinks.map(({ label, href }) => (
-              <a key={label} href={href} className="text-[#3A3A3A] text-sm leading-5 hover:text-[#0A0A0A] transition-colors">
+              <a key={label} href={href} className="text-sm leading-5 transition-colors" style={{ color: "rgba(46,58,92,0.8)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#2E3A5C")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(46,58,92,0.8)")}
+              >
                 {label}
               </a>
             ))}
@@ -30,11 +33,11 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#E5E5E5]" />
+        <div style={{ borderTop: "1px solid rgba(46,58,92,0.15)" }} />
 
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0">
-          <span className="text-[#0A0A0A] text-sm leading-5">
+          <span className="text-sm leading-5" style={{ color: "#2E3A5C" }}>
             © {new Date().getFullYear()} Nomi Reiss. All rights reserved.
           </span>
         </div>

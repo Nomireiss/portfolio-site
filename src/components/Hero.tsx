@@ -10,7 +10,7 @@ export default function Hero() {
     <section
       className="relative overflow-hidden"
       style={{
-        backgroundColor: "#ffffff",
+        backgroundColor: "#FBF8F3",
         padding: "clamp(24px, 3vw, 40px) 0 0",
       }}
     >
@@ -53,7 +53,7 @@ export default function Hero() {
           font-size: clamp(2rem, 4vw, 3.6rem);
           letter-spacing: -0.03em;
           line-height: 1.05;
-          color: #0A0A0A;
+          color: #2A2326;
           margin: 0 0 10px;
         }
         .split-parent p, p.split-parent {
@@ -61,7 +61,7 @@ export default function Hero() {
           font-size: clamp(1.05rem, 1.4vw, 1.2rem);
           font-weight: 400;
           line-height: 1.7;
-          color: #1a1a1a;
+          color: #2A2326;
           margin: 0;
         }
 

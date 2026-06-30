@@ -5,7 +5,7 @@ export default function CTASection() {
     <section
       id="contact"
       style={{
-        backgroundColor: "#0A0A0A",
+        background: "linear-gradient(90deg, #DAD3E3 0%, #C2C8DF 52%, #A9B6D6 100%)",
         minHeight: "unset",
         display: "flex",
         flexDirection: "column",
@@ -31,12 +31,12 @@ export default function CTASection() {
               fontFamily: "Inter, sans-serif",
               fontSize: "0.85rem",
               fontWeight: 400,
-              color: "rgba(255,255,255,0.6)",
+              color: "rgba(46,58,92,0.75)",
               textDecoration: "none",
               transition: "color 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#2E3A5C")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(46,58,92,0.75)")}
           >
             {label}
           </a>
@@ -53,11 +53,11 @@ export default function CTASection() {
             fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)",
             lineHeight: 0.95,
             letterSpacing: "-0.03em",
-            color: "#fff",
+            color: "#2E3A5C",
             margin: 0,
           }}
         >
-          Always up for a good puzzle.
+          Always up for a good puzzle<span style={{ color: "#4F6092" }}>.</span>
         </h2>
 
         {/* Button + status */}
@@ -67,26 +67,26 @@ export default function CTASection() {
             style={{
               display: "inline-flex", alignItems: "center",
               height: "52px", padding: "0 32px",
-              border: "1.5px solid rgba(255,255,255,0.8)",
+              border: "1.5px solid rgba(46,58,92,0.4)",
               borderRadius: "9999px",
               fontFamily: "Inter, sans-serif",
               fontSize: "0.95rem", fontWeight: 500,
-              color: "#fff",
+              color: "#2E3A5C",
               textDecoration: "none",
               transition: "all 0.2s ease",
               backgroundColor: "transparent",
               transform: "scale(1)",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#0D99FF";
-              e.currentTarget.style.borderColor = "#0D99FF";
-              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.backgroundColor = "#4F6092";
+              e.currentTarget.style.borderColor = "#4F6092";
+              e.currentTarget.style.color = "#FBF8F3";
               e.currentTarget.style.transform = "scale(1.05)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.borderColor = "rgba(255,255,255,0.8)";
-              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.borderColor = "rgba(46,58,92,0.4)";
+              e.currentTarget.style.color = "#2E3A5C";
               e.currentTarget.style.transform = "scale(1)";
             }}
           >
@@ -98,7 +98,7 @@ export default function CTASection() {
             <span style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "0.85rem", fontWeight: 400,
-              color: "rgba(255,255,255,0.6)",
+              color: "rgba(46,58,92,0.75)",
             }}>
               Available for opportunities
             </span>
@@ -109,20 +109,21 @@ export default function CTASection() {
       {/* Bottom bar */}
       <div className="grid grid-cols-1 md:grid-cols-3" style={{
         alignItems: "flex-end",
-        borderTop: "1px solid rgba(255,255,255,0.1)",
+        borderTop: "1px solid rgba(46,58,92,0.25)",
+        marginTop: "48px",
         paddingTop: "24px",
       }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.4)" }}>
+          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(46,58,92,0.7)" }}>
             nomi.reiss@gmail.com
           </span>
-          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.4)" }}>
+          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(46,58,92,0.7)" }}>
             Toronto / Remote
           </span>
         </div>
 
         <div style={{ textAlign: "right" }}>
-          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.25)" }}>
+          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8rem", color: "rgba(46,58,92,0.5)" }}>
             NOMI &copy;{new Date().getFullYear()}
           </span>
         </div>

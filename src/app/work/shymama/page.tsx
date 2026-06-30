@@ -9,7 +9,7 @@ const INTER = "Inter, sans-serif";
 
 function PullQuote({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#3A3A3A", margin: "0 0 28px" }}>
+    <p style={{ fontFamily: INTER, fontSize: "1.05rem", lineHeight: 1.8, color: "#2A2326", margin: "0 0 28px" }}>
       {children}
     </p>
   );
@@ -18,9 +18,9 @@ function PullQuote({ children }: { children: React.ReactNode }) {
 function BulletItem({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", gap: "12px", marginBottom: "14px" }}>
-      <span style={{ color: "#A3A3A3", flexShrink: 0, marginTop: "3px" }}>→</span>
-      <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#3A3A3A", margin: 0 }}>
-        <strong style={{ color: "#0A0A0A", fontWeight: 600 }}>{label} </strong>
+      <span style={{ color: "#A6907E", flexShrink: 0, marginTop: "3px" }}>→</span>
+      <p style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#2A2326", margin: 0 }}>
+        <strong style={{ color: "#2A2326", fontWeight: 600 }}>{label} </strong>
         {children}
       </p>
     </div>
@@ -29,7 +29,7 @@ function BulletItem({ label, children }: { label: string; children: React.ReactN
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "16px" }}>
+    <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase", marginBottom: "16px" }}>
       {children}
     </p>
   );
@@ -43,7 +43,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
       fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
       lineHeight: 0.96,
       letterSpacing: "-0.025em",
-      color: "#0A0A0A",
+      color: "#2A2326",
       margin: "0 0 32px",
     }}>
       {children}
@@ -58,15 +58,15 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
     <div style={{
       width: "100%",
       aspectRatio,
-      background: "#F2F2F2",
+      background: "#F1E8D8",
       borderRadius: "10px",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      border: "1px solid #E8E8E8",
+      border: "1px solid #E5D9C5",
       margin: "40px 0",
     }}>
-      <span style={{ fontFamily: INTER, fontSize: "0.7rem", color: "#B5B5B5" }}>
+      <span style={{ fontFamily: INTER, fontSize: "0.7rem", color: "#A6907E" }}>
         {label ?? "Image — to be provided"}
       </span>
     </div>
@@ -77,16 +77,16 @@ function ImagePlaceholder({ label, aspectRatio = "16/9" }: { label?: string; asp
 
 function SidebarComment({ label, mention, children }: { label: string; mention?: string; children: React.ReactNode }) {
   return (
-    <div style={{ borderLeft: "2px solid #EFF0F6", paddingLeft: "16px" }}>
-      <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#555555", textTransform: "uppercase", marginBottom: "10px" }}>
+    <div style={{ borderLeft: "2px solid #E5D9C5", paddingLeft: "16px" }}>
+      <p style={{ fontFamily: INTER, fontSize: "0.82rem", fontWeight: 500, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase", marginBottom: "10px" }}>
         {label}
       </p>
       {mention && (
-        <p style={{ fontFamily: INTER, fontSize: "1rem", color: "#4497F7", fontWeight: 600, marginBottom: "10px" }}>
+        <p style={{ fontFamily: INTER, fontSize: "1rem", color: "#4F6092", fontWeight: 600, marginBottom: "10px" }}>
           {mention}
         </p>
       )}
-      <div style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#1A1A1A" }}>
+      <div style={{ fontFamily: INTER, fontSize: "1rem", lineHeight: 1.75, color: "#2A2326" }}>
         {children}
       </div>
     </div>
@@ -107,7 +107,7 @@ function SectionGrid({ main, sidebar }: { main: React.ReactNode; sidebar: React.
 }
 
 function Divider() {
-  return <div style={{ borderTop: "1px solid #E5E5E5", margin: "72px 0" }} />;
+  return <div style={{ borderTop: "1px solid #ECE3D6", margin: "72px 0" }} />;
 }
 
 /* ─── Page ────────────────────────────────────────────────────── */
@@ -119,14 +119,14 @@ export default function ShyMamaPage() {
     <>
       <Navigation forceColored />
 
-      <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
+      <main style={{ backgroundColor: "#FBF8F3", minHeight: "100vh" }}>
         <div style={{ maxWidth: "1440px", margin: "0 auto", paddingLeft: pad, paddingRight: pad }}>
 
           {/* Back */}
           <div style={{ paddingTop: "40px", paddingBottom: "56px" }}>
             <Link href="/#work"
-              style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: INTER, fontSize: "0.85rem", fontWeight: 500, color: "#737373", textDecoration: "none" }}
-              className="hover:text-[#0A0A0A] transition-colors"
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: INTER, fontSize: "0.85rem", fontWeight: 500, color: "#8A7E72", textDecoration: "none" }}
+              className="hover:text-[#2A2326] transition-colors"
             >
               <ArrowLeft size={15} /> All Work
             </Link>
@@ -135,8 +135,8 @@ export default function ShyMamaPage() {
           {/* ── PROJECT HEADER — full width ──────────────────── */}
           <header style={{ paddingBottom: "48px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
-              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A3A3A3" }} />
-              <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase" }}>
+              <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#A6907E" }} />
+              <span style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase" }}>
                 Case Study · E-Commerce / DTC · 2023
               </span>
             </div>
@@ -147,7 +147,7 @@ export default function ShyMamaPage() {
               fontSize: "clamp(2.2rem, 4.2vw, 5.2rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
-              color: "#0A0A0A",
+              color: "#2A2326",
               margin: "0 0 48px",
             }}>
               Designing for the
@@ -157,8 +157,8 @@ export default function ShyMamaPage() {
 
             {/* Metadata row */}
             <div style={{
-              borderTop: "1px solid #E5E5E5",
-              borderBottom: "1px solid #E5E5E5",
+              borderTop: "1px solid #ECE3D6",
+              borderBottom: "1px solid #ECE3D6",
               paddingTop: "20px",
               paddingBottom: "20px",
             }} className="grid grid-cols-2 md:grid-cols-4">
@@ -169,8 +169,8 @@ export default function ShyMamaPage() {
                 { label: "Year", value: "2023" },
               ].map(({ label, value }) => (
                 <div key={label} style={{ paddingRight: "24px" }}>
-                  <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
-                  <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#0A0A0A", margin: 0 }}>{value}</p>
+                  <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
+                  <p style={{ fontFamily: INTER, fontSize: "0.9rem", fontWeight: 500, color: "#2A2326", margin: 0 }}>{value}</p>
                 </div>
               ))}
             </div>
@@ -232,8 +232,8 @@ export default function ShyMamaPage() {
                 </BulletItem>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "12px" }}>
                   {["Ergonomic Audit — Thumb Zone Map", "Subscription Flow — Checkout Redesign"].map(l => (
-                    <div key={l} style={{ aspectRatio: "4/3", background: "#F2F2F2", borderRadius: "10px", border: "1px solid #E8E8E8", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <span style={{ fontFamily: INTER, fontSize: "0.65rem", color: "#B5B5B5", textAlign: "center", padding: "0 12px" }}>{l}</span>
+                    <div key={l} style={{ aspectRatio: "4/3", background: "#F1E8D8", borderRadius: "10px", border: "1px solid #E5D9C5", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <span style={{ fontFamily: INTER, fontSize: "0.65rem", color: "#A6907E", textAlign: "center", padding: "0 12px" }}>{l}</span>
                     </div>
                   ))}
                 </div>
@@ -322,8 +322,8 @@ export default function ShyMamaPage() {
           </section>
 
           {/* ── MORE WORK ────────────────────────────────────── */}
-          <section style={{ borderTop: "1px solid #E5E5E5", paddingTop: "64px", paddingBottom: "120px" }}>
-            <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#222222", textTransform: "uppercase", marginBottom: "32px" }}>
+          <section style={{ borderTop: "1px solid #ECE3D6", paddingTop: "64px", paddingBottom: "120px" }}>
+            <p style={{ fontFamily: MONA, fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.12em", color: "#A6907E", textTransform: "uppercase", marginBottom: "32px" }}>
               More Work
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -343,7 +343,7 @@ export default function ShyMamaPage() {
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   </div>
-                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 400, color: "#0A0A0A", margin: 0, letterSpacing: "-0.02em" }}>
+                  <p style={{ fontFamily: MONA, fontSize: "1rem", fontWeight: 400, color: "#2A2326", margin: 0, letterSpacing: "-0.02em" }}>
                     {project.title}
                   </p>
                 </a>
