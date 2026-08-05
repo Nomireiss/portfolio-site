@@ -45,21 +45,6 @@ export default function CTASection() {
 
       {/* Main content */}
       <div style={{ display: "flex", flexDirection: "column", gap: "40px", maxWidth: "1000px" }}>
-        {/* Heading with word-fade */}
-        <h2
-          style={{
-            fontFamily: '"Manrope", Inter, sans-serif',
-            fontWeight: 800,
-            fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)",
-            lineHeight: 0.95,
-            letterSpacing: "-0.03em",
-            color: "#2E3A5C",
-            margin: 0,
-          }}
-        >
-          Always up for a good puzzle<span style={{ color: "#4F6092" }}>.</span>
-        </h2>
-
         {/* Button + status */}
         <div style={{ display: "flex", alignItems: "center", gap: "28px", flexWrap: "wrap" }}>
           <a
