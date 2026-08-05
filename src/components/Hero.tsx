@@ -32,7 +32,7 @@ export default function Hero() {
           />
           <SplitText
             tag="p"
-            text="working with product teams to untangle complex problems and land on solutions that feel considered."
+            text="Working with product teams to untangle complex problems and land on solutions that feel considered."
             className=""
             delay={20}
             duration={0.6}
