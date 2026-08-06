@@ -90,17 +90,27 @@ export default function AboutPage() {
 
               {/* Right — profile image */}
               <div className="order-1 md:order-2 md:sticky md:top-[120px]">
-                <img
-                  src="/nomi-avatar.png"
-                  alt="Nomi Reiss"
-                  style={{
-                    width: "100%",
-                    maxWidth: "460px",
-                    height: "auto",
-                    borderRadius: "16px",
-                    display: "block",
-                  }}
-                />
+                <div style={{
+                  width: "100%",
+                  maxWidth: "400px",
+                  aspectRatio: "1",
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                }}>
+                  <img
+                    src="/Gemini_Generated_Image_26mlkd26mlkd26ml.png"
+                    alt="Nomi Reiss"
+                    style={{
+                      width: "115%",
+                      height: "115%",
+                      objectFit: "cover",
+                      objectPosition: "center 15%",
+                      display: "block",
+                      marginLeft: "-5%",
+                      marginTop: "-2%",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </section>
