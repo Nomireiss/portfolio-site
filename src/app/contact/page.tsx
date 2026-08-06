@@ -243,14 +243,6 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                <div style={{ borderLeft: "2px solid #E5D9C5", paddingLeft: "16px" }}>
-                  <p style={{ fontFamily: INTER, fontSize: "0.82rem", color: "#8A7E72", margin: "0 0 6px" }}>
-                    <span style={{ fontWeight: 600, color: "#2A2326" }}>Status:</span> Open to new opportunities.
-                  </p>
-                  <p style={{ fontFamily: INTER, fontSize: "0.82rem", color: "#8A7E72", margin: 0 }}>
-                    <span style={{ fontWeight: 600, color: "#2A2326" }}>Location:</span> Toronto / Remote.
-                  </p>
-                </div>
               </aside>
 
             </div>
