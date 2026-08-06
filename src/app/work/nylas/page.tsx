@@ -345,7 +345,7 @@ export default function NylasPage() {
               { src: "/marketing-site-homepage-dark.jpg", alt: "Nylas Marketing Site — Homepage" },
               { src: "/scheduler-product-page.jpg", alt: "Nylas Marketing Site — Scheduler page" },
               { src: "/marketing-site-email.jpg", alt: "Nylas Marketing Site — Email product page" },
-              { src: "/marketing-site-solutions.jpg", alt: "Nylas Marketing Site — Solutions page" },
+              { src: "/Solutions Page.png", alt: "Nylas Marketing Site — Solutions page" },
             ].map(({ src, alt }) => (
               <div key={src} style={{ overflow: "hidden", aspectRatio: "4/3" }}>
                 <img src={src} alt={alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
