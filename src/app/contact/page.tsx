@@ -186,20 +186,21 @@ export default function ContactPage() {
                         style={{
                           display: "inline-flex",
                           alignItems: "center",
-                          height: "52px",
-                          padding: "0 32px",
-                          backgroundColor: status === "sending" ? "#8A9BBF" : "#4F6092",
-                          borderRadius: "6px",
+                          height: "48px",
+                          padding: "0 28px",
+                          backgroundColor: status === "sending" ? "#5a5456" : "#2A2326",
+                          borderRadius: "9999px",
                           fontFamily: INTER,
                           fontSize: "0.95rem",
                           fontWeight: 500,
                           color: "#FBF8F3",
                           border: "none",
                           cursor: status === "sending" ? "not-allowed" : "pointer",
-                          transition: "background-color 0.2s ease",
+                          transition: "all 0.2s ease",
+                          transform: "scale(1)",
                         }}
-                        onMouseEnter={e => { if (status !== "sending") e.currentTarget.style.backgroundColor = "#3C4D7A"; }}
-                        onMouseLeave={e => { if (status !== "sending") e.currentTarget.style.backgroundColor = "#4F6092"; }}
+                        onMouseEnter={e => { if (status !== "sending") { e.currentTarget.style.backgroundColor = "#3C4D7A"; e.currentTarget.style.transform = "scale(1.05)"; } }}
+                        onMouseLeave={e => { if (status !== "sending") { e.currentTarget.style.backgroundColor = "#2A2326"; e.currentTarget.style.transform = "scale(1)"; } }}
                       >
                         {status === "sending" ? "Sending…" : "Send message"}
                       </button>
