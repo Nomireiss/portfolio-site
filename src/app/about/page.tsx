@@ -92,7 +92,7 @@ export default function AboutPage() {
               <div className="order-1 md:order-2 md:sticky md:top-[120px]">
                 <div style={{
                   width: "100%",
-                  maxWidth: "300px",
+                  maxWidth: "400px",
                   aspectRatio: "1",
                   borderRadius: "50%",
                   overflow: "hidden",
