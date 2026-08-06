@@ -92,7 +92,7 @@ export default function AboutPage() {
               <div className="order-1 md:order-2 md:sticky md:top-[120px]">
                 <div style={{
                   width: "100%",
-                  maxWidth: "400px",
+                  maxWidth: "300px",
                   aspectRatio: "1",
                   borderRadius: "50%",
                   overflow: "hidden",
@@ -101,13 +101,11 @@ export default function AboutPage() {
                     src="/Gemini_Generated_Image_26mlkd26mlkd26ml.png"
                     alt="Nomi Reiss"
                     style={{
-                      width: "115%",
-                      height: "115%",
+                      width: "100%",
+                      height: "100%",
                       objectFit: "cover",
-                      objectPosition: "center 15%",
+                      objectPosition: "center 20%",
                       display: "block",
-                      marginLeft: "-5%",
-                      marginTop: "-2%",
                     }}
                   />
                 </div>
