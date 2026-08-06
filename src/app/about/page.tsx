@@ -92,13 +92,13 @@ export default function AboutPage() {
               <div className="order-1 md:order-2 md:sticky md:top-[120px]">
                 <div style={{
                   width: "100%",
-                  maxWidth: "400px",
+                  maxWidth: "350px",
                   aspectRatio: "1",
                   borderRadius: "50%",
                   overflow: "hidden",
                 }}>
                   <img
-                    src="/Gemini_Generated_Image_26mlkd26mlkd26ml.png"
+                    src="/kgr (1).png"
                     alt="Nomi Reiss"
                     style={{
                       width: "100%",
