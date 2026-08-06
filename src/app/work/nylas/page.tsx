@@ -318,7 +318,7 @@ export default function NylasPage() {
           </section>
 
           <div style={{ overflow: "hidden", marginTop: "40px" }}>
-            <img src="/Components.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
+            <img src="/Nylas UI updated.png" alt="NDS Component Library" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
           <Divider />
